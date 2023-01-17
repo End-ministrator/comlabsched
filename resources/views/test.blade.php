@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="css/app.css">
     <title>Document</title>
 </head>
-<body class="bg-stone-800">
+<body class="bg-stone-500">
     <div>
-        <span class="text-red-700">TEST RED TEXT</span>
+        <span class="text-red-900">TEST.BLADE.PHP</span>
     </div>
 </body>
 </html>

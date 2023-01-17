@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
-    <title>Document</title>
+    <title>@yield('title')</title>
 </head>
-<body class="bg-stone-800">
-    <div>
-        <span class="text-red-700">TEST RED TEXT</span>
-    </div>
+<header><h1 class="text-red-700">LABSCHED</h1></header>
+<body>
+    @yield('content')
 </body>
+<footer><h1>2023</h1></footer>
 </html>
