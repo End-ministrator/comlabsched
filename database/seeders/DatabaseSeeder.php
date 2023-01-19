@@ -31,8 +31,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'faculty@example.com',
             'password' => bcrypt('password'),
             'role' => 'faculty',
-            'tag_id' => '0987654321',
-            'permissions' => '{"view_schedules": true, "view_logs": false}'
+            'tag_id' => '2345678901',
+            'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}'
         ]);
 
         Schedule::create([
@@ -43,6 +43,8 @@ class DatabaseSeeder extends Seeder
             'laboratory'=>'lab1',
             'created_at'=> Carbon::now(),
             'updated_at' => Carbon::now(),
+            'school_year' => '2022-2023',
+            'semester' => '1st',
         ]);
 
         Schedule::create([
@@ -53,6 +55,8 @@ class DatabaseSeeder extends Seeder
             'laboratory'=>'lab1',
             'created_at'=> Carbon::now(),
             'updated_at' => Carbon::now(),
+            'school_year' => '2022-2023',
+            'semester' => '1st',
         ]);
 
         Schedule::create([
@@ -63,6 +67,8 @@ class DatabaseSeeder extends Seeder
             'laboratory'=>'lab2',
             'created_at'=> Carbon::now(),
             'updated_at' => Carbon::now(),
+            'school_year' => '2022-2023',
+            'semester' => '1st',
         ]);
 
         Schedule::create([
@@ -73,6 +79,8 @@ class DatabaseSeeder extends Seeder
             'laboratory'=>'lab2',
             'created_at'=> Carbon::now(),
             'updated_at' => Carbon::now(),
+            'school_year' => '2022-2023',
+            'semester' => '1st',
         ]);
     }
 }

@@ -18,19 +18,26 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('login/login');
-});
+})->middleware('guest')->name('index');
+
+Route::get('/logout', function () {
+    auth()->logout();
+    return redirect('/');
+})->name('logout');
 
 Route::get('/test', function () {
+    ddd("test");
     return view('test');
 });
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [ScheduleController::class, 'dashboard'])->name('dashboard');
+    Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');
+    Route::post('/schedule/save', [ScheduleController::class, 'saveSchedule'])->name('schedule.save');
+    Route::get('/schedule/{id}/edit', [ScheduleController::class, 'editSchedule'])->name('schedule.edit');
+    Route::post('/updateSchedule', [ScheduleController::class, 'updateSchedule'])->name('schedule.update');
+    Route::get('/schedule/{id}/delete', [ScheduleController::class, 'deleteSchedule'])->name('schedule.delete');
 });
-
-Route::get('/addSchedule', [ScheduleController::class, 'addSchedule']);
-Route::post('/saveSchedule', [ScheduleController::class, 'saveSchedule']);
-Route::get('/editSchedule/{id}', [ScheduleController::class, 'editSchedule']);
-Route::post('/updateSchedule', [ScheduleController::class, 'updateSchedule']);
-Route::get('/deleteSchedule/{id}', [ScheduleController::class, 'deleteSchedule']);

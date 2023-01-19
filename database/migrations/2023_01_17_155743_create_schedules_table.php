@@ -20,16 +20,11 @@ class CreateSchedulesTable extends Migration
             $table->string('days');
             $table->integer('faculty_id');
             $table->string('laboratory');
+            $table->string('school_year');
+            $table->string('semester');
             $table->timestamps();
         });
     }
-
-    // - Faculty_ID
-	// - Start Time
-	// - End Time
-	// - Days (Monday)
-	// - Unique Token
-	// - Laboratory
 
     /**
      * Reverse the migrations.
