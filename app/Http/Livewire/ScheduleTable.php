@@ -18,7 +18,7 @@ class ScheduleTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Id", "id")
+            Column::make("ID", "id")
                 ->sortable(),
             Column::make("Start time", "start_time")
                 ->sortable(),
@@ -26,7 +26,7 @@ class ScheduleTable extends DataTableComponent
                 ->sortable(),
             Column::make("Days", "days")
                 ->sortable(),
-            Column::make("Faculty id", "faculty_id")
+            Column::make("Faculty ID", "faculty_id")
                 ->sortable(),
             Column::make("Laboratory", "laboratory")
                 ->sortable(),

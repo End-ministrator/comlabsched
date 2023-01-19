@@ -5,8 +5,9 @@
             @if(auth()->user()->role == 'department head')
                 <li class="mr-5"><a class="text-white" href="#">Schedules</a></li>
                 <li class="mr-5"><a class="text-white" href="#">Faculties</a></li>
+                <li class="mr-5"><a class="text-white" href="{{ route('logs') }}">Logs</a></li>
             @endif
-            <li class="mr-5"><a class="text-white" href="#">Monitoring</a></li>
+            <li class="mr-5"><a class="text-white" href="{{ route('dashboard') }}">Monitoring</a></li>
             <li class="mr-5"><a class="text-white" href="{{ route('logout') }}">Logout</a></li>
         </ul>
     </nav>

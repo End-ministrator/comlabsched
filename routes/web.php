@@ -32,6 +32,9 @@ Route::get('/test', function () {
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
+Route::get('/logs', function () {
+    return view('accessLogs');
+})->name('logs');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [ScheduleController::class, 'dashboard'])->name('dashboard');
@@ -40,4 +43,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/schedule/{id}/edit', [ScheduleController::class, 'editSchedule'])->name('schedule.edit');
     Route::post('/updateSchedule', [ScheduleController::class, 'updateSchedule'])->name('schedule.update');
     Route::get('/schedule/{id}/delete', [ScheduleController::class, 'deleteSchedule'])->name('schedule.delete');
+    Route::get('/logs', function () {
+        return view('accessLogs');
+    })->name('logs');
 });

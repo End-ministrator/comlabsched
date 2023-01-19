@@ -11,8 +11,9 @@
     @endforeach --}}
     <x-nav-bar />
     <!-- Outside of any Livewire component -->
-    <button onclick="Livewire.emit('openModal', 'add-schedule')">Add User</button>
-    <a class="text-white" href="{{ route('logout') }}">Logout</a>
+    @if(auth()->user()->role == 'department head')
+        <button onclick="Livewire.emit('openModal', 'add-schedule')">Add Schedule</button>
+    @endif
     @if(Session::has('success'))
         <div role="alert">
             {{Session::get('success')}}
@@ -46,5 +47,5 @@
             </div>
         </div>
     </div>    
-    <livewire:schedule-table theme="tailwind"  />
+    <livewire:schedule-table theme="tailwind"/>
 @endsection

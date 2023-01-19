@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
+use App\Models\Log;
 use App\Models\User;
 use App\Models\Schedule;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -81,6 +82,26 @@ class DatabaseSeeder extends Seeder
             'updated_at' => Carbon::now(),
             'school_year' => '2022-2023',
             'semester' => '1st',
+        ]);
+
+        Log::create([
+            'rfid' => '2345678901',
+            'status' => 'granted',
+        ]);
+
+        Log::create([
+            'rfid' => '2345678901',
+            'status' => 'granted',
+        ]);
+
+        Log::create([
+            'rfid' => '2345678901',
+            'status' => 'denied',
+        ]);
+
+        Log::create([
+            'rfid' => '1234567890',
+            'status' => 'granted',
         ]);
     }
 }
