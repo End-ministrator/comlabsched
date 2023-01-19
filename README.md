@@ -4,3 +4,6 @@
 
 # Free Components 
 ```flowbite.com```
+
+# Data tables
+```https://github.com/rappasoft/laravel-livewire-tables```
