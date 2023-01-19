@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -16,10 +17,20 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('login/login');
+});
+
+Route::get('/test', function () {
+    return view('test');
 });
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [ScheduleController::class, 'dashboard'])->name('dashboard');
 });
+
+Route::get('/addSchedule', [ScheduleController::class, 'addSchedule']);
+Route::post('/saveSchedule', [ScheduleController::class, 'saveSchedule']);
+Route::get('/editSchedule/{id}', [ScheduleController::class, 'editSchedule']);
+Route::post('/updateSchedule', [ScheduleController::class, 'updateSchedule']);
+Route::get('/deleteSchedule/{id}', [ScheduleController::class, 'deleteSchedule']);

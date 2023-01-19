@@ -26,6 +26,15 @@ class DatabaseSeeder extends Seeder
             'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}'
         ]);
 
+        User::create([
+            'name' => 'Jane Doe',
+            'email' => 'faculty@example.com',
+            'password' => bcrypt('password'),
+            'role' => 'faculty',
+            'tag_id' => '0987654321',
+            'permissions' => '{"view_schedules": true, "view_logs": false}'
+        ]);
+
         Schedule::create([
             'start_time' => '00:00',
             'end_time' => '23:59',
