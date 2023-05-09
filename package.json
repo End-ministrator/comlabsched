@@ -7,7 +7,9 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "watch:css": "watch 'npm run dev' resources/css",
+        "serve": "php artisan serve"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",
@@ -16,5 +18,8 @@
         "lodash": "^4.17.19",
         "postcss": "^8.4.21",
         "tailwindcss": "^3.2.4"
+    },
+    "dependencies": {
+        "watch": "^1.0.2"
     }
 }
