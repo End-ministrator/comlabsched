@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>@yield('title')</title>
+   
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/f26d36d903.js" crossorigin="anonymous"></script>
     @livewireStyles
@@ -16,9 +17,19 @@
 
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script>
+    function toggleDarkMode() {
+      const body = document.querySelector('body');
+      body.classList.toggle('dark');
+    }
+
+    const darkModeToggle = document.querySelector('#dark-mode-toggle');
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+  </script>
 </head>
    
-<body class="bg-white"> 
+<body class="bg-white dark:bg-gray-700"> 
+
     @yield('content')
     @livewireScripts
     @livewire('livewire-ui-modal')

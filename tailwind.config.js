@@ -24,6 +24,7 @@ module.exports = {
         '120': '36rem',
         '128': '40rem',
         '132': '44rem',
+        '140': '49rem',
         'max-112': '32rem',
         'min-112': '32rem',
         'max-100': '22rem',

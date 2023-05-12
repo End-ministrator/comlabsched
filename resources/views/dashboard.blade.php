@@ -6,11 +6,23 @@
 <x-topbar/>    
 
 <div class="flex flex-row h-screen">
-    <x-nav-bar />
-    <div class="flex justify center items-center w-full h-screen">
-        <!-- Main Content Goes Here -->
-       
+    <div>
+        <x-nav-bar />
     </div>
+    <!-- Main Content Goes Here -->
+
+    <div class="h-auto w-full bg-gray-500 flex relative">
+        <div class="w-full h-auto m-3 bg-white flex  items-center justify-center">
+            <div>
+               
+            </div>
+            <div>
+            
+            </div>
+            
+        </div>
+    </div>
+    
     
 </div>
  
