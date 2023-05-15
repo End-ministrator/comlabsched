@@ -14,18 +14,24 @@
     <!-- Alpine v3 -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Chart Js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script>
-    function toggleDarkMode() {
-      const body = document.querySelector('body');
-      body.classList.toggle('dark');
-    }
+        window.addEventListener('scroll', function() {
+          // Get the current scroll position
+          var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-    const darkModeToggle = document.querySelector('#dark-mode-toggle');
-    darkModeToggle.addEventListener('click', toggleDarkMode);
-  </script>
+          // Check if the user has scrolled past a certain point
+          if (scrollPosition > 100) {
+            console.log('User has scrolled down');
+            // do something here, such as adding a class to an element or showing a navigation bar
+          }
+        });
+        
+    </script>
 </head>
    
 <body class="bg-white dark:bg-gray-700"> 

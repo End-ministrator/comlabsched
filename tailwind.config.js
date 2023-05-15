@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./resources/**/*.{blade.php,vue,js}"],
+  content: [
+    "./resources/**/*.{blade.php,vue,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+],
   theme: {
     extend: {
       colors: {
@@ -11,7 +14,8 @@ module.exports = {
         creamcorn: "#F2C75B",
         wala:"#DE9967",
         brownish:"#783201",
-        lightgray:"#DBDBDB"
+        lightgray:"#DBDBDB",
+        smokeywhite:"#f5f5f5"
       },
       width: {
         '112': '32rem', // set a custom utility class for width up to 1920px
@@ -30,7 +34,14 @@ module.exports = {
         'max-100': '22rem',
 
       },
+      margin:{
+        'x':'256px',
+        'xsm':'144px',
+        'xmd':'192px',
+      },
+
     },
   },
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin.cjs")],
+  darkMode: "class"
 }
