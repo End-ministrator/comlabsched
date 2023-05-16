@@ -19,22 +19,41 @@
 
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
-    <script>
-        window.addEventListener('scroll', function() {
-          // Get the current scroll position
-          var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
 
-          // Check if the user has scrolled past a certain point
-          if (scrollPosition > 100) {
-            console.log('User has scrolled down');
-            // do something here, such as adding a class to an element or showing a navigation bar
-          }
+    
+    
+    <script>
+            window.addEventListener('scroll', ()=>
+        {   
+                const LOGO = document.getElementById('logo');
+                const PROFILE = document.getElementById('profile');
+                const targetpoint = 20;
+                const scrollval = window.scrollY;
+                console.log(scrollval);
+                if(scrollval > targetpoint){
+                    LOGO.classList.remove('lg:opacity-0','lg:-translate-x-2');
+                    LOGO.classList.add('lg:opacity-100','transition-opacity','lg:translate-x-2', 'transition-transform');
+                    PROFILE.classList.remove('lg:opacity-0','lg:-translate-x-2');
+                    PROFILE.classList.add('lg:opacity-100','transition-opacity','lg:translate-x-2', 'transition-transform');
+                    
+                }else {
+                    LOGO.classList.remove('lg:opacity-100','lg:translate-x-2');
+                    LOGO.classList.add('lg:opacity-0', 'transition-opacity','lg:-translate-x-2', 'transition-transform');
+                    PROFILE.classList.remove('lg:opacity-100','lg:translate-x-2');
+                    PROFILE.classList.add('lg:opacity-0','transition-opacity','lg:-translate-x-2', 'transition-transform');
+                    
+                }
+
+                // if(targetpoint <)
+
+
+
         });
-        
     </script>
 </head>
    
-<body class="bg-white dark:bg-gray-700"> 
+<body class="bg-bg dark:bg-gray-700 lg:text-smokeywhite md:text-cyan sm:text-violet-600 text-green-500"> 
 
     @yield('content')
     @livewireScripts

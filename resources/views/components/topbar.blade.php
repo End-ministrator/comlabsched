@@ -1,4 +1,4 @@
-<nav id="topbar" class="bg-white  dark:bg-gray-900  border shadow-black shadow-sm w-full  "> 
+<nav id="topbar" class="bg-white  dark:bg-gray-900  border shadow-black shadow-sm w-full rounded-none "> 
             <!-- <span class="sm:text-red-500 md:text-yellow-500 lg:text-green-500">md</span> -->
             <div class="flex flex-row justify-between"> 
                 <a href="#" class="flex items-center space-x-2 ml-1 sm:ml-2 md:ml-3 lg:ml-8">

@@ -15,7 +15,11 @@ module.exports = {
         wala:"#DE9967",
         brownish:"#783201",
         lightgray:"#DBDBDB",
-        smokeywhite:"#f5f5f5"
+        smokeywhite:"#f5f5f5",
+        bg:"#15051f",
+        bluee:"#3149bf",
+        cyan:"#00ffcc",
+
       },
       width: {
         '112': '32rem', // set a custom utility class for width up to 1920px
@@ -35,7 +39,7 @@ module.exports = {
 
       },
       margin:{
-        'x':'256px',
+        'x':'208px',
         'xsm':'144px',
         'xmd':'192px',
       },

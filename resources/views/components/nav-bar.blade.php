@@ -13,18 +13,29 @@
     </nav>
 </div> -->
 
-<aside id="menu" class="bg-yellow-500  h-screen lg:w-64 md:w-48 w-36 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
-    <div  id=""class="flex flex-col space-y-6 sm:space-y-6 md:space-y-6 lg:space-y-4 text-lg font-semibold mt-10 relative ">
-        <button class="w-5/6 grid hover:bg-gray-200 rounded-md z-0 hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group"><i class="fa-solid fa-house mr-2 "></i><a href="{{ route('dashboard') }}" class="justify-self-start sm:hidden md:hidden lg:block hidden">Dashboard</a></button>
-        <button class="w-5/6 grid hover:bg-gray-200 rounded-md z-0 hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group"><i class="fa-solid fa-magnifying-glass mr-2  "></i><a href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Monitoring</a></button>
-        <button class="w-5/6 grid hover:bg-gray-200 rounded-md z-0 hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group"><i class="fa-solid fa-calendar mr-2  "></i><a href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Scheduling</a></button>
-        <button class="w-5/6 grid hover:bg-gray-200 rounded-md z-0 hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group"><i class="fa-solid fa-users mr-2  "></i><a href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Faculty</a></button>
-        <button class="w-5/6 grid hover:bg-gray-200 rounded-md z-0 hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group"><i class="fa-solid fa-clipboard-list mr-2  "><a href="{{ route('logs') }}" class="justify-self-start sm:hidden md:hidden lg:block hidden"></i>Logs</a></button>
-        <button class="w-5/6 grid hover:bg-gray-200 rounded-md z-0 hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group"><i class="fa-solid fa-gear mr-2  "></i><a href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Settings</a></button>
+</script>
+<aside id="" class="bg-gradient-to-tl from-pink-500 to-yellow-500  h-screen lg:w-52 md:w-48 w-36 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
+    <div  id=""class="flex flex-col space-y-8 sm:space-y-6 md:space-y-6 lg:space-y-4 text-lg font-semibold mt-10 relative ">
+        <a href="" id="logo" class="flex items-center space-x-2 ml-1 sm:ml-2 md:ml-3 lg:ml-8 transition-opacity transition-transform lg:-translate-x-2 lg:opacity-0 md:opacity-0 sm:opacity-100 opacity-100 translate-x-10 ">
+            <i class="fa-solid fa-cube text-3xl"></i>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white lg:opacity-100 md:opacity-100 sm:opacity-0 opacity-0">LOGO</span>
+        </a>
+        <a href="{{ route('dashboard') }}" id="menu" class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-6 lg:-inset-x-1 inset-x-0"><i class="fa-solid fa-house mx-2 relative lg:inset-x-6 md:inset-x-10 sm:inset-x-10 inset-x-10 "></i><span href="{{ route('dashboard') }}" class="justify-self-start sm:hidden md:hidden lg:block hidden">Dashboard</span></a>
+        <a href=""         id="menu" class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-6 lg:-inset-x-1 inset-x-0"><i class="fa-solid fa-magnifying-glass mx-2 relative lg:inset-x-6 md:inset-x-10 sm:inset-x-10 inset-x-10 "></i><span href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Monitoring</span></a>
+        <a href=""         id="menu" class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-6 lg:-inset-x-1 inset-x-0"><i class="fa-solid fa-calendar mx-2 relative lg:inset-x-6 md:inset-x-10 sm:inset-x-10 inset-x-10 "></i><span href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Scheduling</span></a>
+        <a href=""         id="menu" class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-6 lg:-inset-x-1 inset-x-0"><i class="fa-solid fa-users mx-2 relative lg:inset-x-6 md:inset-x-10 sm:inset-x-10 inset-x-10 "></i><span href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Faculty</span></a>
+        <a href="{{ route('logs') }}" id="menu" class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-6 lg:-inset-x-1 inset-x-0"><i class="fa-solid fa-clipboard-list mx-2 relative lg:inset-x-6 md:inset-x-10 sm:inset-x-10 inset-x-10 "></i><span  class="justify-self-start sm:hidden md:hidden lg:block hidden">Logs</span></a>
+        <a href=""         id="menu" class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-6 lg:-inset-x-1 inset-x-0"><i class="fa-solid fa-gear mx-2 relative lg:inset-x-6 md:inset-x-10 sm:inset-x-10 inset-x-10 "></i><span href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden">Settings</span></a>
+    </div>
+    <div>
+        <ul id="profile" class="flex inset-x-4 inset-y-16 relative flex-row h-full items-center mr-2  transition-opacity transition-transform lg:-translate-x-2 lg:opacity-0 md:opacity-100 sm:opacity-100 opacity-100 translate-x-10  ">
+            <li class="w-12 h-12 relative mt-2 sm:-inset-x-6 md:inset-x-0 lg:inset-x-0 -inset-x-6"><img src="/images/usersample.jpg" alt="" class="rounded-full bg-contain bg-no-repeat "> </li>
+            <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden">Welcome[First Name]</li>
+        </ul>
     </div>
     <div class=" flex flex-col text-lg font-semibold mb-10 justify-center">
-        
-        <button class="w-5/6 grid hover:bg-gray-200 rounded-md hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 -space-x-6 items-center relative group"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i><a href="{{ route('logout') }}" class="justify-self-start sm:hidden md:hidden lg:block hidden">Log Out</a></button>
+
+        <button class="w-5/6 grid  rounded-md hover:inset-x-3 transition-all duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 -space-x-6 items-center relative group"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i><a href="{{ route('logout') }}" class="justify-self-start sm:hidden md:hidden lg:block hidden">Log Out</a></button>
     </div>
 </aside >
 
