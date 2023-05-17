@@ -1,7 +1,7 @@
 <nav id="topbar" class="bg-white  dark:bg-gray-900  border shadow-black shadow-sm w-full rounded-none "> 
             <!-- <span class="sm:text-red-500 md:text-yellow-500 lg:text-green-500">md</span> -->
             <div class="flex flex-row justify-between"> 
-                <a href="#" class="flex items-center space-x-2 ml-1 sm:ml-2 md:ml-3 lg:ml-8">
+                <a href="#" class="flex items-center space-x-2 ml-1 sm:ml-2 md:ml-3 lg:ml-8 opacity-0 sm:opacity-0 md:opacity-100 lg:opacity-100">
                     <i class="fa-solid fa-cube text-2xl"></i>
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">LOGO</span>
                 </a>
@@ -20,7 +20,7 @@
             
                 <div>
                     <ul class="flex  flex-row h-full items-center mr-2  ">
-                    <li class="w-12 h-12 mt-2"><img src="/images/usersample.jpg" alt="" class="rounded-full bg-contain bg-no-repeat "> </li>
+                    <li class="w-12 h-12 mt-2 sm:hidden md:hidden lg:block hidden"><img src="/images/usersample.jpg" alt="" class="rounded-full bg-contain bg-no-repeat "> </li>
                     <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden">Welcome[First Name]</li>
                     </ul>
                 </div>

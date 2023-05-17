@@ -41,7 +41,7 @@ module.exports = {
       margin:{
         'x':'208px',
         'xsm':'144px',
-        'xmd':'192px',
+        'xmd':'160px',
       },
 
     },

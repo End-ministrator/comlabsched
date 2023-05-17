@@ -28,7 +28,7 @@
         {   
                 const LOGO = document.getElementById('logo');
                 const PROFILE = document.getElementById('profile');
-                const targetpoint = 20;
+                const targetpoint = 47;
                 const scrollval = window.scrollY;
                 console.log(scrollval);
                 if(scrollval > targetpoint){
@@ -45,7 +45,7 @@
                     
                 }
 
-                // if(targetpoint <)
+              
 
 
 
@@ -53,7 +53,7 @@
     </script>
 </head>
    
-<body class="bg-smokeywhite dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500"> 
+<body class="bg-white dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500"> 
 
     @yield('content')
     @livewireScripts

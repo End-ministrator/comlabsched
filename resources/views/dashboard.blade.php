@@ -13,11 +13,11 @@
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
             <x-topbar/>
             <!-- main content goes here -->
-            <div class="h-full w-full bg-smokeywhite flex flex-col rounded-none  ">
-                <div class="grid  grid-flow-row ml-6  w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 ">
+            <div class="h-full w-full bg-white flex flex-col rounded-none ">
+                <div class="grid grid-flow-row w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 ">
 
                     
-                    <div class="  w-11/12 h-40 rounded-md shadow-sm shadow-black mx-2 my-1 bg-cyan flex flex-grow flex-col ">
+                    <div class="flex w-11/12 h-40 rounded-md shadow-sm shadow-black mx-8 my-1 bg-cyan flex-grow flex-col ">
                         <span class="font-semibold text-xl mx-2 my-1">Laboratory 1</span>
                         <div class="flex justify-between">
                             <div class="my-3">
@@ -26,7 +26,7 @@
                             
                             <div class="">
                                 <span class="font-semibold text-md mx-2 my-1">Upcoming Schedule</span>
-                                <div class="flex w-1/2 h-16 mx-2 my-2 border">
+                                <div class="flex w-1/2 h-16 mx-2 my-2 border-none">
                                 <!-- upcoming sched here -->
                                 <span>SCHED HERE</span>
                                 </div>
@@ -38,7 +38,7 @@
                     
                     </div>
 
-                    <div class="  w-11/12 h-40 rounded-md shadow-sm shadow-black mx-2 my-1 bg-bluee flex flex-grow flex-col ">
+                    <div class="flex  w-11/12 h-40 rounded-md shadow-sm shadow-black mx-8 my-1 bg-bluee flex-grow flex-col ">
                         <span class="font-semibold text-xl mx-2 my-1">Laboratory 2</span>
                         <div class="flex justify-between">
                             <div class="my-3">
@@ -47,7 +47,7 @@
                             
                             <div class="">
                                 <span class="font-semibold text-md mx-2 my-1">Upcoming Schedule</span>
-                                <div class="flex w-1/2 h-16 mx-2 my-2 border">
+                                <div class="flex w-1/2 h-16 mx-2 my-2 border-none">
                                     <!-- upcoming sched here -->
                                     <span>SCHED HERE</span>
                                 </div>
@@ -58,7 +58,7 @@
                         
                     
                 </div> 
-                <div class="flex  bg-white mx-3 mt-5 justify-center items-center rounded-md">
+                <div class="flex  bg-white mx-3 mt-5 justify-center items-center rounded-md shadow-black shadow-sm">
                     <canvas id="myChart" class="relative w-full h-auto m-2"></canvas>
                 </div> 
                 
@@ -81,13 +81,13 @@
                 {
                     label: 'Laboratory 1',
                     data: [3, 5, 2, 4, 3],
-                    backgroundColor: '#00ffcc',
+                    backgroundColor: '#ec4899',
                     borderWidth: 1
                 },
                 {
                     label: 'Laboratory 2 ',
                     data: [4, 3, 5, 1, 2],
-                    backgroundColor: '#4020df',
+                    backgroundColor: '#eab308',
                     borderWidth: 1
                 }
             ]
