@@ -53,7 +53,7 @@
     </script>
 </head>
    
-<body class="bg-bg dark:bg-gray-700 lg:text-smokeywhite md:text-cyan sm:text-violet-600 text-green-500"> 
+<body class="bg-smokeywhite dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500"> 
 
     @yield('content')
     @livewireScripts
