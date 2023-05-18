@@ -50,10 +50,11 @@
                   <div class=" flex items-center my-5">
                   <input type="submit" value="Log in" class="bg-white hover:bg-gray-200 text-sm font-semibold flex w-full h-8 justify-center px-2 rounded-lg border border-transparent ">
                   </div>
-                  @error('email') 
-                      <p class="error ">{{ $message }}</p> 
-                  @enderror
+                   
               </form>
+           @error('email') 
+                      <p class="error w-4/6 relative -translate-y-40">{{ $message }}</p> 
+                    @enderror
 
       </div>
       
