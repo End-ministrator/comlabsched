@@ -26,6 +26,8 @@ module.exports = {
         'max-112': '32rem',
         'min-112': '32rem',
         'max-100': '22rem',
+        '95p': '95.5%',
+       
       },
       height: {
         '112': '32rem', // set a custom utility class for width up to 1920px

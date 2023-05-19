@@ -36,6 +36,12 @@ Route::get('/logs', function () {
     return view('accessLogs');
 })->name('logs');
 
+Route::get('/settings', function ()
+{
+    return view('settings');
+})->name('settings');
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [ScheduleController::class, 'dashboard'])->name('dashboard');
     Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');

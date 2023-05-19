@@ -14,10 +14,10 @@
             <x-topbar/>
             <!-- main content goes here -->
             <div class="h-full w-full bg-white flex flex-col rounded-none ">
-                <div class="grid grid-flow-row w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 ">
+                <div class="grid grid-flow-row w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-4  ">
 
                     
-                    <div class="flex w-11/12 h-40 rounded-md shadow-sm shadow-black mx-8 my-1 bg-cyan flex-grow flex-col ">
+                    <div class="flex w-95p h-40 rounded-md shadow-sm shadow-black ml-4  my-1 bg-cyan  flex-col ">
                         <span class="font-semibold text-xl mx-2 my-1">Laboratory 1</span>
                         <div class="flex justify-between">
                             <div class="my-3">
@@ -38,7 +38,7 @@
                     
                     </div>
 
-                    <div class="flex  w-11/12 h-40 rounded-md shadow-sm shadow-black mx-8 my-1 bg-bluee flex-grow flex-col ">
+                    <div class="flex  w-95p h-40 rounded-md shadow-sm shadow-black ml-4 my-1 bg-bluee  flex-col ">
                         <span class="font-semibold text-xl mx-2 my-1">Laboratory 2</span>
                         <div class="flex justify-between">
                             <div class="my-3">
@@ -114,7 +114,7 @@
 
 
     
-<div class="hidden">
+<div class="hidden ">
     <livewire:schedule-table theme="tailwind"/> 
         {{-- @foreach ($schedules as $schedule)
             <p>Time: {{$schedule->start_time}} - {{$schedule->end_time}}</p>
