@@ -19,6 +19,7 @@ module.exports = {
         bg:"#15051f",
         bluee:"#3149bf",
         cyan:"#00ffcc",
+        reddishyellow:"#EC8433"
 
       },
       width: {
@@ -38,6 +39,7 @@ module.exports = {
         'max-112': '32rem',
         'min-112': '32rem',
         'max-100': '22rem',
+        '85p': '85%',
 
       },
       margin:{

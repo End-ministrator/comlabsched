@@ -114,7 +114,7 @@
 
 
     
-<div class="hidden ">
+<div class="  ">
     <livewire:schedule-table theme="tailwind"/> 
         {{-- @foreach ($schedules as $schedule)
             <p>Time: {{$schedule->start_time}} - {{$schedule->end_time}}</p>
