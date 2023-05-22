@@ -1139,6 +1139,9 @@ video {
 .w-9 {
   width: 2.25rem;
 }
+.w-95p {
+  width: 95.5%;
+}
 .w-96 {
   width: 24rem;
 }
@@ -1192,9 +1195,6 @@ video {
 }
 .w-screen {
   width: 100vw;
-}
-.w-95p {
-  width: 95.5%;
 }
 .min-w-0 {
   min-width: 0px;
