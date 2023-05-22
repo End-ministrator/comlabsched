@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
+    public function index (){
+     
+    }
+
     public function dashboard(){
         $data = Schedule::all();
         return view('dashboard', compact('data'));
