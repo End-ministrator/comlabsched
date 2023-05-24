@@ -20,7 +20,22 @@
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     
-
+    <style>
+    /* For Webkit Browsers */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    </style>
     
     
     <script>
@@ -50,10 +65,14 @@
 
 
         });
+
+        
+ 
+            
     </script>
 </head>
    
-<body class="bg-white dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500"> 
+<body class="bg-white dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500 " id=" "> 
 
     @yield('content')
     @livewireScripts

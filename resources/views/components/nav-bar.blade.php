@@ -14,8 +14,8 @@
 </div> -->
 
 </script>
-<aside id=""
-    class="bg-gradient-to-tl from-red-500 to-yellow-500  h-screen lg:w-52 md:w-40 w-36 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
+<aside id="nav"
+    class="   bg-yellow-300  h-screen lg:w-52 md:w-40 w-36 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
     <div id=""class="flex flex-col space-y-8 sm:space-y-6 md:space-y-6 lg:space-y-4 text-lg   mt-10 relative ">
         <a href="" id="logo"
             class="flex items-center space-x-2 ml-1 sm:ml-2 md:ml-3 lg:ml-8 transition-opacity transition-transform lg:-translate-x-2 lg:opacity-0 md:opacity-0 sm:opacity-100 opacity-100 translate-x-10 ">
@@ -32,10 +32,10 @@
             class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
                 class="fa-solid fa-magnifying-glass mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
                 href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Monitoring</span></a>
-        <a href="" id="menu"
+        <a href="{{ url('schedule') }}" id="menu"
             class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
                 class="fa-solid fa-calendar mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
-                href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Scheduling</span></a>
+                href="" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Scheduling</span></a>
                 
         <a href="{{ url('faculty') }}" id="menu"
             class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i

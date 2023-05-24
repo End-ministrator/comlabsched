@@ -19,7 +19,7 @@ module.exports = {
         bg:"#15051f",
         bluee:"#3149bf",
         cyan:"#00ffcc",
-        reddishyellow:"#EC8433"
+        reddishyellow:"#EBA411"
 
       },
       width: {

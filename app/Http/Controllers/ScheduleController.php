@@ -8,13 +8,25 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
-    public function index (){
-     
+
+    protected $data;
+
+    public function __construct()
+    {
+        $this->data = Schedule::all();
     }
+    public function index (){
+   
+    }
+    
 
     public function dashboard(){
         $data = Schedule::all();
         return view('dashboard', compact('data'));
+    }
+    public function schedule(){
+        $data = Schedule::all();
+        return view('schedule', compact('data'));
     }
 
     public function addSchedule(){
