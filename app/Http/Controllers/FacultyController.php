@@ -15,7 +15,13 @@ class FacultyController extends Controller
     public function index()
     {
         $faculties = Faculty::all();
-        return view('facultycrud.faculty')->with('faculties', $faculties);
+        $editfaculties = Faculty::all()->toArray();
+        // $faculty = Faculty::find($id);
+        // dd($editfaculties);
+      
+       
+        return view('facultycrud.faculty', compact('faculties', 'editfaculties'));
+        
     }
 
     /**

@@ -64,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
 // Faculty
 
 Route::resource("/faculty", FacultyController::class);
+// Route::get("/editFaculty/{id}", [FacultyController::class, 'edit'])->name('edit');
 Route::resource('/schedule', ScheduleController::class);
 
 Route::middleware(['auth'])->group(function () {

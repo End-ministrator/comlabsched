@@ -34,15 +34,15 @@
         <label class="w-full h-8 rounded-md">Permissions</label>
 
         <input class="w-full input h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required type="text" name="permissions" id="permissions" class="form-control">
-        <div class="w-full flex justify-end">
-            <input class="w-16 h-8 rounded-md    " id="save"type="submit" value="Save" class="btn btn-success">
+        <div class="w-full flex justify-end ">
+            <input class="w-16 h-7 rounded-md   bg-yellow-500 " id="save"type="submit" value="Save" class="btn btn-success">
         </div>      
                 
                 
                 
     </form>
-    <div class="w-3/4 flex justify-start ml-2 ">
-        <button id="cancel"   class="relative -inset-y-7">Cancel</button>
+    <div class="w-3/4 flex justify-start ml-2  ">
+        <button id="cancel"   class="relative h-7 -inset-y-7 bg-yellow-500 w-16 rounded-md">Cancel</button>
     </div>
             
 </div>
@@ -51,9 +51,34 @@
     
     <!-- edit faculty modal -->
 
+    <div  class="w-1/3 h-3/4 bg-yellow-300 rounded-md justify-center items-center flex flex-col ">
+        <form action="{{ url('faculty/' . $editfaculties[0]['id']) }}" method="post">
+                @csrf
+                @method('PATCH')
+                <input type="hidden" name="id" id="id" value="{{ $editfaculties[0]['id'] }}" id="id" />
+                <label>Name</label></br>
+                <input type="text" name="name" id="name" value="{{ $editfaculties[0]['name'] }}"
+                    class="form-control"></br>
+                <label>Email</label></br>
+                <input type="text" name="email" id="email" value="{{ $editfaculties[0]['email'] }}" class="form-control"></br>
+                <label>Password</label></br>
+                <input type="text" name="password" id="password" value="{{ $editfaculties[0]['id'] }}" class="form-control"></br>
+                <label>Role</label></br>
+                <select name="role" id="role" value="{{ $editfaculties[0]['role']  }}">
+                    <option value="faculty">Faculty</option>
+                    <option value="admin">Admin</option>
+                </select></br>
+                <label>Tag Id</label></br>
+                <input type="text" name="tag_id" id="tag_id" value="{{ $editfaculties[0]['tag_id'] }}" class="form-control"></br>
+                <label>Permissions</label></br>
+                <input type="text" name="permissions" id="permissions" value="{{  $editfaculties[0]['permissions'] }}" class="form-control"></br>
+
+                <button type="submit" value="Update" class="btn btn-success">Update</button></br>
+    </form>
+ </div>
     
 
-
+<!-- edit faculty modal end -->
     
 <div class="flex flex-row bg-smokeywhite" id="body">
 
@@ -111,11 +136,11 @@
                                 @foreach ($faculties as $item)
                                     <tr class="h-12 ">
                                         <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td class="text-center">{{ $item->name }}</td>
-                                        <td class="text-center">{{ $item->email }}</td>
-                                        <td class="text-center">{{ $item->password }}</td>
-                                        <td class="text-center">{{ $item->role }}</td>
-                                        <td class="text-center">{{ $item->tag_id }}</td>
+                                        <td class="text-center">{{ $item['name'] }}</td>
+                                        <td class="text-center">{{ $item['email'] }}</td>
+                                        <td class="text-center">{{ $item['password'] }}</td>
+                                        <td class="text-center">{{ $item['role'] }}</td>
+                                        <td class="text-center">{{ $item['tag_id'] }}</td>
                                         <td class="text-center">
 
                                             <a href="{{ url('/faculty/' . $item->id . '/edit') }}"
@@ -123,7 +148,9 @@
                                                 <button class="btn btn-primary btn-sm"><i
                                                         class="fa fa-pencil-square-o" aria-hidden="true"></i>|
                                                     
-                                                </button></a>
+                                                </button>
+                                            </a>
+                                           
 
                                             <form method="POST" action="{{ url('/faculty/' . $item->id) }}"
                                                 accept-charset="UTF-8" style="display:inline">
