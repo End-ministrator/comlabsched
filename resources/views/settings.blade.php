@@ -14,7 +14,7 @@
         <x-topbar/>
         <!-- main content goes here -->
         <div class="grid  w-full h-screen items-center ">
-            <div class="absolute  flex justify-self-start translate-x-40 h-5/6 w-20 bg-gradient-to-tl from-red-500 to-yellow-500 border z-50  justify-evenly items-center flex-col  space-y-20">
+            <div class="absolute  flex justify-self-start translate-x-40 h-5/6 w-20 bg-yellow-300 border z-50  justify-evenly items-center flex-col  space-y-20">
                 <a href="" class="my-2 text-2xl"><i class="fa-solid fa-user"></i></a>
                 <a href="" class="my-2 text-2xl"><i class="fa-solid fa-lock"></i></i></a>
                 <a href="" class="my-2 text-2xl"><i class="fa-solid fa-user"></i></a>
