@@ -15,12 +15,12 @@ class FacultyController extends Controller
     public function index()
     {
         $faculties = Faculty::all();
-        $editfaculties = Faculty::all()->toArray();
+        // $editfaculties = Faculty::all()->toArray();
         // $faculty = Faculty::find($id);
         // dd($editfaculties);
       
        
-        return view('facultycrud.faculty', compact('faculties', 'editfaculties'));
+        return view('facultycrud.faculty')->with('faculties', $faculties);
         
     }
 
@@ -101,5 +101,12 @@ class FacultyController extends Controller
     {
         Faculty::destroy($id);
         return redirect('faculty')->with('flash_message', 'Faculty deleted!');  
+    }
+
+    public function test (){
+
+        $faculties = Faculty::all();
+   
+        return view('facultycrud.test')->with(compact('faculties'));
     }
 }

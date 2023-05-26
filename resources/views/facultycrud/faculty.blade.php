@@ -1,86 +1,101 @@
 @extends('layouts.main')
 
-@section('title', 'Department Head | Dashboard')
+@section('title', 'Department Head | Faculty')
 
 @section('content')
 
-       <!--  create faculty modal-->
+    <!--  create faculty modal-->
 
-<div id="Cmodal"class=" hidden w-1/3 h-3/4 bg-yellow-300 rounded-md justify-center items-center flex flex-col absolute z-50 inset-y-32 inset-x-1/3    ">
-    <form action="{{ url('faculty') }}" method="post" class="space-y-2 w-3/4 ">
-        @csrf
-        <label class="w-full h-8 rounded-md">Name</label>
-        <input class=" input w-full  h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500 " required type="text" name="name" id="name" class="form-control">
+    <div
+        id="Cmodal"class=" hidden w-1/3 h-3/4 bg-yellow-300 rounded-md justify-center items-center flex flex-col absolute z-50 inset-y-32 inset-x-1/3    ">
+        <form action="{{ url('faculty') }}" method="post" class="space-y-2 w-3/4 ">
+            @csrf
+            <label class="w-full h-8 rounded-md">Name</label>
+            <input class=" input w-full  h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500 "
+                required type="text" name="name" id="name" value= "" class="form-control">
 
-        <label class="w-full h-8 rounded-md">Email</label>
+            <label class="w-full h-8 rounded-md">Email</label>
+            <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500"
+                required type="text" name="email" id="email" class="form-control">
 
-        <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required type="text" name="email" id="email" class="form-control">
+            <label class="w-full h-8 rounded-md">Password</label>
 
-        <label class="w-full h-8 rounded-md">Password</label>
+            <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500"
+                required type="text" name="password" id="password" class="form-control">
 
-        <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required type="text" name="password" id="password" class="form-control">
+            <label class="w-full h-8 rounded-md">Role</label>
 
-        <label class="w-full h-8 rounded-md">Role</label>
+            <select class="w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required
+                name="role" id="role">
+                <option value="faculty">Faculty</option>
+                <option value="admin">Admin</option>
+            </select>
 
-        <select class="w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required name="role" id="role">
-            <option value="faculty">Faculty</option>
-            <option value="admin">Admin</option>
-        </select>
+            <label class="w-full h-8 rounded-md">Tag Id</label>
 
-        <label class="w-full h-8 rounded-md">Tag Id</label>
+            <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500"
+                required type="text" name="tag_id" id="tag_id" class="form-control">
 
-        <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required type="text" name="tag_id" id="tag_id" class="form-control">
+            <label class="w-full h-8 rounded-md">Permissions</label>
+            <input class="w-full input h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required
+                type="text" name="permissions" id="permissions" class="form-control">
 
-        <label class="w-full h-8 rounded-md">Permissions</label>
+            <div class="w-full flex justify-end ">
+                <input class="w-16 h-7 rounded-md   bg-yellow-500 " id="save"type="submit" value="Save"
+                    class="btn btn-success">
+            </div>
 
-        <input class="w-full input h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" required type="text" name="permissions" id="permissions" class="form-control">
-        <div class="w-full flex justify-end ">
-            <input class="w-16 h-7 rounded-md   bg-yellow-500 " id="save"type="submit" value="Save" class="btn btn-success">
-        </div>      
-                
-                
-                
-    </form>
-    <div class="w-3/4 flex justify-start ml-2  ">
-        <button id="cancel"   class="relative h-7 -inset-y-7 bg-yellow-500 w-16 rounded-md">Cancel</button>
+
+
+        </form>
+        <div class="w-3/4 flex justify-start ml-2  ">
+            <button id="cancel" class="relative h-7 -inset-y-7 bg-yellow-500 w-16 rounded-md">Cancel</button>
+        </div>
+
     </div>
-            
-</div>
 
 
-    
+
     <!-- edit faculty modal -->
 
-    <div  class="w-1/3 h-3/4 bg-yellow-300 rounded-md justify-center items-center flex flex-col ">
-        <form action="{{ url('faculty/' . $editfaculties[0]['id']) }}" method="post">
-                @csrf
-                @method('PATCH')
-                <input type="hidden" name="id" id="id" value="{{ $editfaculties[0]['id'] }}" id="id" />
-                <label>Name</label></br>
-                <input type="text" name="name" id="name" value="{{ $editfaculties[0]['name'] }}"
-                    class="form-control"></br>
-                <label>Email</label></br>
-                <input type="text" name="email" id="email" value="{{ $editfaculties[0]['email'] }}" class="form-control"></br>
-                <label>Password</label></br>
-                <input type="text" name="password" id="password" value="{{ $editfaculties[0]['id'] }}" class="form-control"></br>
-                <label>Role</label></br>
-                <select name="role" id="role" value="{{ $editfaculties[0]['role']  }}">
-                    <option value="faculty">Faculty</option>
-                    <option value="admin">Admin</option>
-                </select></br>
-                <label>Tag Id</label></br>
-                <input type="text" name="tag_id" id="tag_id" value="{{ $editfaculties[0]['tag_id'] }}" class="form-control"></br>
-                <label>Permissions</label></br>
-                <input type="text" name="permissions" id="permissions" value="{{  $editfaculties[0]['permissions'] }}" class="form-control"></br>
+    {{-- <div id="editmodal"class=" hidden w-1/3 h-3/4 bg-yellow-300 rounded-md justify-center items-center flex flex-col absolute z-50 inset-y-32 inset-x-1/3    ">
+        <form action="{{ url('faculty' ) }}" method="post">
+            @csrf
+            @method('PATCH')
+            <input type="hidden" name="id" id="id" value="" id="id" />
+            <label>Name</label></br>
+            <input  class=" input w-full  h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500 " type="text" name="name" id="name" value=""
+                class="form-control"></br>
+            <label>Email</label></br>
+            <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" type="text" name="email" id="email" value=""
+                class="form-control"></br>
+            <label>Password</label></br>
+            <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" type="text" name="password" id="password" value=""
+                class="form-control"></br>
+            <label>Role</label></br>
+            <select class="w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" name="role" id="role" value="">
+                <option value="faculty">Faculty</option>
+                <option value="admin">Admin</option>
+            </select></br>
+            <label>Tag Id</label></br>
+            <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" type="text" name="tag_id" id="tag_id" value=""
+                class="form-control"></br>
+            <label>Permissions</label></br>
+            <input class=" input w-full h-8 rounded-md focus:outline-none shadow-inner text-black shadow-yellow-500" type="text" name="permissions" id="permissions" value=""
+                class="form-control"></br>
 
-                <button type="submit" value="Update" class="btn btn-success">Update</button></br>
-    </form>
- </div>
-    
+            <button id="update" type="submit" value="Update" class="btn btn-success">Update</button></br>
+        </form>
 
-<!-- edit faculty modal end -->
-    
-<div class="flex flex-row bg-smokeywhite" id="body">
+         <div class="w-3/4 flex justify-start ml-2  ">
+            <button id="cancel" class="relative h-7 -inset-y-7 bg-yellow-500 w-16 rounded-md">Cancel</button>
+        </div>
+    </div>
+ --}}
+
+    <!-- edit faculty modal end -->
+
+    <div class="flex flex-row bg-smokeywhite" id="body">
 
         <div class=" flex">
             <x-nav-bar />
@@ -91,27 +106,28 @@
             <x-topbar />
             <!-- main content goes here -->
 
-    
-       
 
 
 
-      
-    
 
-            <div class="flex flex-col justify-center  w-11/12 h-85p pb-8 pt-4 pl-4 pr-4 my-8 bg-white  shadow shadow-black  rounded-lg ">
+
+
+
+
+            <div
+                class="flex flex-col justify-center  w-11/12 h-85p pb-8 pt-4 pl-4 pr-4 my-8 bg-white  shadow shadow-black  rounded-lg ">
                 <div class="flex flex-row justify-between">
-                     
 
-                    <button  class="btn btn-success btn-sm flex justify-center items-center  border ml-14 mt-8 rounded-md  border-black w-28 h-10" id="addfaculty"
-                            title="Add New Faculty">
-                            <span class="text-lg">Add Faculty</span>
+
+                    <button
+                        class="btn btn-success btn-sm flex justify-center items-center  border ml-14 mt-8 rounded-md  border-black w-28 h-10"
+                        id="addfaculty" title="Add New Faculty">
+                        <span class="text-lg">Add Faculty</span>
                     </button>
                     <div class=" flex   text-gray-600 ml-8 mt-8 mr-12">
-                        <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                                type="search"
-                                name="search"
-                                placeholder="Search">
+                        <input
+                            class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                            type="search" name="search" placeholder="Search">
                         <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
 
                         </button>
@@ -143,23 +159,21 @@
                                         <td class="text-center">{{ $item['tag_id'] }}</td>
                                         <td class="text-center">
 
-                                            <a href="{{ url('/faculty/' . $item->id . '/edit') }}"
-                                                title="Edit Student">
-                                                <button class="btn btn-primary btn-sm"><i
-                                                        class="fa fa-pencil-square-o" aria-hidden="true"></i>|
-                                                    
+                                            <a href="{{ url('/faculty/' . $item->id . '/edit') }}" title="Edit Student">
+                                                <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
+                                                        aria-hidden="true"></i>|
+
                                                 </button>
                                             </a>
-                                           
+
 
                                             <form method="POST" action="{{ url('/faculty/' . $item->id) }}"
                                                 accept-charset="UTF-8" style="display:inline">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit" class="btn btn-danger btn-sm"
-                                                    title="Delete Student"
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Student"
                                                     onclick="return confirm('Confirm delete?')">
-                                                    |<i class="fa fa-trash-o" aria-hidden="true"></i> 
+                                                    |<i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </button>
                                             </form>
 
@@ -177,14 +191,14 @@
             </div>
 
 
- 
 
 
-    
+
+
             <!-- main content ends here -->
         </div>
 
-</div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -194,10 +208,10 @@
             for (let i = 0; i < rows.length; i++) {
                 if (i % 2 === 0) {
                     rows[i].classList.add('bg-reddishyellow');
-                    rows[i+1].classList.add('bg-white');
+                    rows[i + 1].classList.add('bg-white');
                 } else {
                     rows[i].classList.remove('bg-reddishyellow');
-                    rows[i+1].classList.remove('bg-white');
+                    rows[i + 1].classList.remove('bg-white');
                 }
             }
         });
@@ -211,40 +225,40 @@
         const save = document.getElementById('save');
         var f;
         button.addEventListener('click', function() {
-        bg.classList.add('brightness-50');
-        nav.classList.add('brightness-50');
-        Cmodal.classList.remove('hidden');
-        Cmodal.classList.add('block');
-        console.log('clicked')
+            bg.classList.add('brightness-50');
+            nav.classList.add('brightness-50');
+            Cmodal.classList.remove('hidden');
+            Cmodal.classList.add('block');
+            console.log('clicked')
         });
         cancel.addEventListener('click', function() {
-        bg.classList.remove('brightness-50');
-        nav.classList.remove('brightness-50');
-        Cmodal.classList.add('hidden');
-        Cmodal.classList.remove('block');
-        console.log('clicked')
+            bg.classList.remove('brightness-50');
+            nav.classList.remove('brightness-50');
+            Cmodal.classList.add('hidden');
+            Cmodal.classList.remove('block');
+            console.log('clicked')
         });
 
         save.addEventListener('click', function() {
 
             inputs.forEach((input) => {
-        if (input.value === '') {
-                f=1;
-        }
-        });
-        if(f<1){
-        bg.classList.remove('brightness-50');
-        nav.classList.remove('brightness-50');
-        Cmodal.classList.add('hidden');
-        Cmodal.classList.remove('block');
-        console.log('clicked')
-        }
-        
+                if (input.value === '') {
+                    f = 1;
+                }
+            });
+            if (f < 1) {
+                bg.classList.remove('brightness-50');
+                nav.classList.remove('brightness-50');
+                Cmodal.classList.add('hidden');
+                Cmodal.classList.remove('block');
+                console.log('clicked')
+            }
+
         });
 
-        
-   
- 
+
+
+
         // document.addEventListener('click', function() {
         // // Click event occurred
         // console.log('Clicked somewhere');
@@ -256,7 +270,5 @@
         // modal.classList.add('block');
         // }
         // });
-
- 
     </script>
 @endsection

@@ -3,6 +3,9 @@ module.exports = {
   content: [
     "./resources/**/*.{blade.php,vue,js}",
     "./node_modules/tw-elements/dist/js/**/*.js",
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
 ],
   theme: {
     extend: {
