@@ -51,7 +51,7 @@
     
     <!-- edit faculty modal -->
 
-    <div  class="w-1/3 h-3/4 bg-yellow-300 rounded-md justify-center items-center flex flex-col ">
+    <div  class="hidden w-1/3 h-3/4 bg-yellow-300 rounded-md justify-center items-center flex flex-col ">
         <form action="{{ url('faculty/' . $editfaculties[0]['id']) }}" method="post">
                 @csrf
                 @method('PATCH')

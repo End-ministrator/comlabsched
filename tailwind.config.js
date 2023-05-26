@@ -6,6 +6,10 @@ module.exports = {
 ],
   theme: {
     extend: {
+      translate: {
+        '26': '105px',
+        '-38': '-146px',
+      },
       colors: {
         background: '#F5F5F5', // Replace this with your hex code
         scarlet: '#900D09',

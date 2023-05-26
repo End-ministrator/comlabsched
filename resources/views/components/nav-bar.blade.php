@@ -41,7 +41,7 @@
             class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
                 class="fa-solid fa-users mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
                 href="#"
-                class="justify-self-start sm:hidden md:hidden lg:block hidden ">Faculty</span></a>
+                class="justify-self-start sm:hidden md:hidden lg:block hidden ">Users</span></a>
 
         <a href="{{ route('logs') }}" id="menu"
             class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
