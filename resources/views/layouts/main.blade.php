@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>@yield('title')</title>
-   
+
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/f26d36d903.js" crossorigin="anonymous"></script>
     @livewireStyles
@@ -70,6 +70,40 @@
  
             
     </script>
+    <!-- full calendar -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.8/index.global.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+    initialView: 'resourceTimeGridFourDay',
+    datesAboveResources: true,
+    headerToolbar: {
+      left: 'prev,next',
+      center: 'title',
+      right: 'resourceTimeGridDay,resourceTimeGridFourDay'
+    },
+    views: {
+      resourceTimeGridFourDay: {
+        type: 'resourceTimeGrid',
+        duration: { days: 4 },
+        buttonText: '4 days'
+      }
+    },
+    resources: [
+      { id: 'a', title: 'Room A' },
+      { id: 'b', title: 'Room B' }
+    ],
+    events: 'https://fullcalendar.io/api/demo-feeds/events.json?with-resources=2'
+  });
+
+  calendar.render();
+});
+  
+    </script>
+
 </head>
    
 <body class="bg-white dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500 " id=" "> 

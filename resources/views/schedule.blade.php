@@ -14,7 +14,7 @@
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
         <x-topbar/>
         <!-- main content goes here -->
-        
+        {{--
         <div class=" bg-black">
             <livewire:schedule-table theme="tailwind"/> 
                 {{-- @foreach ($schedules as $schedule)
@@ -22,8 +22,8 @@
                     <p>Day: {{$schedule->days}}</p>
                     <p>Faculty: {{$schedule->faculty_id}}</p> 
                     <p>Room: {{$schedule->laboratory}}</p>   
-                @endforeach --}} 
-                
+                @endforeach --}}
+                {{--
                 <!-- Outside of any Livewire component -->
                 @if(auth()->user()->role == 'department head')
                     <button onclick="Livewire.emit('openModal', 'add-schedule')" class="z-50 inset-y-28 w-96 h-96">Add Schedule</button>
@@ -38,7 +38,7 @@
                         <div class=" w-full flex justify-center"> 
                             <table class="w-90 border-spacing-9 border-separate border table-fixed bg-zinc-500">
                                 <thead>
-                                    <tr >
+                                    <tr>
                                         <th>Time</th>
                                         <th>Day</th>
                                         <th>Faculty</th>
@@ -61,15 +61,18 @@
                         </div>
                     </div>
                 </div>      
-            
+     
         </div>
 
         <!-- content end -->
+        --}}
+
     </div>
 
 </div>
 
- 
+<div id='calendar' style="max-width: 1750px; max-height: 800px; margin: 40px auto; padding-left: 200px"></div>
+
 
 
 
