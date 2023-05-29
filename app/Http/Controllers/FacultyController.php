@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Faculty;
 use Illuminate\Http\Request;
 
@@ -105,8 +106,7 @@ class FacultyController extends Controller
 
     public function test (){
 
-        $faculties = Faculty::all();
-   
+        $faculties = User::all();
         return view('facultycrud.test')->with(compact('faculties'));
     }
 }

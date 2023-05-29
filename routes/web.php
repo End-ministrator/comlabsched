@@ -67,7 +67,7 @@ Route::middleware(['auth'])->group(function () {
 // Route::resource("/faculty", FacultyController::class);
 
 
-Route::get('/facult',[FacultyController::class, 'test']);
+Route::get('/faculty',[FacultyController::class, 'test']);
 // Route::get('/faculty-show', FacultyShow::class);
 // Route::get("/editFaculty/{id}", [FacultyController::class, 'edit'])->name('edit');
 Route::resource('/schedule', ScheduleController::class);

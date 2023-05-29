@@ -3,8 +3,9 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use LivewireUI\Modal\ModalComponent;
 
-class AddFaculty extends Component
+class AddFaculty extends ModalComponent
 {
 
 

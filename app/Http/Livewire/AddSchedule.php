@@ -35,7 +35,8 @@ class AddSchedule extends ModalComponent
         'semester' => 'Semester',
     ];
 
-    public function mount(){
+    public function mount()
+    {
         $this->school_year = '2022-2023';
         $this->semester = '1st Semester';
         $this->laboratory = 'Lab 1';
@@ -48,7 +49,8 @@ class AddSchedule extends ModalComponent
         $this->validateOnly($field);
     }
 
-    public function addSched(){
+    public function addSched()
+    {
         $validatedData = $this->validate(); // Validate after submit button is clicked
         Schedule::create($validatedData);
         $this->closeModal();
