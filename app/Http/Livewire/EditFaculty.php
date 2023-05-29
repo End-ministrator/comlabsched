@@ -69,6 +69,7 @@ class EditFaculty extends ModalComponent
         ]);
         User::find($this->facultyId)->update($validateData);
         $this->closeModal();
+        $this->emit('updateShowFaculty');
     }
 
     public function render()

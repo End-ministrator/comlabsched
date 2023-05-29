@@ -8,7 +8,6 @@ use LivewireUI\Modal\ModalComponent;
 
 class AddFaculty extends ModalComponent
 {
-
     public $faculties;
 
     public $name;
@@ -19,7 +18,6 @@ class AddFaculty extends ModalComponent
     public $permissions;
 
 
-    protected $listeners = ['updateShowFaculty' => '$refresh'];
 
     public function render()
     {
@@ -53,8 +51,7 @@ class AddFaculty extends ModalComponent
         $this->validateOnly($field);
     }
 
-
-    public function save()
+    public function saveFaculty()
     {
         $validatedData = $this->validate([
             'name' => 'required',
@@ -64,10 +61,9 @@ class AddFaculty extends ModalComponent
             'tag_id' => 'required',
             'permissions' => 'required',
         ]);
-
         // Validate after submit button is clicked
         User::create($validatedData);
         $this->closeModal();
-        $this->emit('updateShowFaculty');
+
     }
 }

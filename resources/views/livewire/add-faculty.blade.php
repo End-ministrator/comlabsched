@@ -2,7 +2,7 @@
     <div class="card-header">Create New Faculty</div>
     <div class="card-body">
 
-        <form wire:submit.prevent="save" method="POST">
+        <form wire:submit.prevent="saveFaculty" method="POST">
             @csrf
             <label>Name</label></br>
             <input type="text" wire:model="name" id="name" class="form-control"></br>
@@ -39,7 +39,7 @@
                 <p class="error">{{ $message }}</p>
             @enderror
 
-            <input type="submit" wire:click="save" value="Save" class="btn btn-success"></br>
+            <input type="submit"  value="Save" class="btn btn-success"></br>
         </form>
 
     </div>
