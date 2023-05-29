@@ -40,18 +40,27 @@
 
 
                         </div>
-                        <div class="mr-10">
+                        <div class="mr-10 flex flex-col justify-between h-72 ">
                             <button id="editbtn">
                                 <span class="flex bg-yellow-400 h-9 w-14 items-center justify-center rounded-lg"  >
                                 <i class="fa-solid fa-pencil"></i>
                                     Edit
                                 </span>
                             </button>
+                            <div class="flex justify-end w-1/3 space-x-3 translate-y-96 sm:translate-y-72 md:translate-y-72 lg:translate-y-64">
+                                <button id="Gcancel" class="relative  hidden -inset-y-3">
+                                    Cancel
+                                </button>
+                                <button id="Gsave" class="relative  hidden -inset-y-3">
+                                    Save
+                                </button>
+                            </div>  
+
                         </div>
 
                     </div>
                 </div>
-                    <div class="grid grid-cols-3  mb-10 ml-6 space-y-3 ">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10 sm:mt-10 md:mt-10 lg:mt-2  mb-10 ml-6 space-y-3 ">
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Last Name</span>
                             <span class="opacity-50">Matullano</span>
@@ -83,31 +92,30 @@
                 <!-- end general category -->
 
                 <!-- Password Category -->
-            <div id="password"class="flex  mb-12 justify-self-center w-11/12 h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
-                 <div class="w-1/3 h-full  flex flex-col ml-6">
+            <div id="password"class="flex flex-col sm:flex-col md:flex-row lg:flex-row mb-12 justify-self-center w-11/12 h-140 sm:h-140 md:h-140  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
+                
+                 <div class="w-11/12 sm:w-11/12 m:w-11/12 lg:w-1/3 h-full  flex flex-col ml-6">
                     <div class="flex flex-col">
-                        <span class="text-3xl font-semibold my-10">Password Settings</span>
-                          <span>Please enter your password to change your password</span>      
+                        <span class="text-3xl my-10">Password Settings</span>
+                        <span>Please enter your password to change your password</span>      
 
                     </div>    
+                 </div>
 
-
-
-
-                 </div> 
-                   <div class="flex w-1/3">
-                    <div id="form"class="w-1/2 flex flex-col opacity-30  ">
+                 <div class="flex w-1/2 space-x-20 justify-between">
+                   
+                        <div id="form"class="w-full mt-10 flex flex-col opacity-30  ">
                             <span id="label1" class="relative transform">Current Password</span>
-                            <div class="mb-6 border border-yellow-500 dark:border-amber-700"></div>
+                            <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
                             <span id="label2" class="relative transform">New Password</span>
-                            <div class="mb-6 border border-yellow-500 dark:border-amber-700"></div>
+                            <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
                             <span id="label3" class="relative transform">Retype New Password</span>
-                            <div class="mb-6 border border-yellow-500 dark:border-amber-700"></div>
-                            <input id="current"type="password" required class="dark:bg-gray-600 hidden w-1/5  shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-1 ">
-                            <input id="new"type="password" required class="dark:bg-gray-600 hidden w-1/5  shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-14">
-                            <input id="rnew"type="password" required class="dark:bg-gray-600 hidden w-1/5  shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-26 ">
+                            <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
+                            <input id="current"type="password" required class="dark:bg-gray-600 hidden w-1/5     shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-1 ">
+                            <input id="new"type="password" required class="dark:bg-gray-600 hidden w-1/5     shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-14">
+                            <input id="rnew"type="password" required class="dark:bg-gray-600 hidden w-1/5     shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-26 ">
                             
-                            <ul class="flex justify-end translate-x-24 mr-5">
+                            <ul class="flex justify-center mr-5 md:translate-x-16 lg:translate-x-0">
                                 <li  class="eye hidden relative -translate-y-38 mt-1  ">
                                     <button id="revealpass1"class="text-sm absolute"><i class="fa-solid fa-eye"></i></button>
                                     <button id="hidepass1"class="text-sm hidden absolute"><i class=" fa-solid fa-eye-slash"></i></button>
@@ -122,10 +130,10 @@
                                 </li >
                             </ul>
 
-                    </div>
+                        </div>
                    </div>
 
-                    <div class="flex flex-col justify-between h-full py-16">
+                    <div class="flex flex-col justify-between h-full pt-10 pb-8 ">
 
                     
 
@@ -135,7 +143,7 @@
                                 Edit
                             </span>
                         </button>
-                        <div class="flex justify-end w-1/3 space-x-3">
+                        <div class="flex justify-end w-1/3 space-x-3 sm:mt-10 md:translate-y-44 lg:translate-y-36  mr-12">
                             <button id="Pcancel" class="relative hidden -inset-y-3">
                                 Cancel
                             </button>
@@ -146,6 +154,7 @@
 
 
                     </div>
+                </div>
 
             </div>
             <!-- end password category -->
@@ -213,40 +222,96 @@ themeCheck();
     const revealp3 = document.getElementById('revealpass3');
     const dark = document.querySelectorAll('fa-sun');
     const light = document.querySelectorAll('fa-moon');
-    const theme = document.getElementById('themee'); 
-    const sunIcon = document.getElementById('sun');
-    const moonIcon = document.getElementById('moon');
 
     const gensens = document.querySelectorAll('.gensen');
     const editbtn = document.getElementById('editbtn');
+    const Gcancel =document.getElementById('Gcancel');
+    const Gsave =document.getElementById('Gsave');
+
 
     editbtn.addEventListener('click', function (){
         gensens.forEach(gensen => {
     
         if(gensen.classList.contains('hidden')){
             gensen.classList.remove('hidden');
+            editbtn.classList.add('hidden');
+            Gcancel.classList.remove('hidden');
+
+            Gsave.classList.remove('hidden');
             console.log('Button clicked');
         }else{
             gensen.classList.add('hidden');
+            editbtn.classList.remove('hidden');
+            Gcancel.classList.add('hidden');
+            Gsave.classList.add('hidden');
         }
 
         }); 
     });
+    Gcancel.addEventListener('click', function(){
+        gensens.forEach(gensen => {
+    
+        if(gensen.classList.contains('hidden')){
+            gensen.classList.remove('hidden');
+            editbtn.classList.add('hidden');
+            Gcancel.classList.remove('hidden');
 
+            Gsave.classList.remove('hidden');
+            console.log('Button clicked');
+        }else{
+            gensen.classList.add('hidden');
+            editbtn.classList.remove('hidden');
+            Gcancel.classList.add('hidden');
+            Gsave.classList.add('hidden');
+        }
+
+    }); 
+
+
+    });
+    Gsave.addEventListener('click', function(){
+
+        gensens.forEach(gensen => {
     
+    if(gensen.classList.contains('hidden')){
+        gensen.classList.remove('hidden');
+        editbtn.classList.add('hidden');
+        Gcancel.classList.remove('hidden');
+
+        Gsave.classList.remove('hidden');
+        console.log('Button clicked');
+    }else{
+        gensen.classList.add('hidden');
+        editbtn.classList.remove('hidden');
+        Gcancel.classList.add('hidden');
+        Gsave.classList.add('hidden');
+    }
+
+    }); 
+
+
+        
+    });
+
+
+    const theme = document.getElementById('themee');
+
+    const sunIcon = document.getElementById('sun');
+
+    const moonIcon = document.getElementById('moon');
     
-    // theme.addEventListener('click', function (){
-    //     if (sunIcon.classList.contains('invisible')) {
-    //         sunIcon.classList.remove('invisible');
-    //         moonIcon.classList.add('invisible');
-    //         themeSwitch();
+    theme.addEventListener('click', function (){
+        if (sunIcon.classList.contains('invisible')) {
+            sunIcon.classList.remove('invisible');
+            moonIcon.classList.add('invisible');
+            themeSwitch();
             
-    // } else {
-    //         sunIcon.classList.add('invisible');
-    //         moonIcon.classList.remove('invisible');
-    //         themeSwitch();
-    // }
-    // });
+    } else {
+            sunIcon.classList.add('invisible');
+            moonIcon.classList.remove('invisible');
+            themeSwitch();
+    }
+    });
     pbutton.addEventListener('click', function() {
     plabel1.classList.add('-translate-y-5','transition-transform');
     plabel2.classList.add('-translate-y-5','transition-transform');
@@ -257,6 +322,7 @@ themeCheck();
     pcancel.classList.remove('hidden' );
     psave.classList.remove('hidden' );
     form.classList.remove('opacity-30' );
+    pbutton.classList.add('hidden');
     current.value='';
     newP.value='';
     rnewP.value='';
@@ -293,6 +359,7 @@ themeCheck();
     pcancel.classList.add('hidden');
     psave.classList.add('hidden');
     form.classList.add('opacity-30' );
+    pbutton.classList.remove('hidden');
     eyes.forEach(eye => {
     
     current.type = 'password';
@@ -321,6 +388,7 @@ themeCheck();
     pcancel.classList.add('hidden');
     psave.classList.add('hidden');
     form.classList.add('opacity-30' );
+    pbutton.classList.remove('hidden');
 
     eyes.forEach(eye => {
     

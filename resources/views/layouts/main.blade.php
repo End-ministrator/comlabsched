@@ -112,7 +112,7 @@
 
 </head>
    
-<body class=" bg-smokeywhite dark:bg-gray-700 dark:text-white  " id="body"> 
+<body class=" bg-smokeywhite dark:bg-gray-800  text-red-500 sm:text-blue-500 md:text-teal-500 lg:text-fuchsia-500 " id="body"> 
 
     @yield('content')
     @livewireScripts
