@@ -15,13 +15,11 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties = Faculty::all();
-        // $editfaculties = Faculty::all()->toArray();
-        // $faculty = Faculty::find($id);
-        // dd($editfaculties);
-      
        
-        return view('facultycrud.faculty')->with('faculties', $faculties);
+
+        $faculties = User::all();
+        $faculty_id = $faculties->first()->id;
+        return view('facultycrud.faculty')->with(compact('faculties', 'faculty_id'));
         
     }
 
@@ -106,7 +104,6 @@ class FacultyController extends Controller
 
     public function test (){
 
-        $faculties = User::all();
-        return view('facultycrud.test')->with(compact('faculties'));
+      
     }
 }

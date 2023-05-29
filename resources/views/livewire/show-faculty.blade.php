@@ -38,33 +38,30 @@
                                 <th class="">#</th>
                                 <th class="">Name</th>
                                 <th class="">Email</th>
-                                <th class="">Password</th>
                                 <th class="">Role</th>
                                 <th class="">Tag Id</th>
                                 <th class="">Action</th>
                             </tr>
                         </thead>
                         <tbody class=" ">
-                            @foreach ($faculty as $item)
+                            @foreach ($faculties as $faculty)
                                 <tr class="h-12 ">
                                     <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td class="text-center">{{ $item->name }}</td>
-                                    <td class="text-center">{{ $item->email }}</td>
-                                    <td class="text-center">{{ $item->password }}</td>
-                                    <td class="text-center">{{ $item->role }}</td>
-                                    <td class="text-center">{{ $item->tag_id }}</td>
+                                    <td class="text-center">{{ $faculty->name }}</td>
+                                    <td class="text-center">{{ $faculty->email }}</td>
+                                    <td class="text-center">{{ $faculty->role }}</td>
+                                    <td class="text-center">{{ $faculty->tag_id }}</td>
                                     <td class="text-center">
 
-                                        <a href="{{ url('/faculty/' . $item->id . '/edit') }}" title="Edit Student">
-                                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
-                                                    aria-hidden="true"></i>|
 
-                                            </button>
+                                        <button onclick="Livewire.emit('openModal', 'edit-faculty', { facultyId: {{ $faculty->id }}}) "
+                                            class="btn btn-primary btn-sm">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>|
+                                        </button>
+                                     
 
-                                        </a>
 
-
-                                        <form method="POST" action="{{ url('/faculty/' . $item->id) }}"
+                                        <form method="POST" action="{{ url('/faculty/' . $faculty->id) }}"
                                             accept-charset="UTF-8" style="display:inline">
                                             @method('DELETE')
                                             @csrf

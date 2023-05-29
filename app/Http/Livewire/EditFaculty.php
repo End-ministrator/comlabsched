@@ -6,26 +6,33 @@ use App\Models\User;
 use Livewire\Component;
 use LivewireUI\Modal\ModalComponent;
 
-class AddFaculty extends ModalComponent
+class EditFaculty extends ModalComponent
 {
-
     public $faculties;
-
+    public $faculty;
+ 
+    public $facultyId;
     public $name;
     public $email;
     public $password;
     public $role;
     public $tag_id;
     public $permissions;
+    public $faculty_id;
 
-
-    protected $listeners = ['updateShowFaculty' => '$refresh'];
-
-    public function render()
+    public function mount($facultyId)
     {
-        return view('livewire.add-faculty');
-    }
+        // dd($id);
+        $user = User::find($facultyId);
 
+        $this->facultyId = $facultyId;
+        $this->name = $user->name;
+        $this->email = $user->email;
+        $this->password = $user->password;
+        $this->role = $user->role;
+        $this->tag_id = $user->tag_id;
+        $this->permissions = $user->permissions;
+    }
 
     protected $rules = [
         'name' => 'required',
@@ -37,26 +44,22 @@ class AddFaculty extends ModalComponent
     ];
 
     protected $validationAttributes = [
-        'name' => 'required',
-        'email' => 'required',
-        'password' => 'required',
-        'role' => 'required',
-        'tag_id' => 'required',
-        'permissions' => 'required',
+        'name' => 'Name',
+        'email' => 'Email',
+        'password' => 'Password',
+        'role' => 'Role',
+        'tag_id' => 'Tag id',
+        'permissions' => 'Permissions',
     ];
-
-
-
 
     public function updated($field)
     {
         $this->validateOnly($field);
     }
 
-
-    public function save()
+    public function editFaculty()
     {
-        $validatedData = $this->validate([
+        $validateData = $this->validate([
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required',
@@ -64,10 +67,12 @@ class AddFaculty extends ModalComponent
             'tag_id' => 'required',
             'permissions' => 'required',
         ]);
-
-        // Validate after submit button is clicked
-        User::create($validatedData);
+        User::find($this->facultyId)->update($validateData);
         $this->closeModal();
-        $this->emit('updateShowFaculty');
+    }
+
+    public function render()
+    {
+        return view('livewire.edit-faculty');
     }
 }

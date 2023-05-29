@@ -53,7 +53,10 @@ class AddSchedule extends ModalComponent
     {
         $validatedData = $this->validate(); // Validate after submit button is clicked
         Schedule::create($validatedData);
+        $this->emit('updateShowFaculty');
         $this->closeModal();
+
+    
     }
 
 
