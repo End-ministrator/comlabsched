@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script src="js\app.js"></script>
     <title>@yield('title')</title>
 
     <!-- font awesome -->
@@ -36,9 +37,11 @@
         background: #555;
     }
     </style>
-    
+   
     
     <script>
+
+      
             window.addEventListener('scroll', ()=>
         {   
                 const LOGO = document.getElementById('logo');
@@ -102,11 +105,14 @@
   calendar.render();
 });
   
+
+
+
     </script>
 
 </head>
    
-<body class="bg-white dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500 " id=" "> 
+<body class=" bg-white dark:bg-gray-700 dark:text-white  " id="body"> 
 
     @yield('content')
     @livewireScripts

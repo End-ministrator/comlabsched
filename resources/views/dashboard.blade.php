@@ -13,7 +13,7 @@
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
             <x-topbar/>
             <!-- main content goes here -->
-            <div class="h-full w-full bg-white flex flex-col rounded-none ">
+            <div class="h-full w-full   flex flex-col rounded-none dark:bg-gray-800 bg-smokeywhite ">
                 <div class="grid grid-flow-row w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-4  ">
 
                     

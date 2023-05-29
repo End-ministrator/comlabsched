@@ -4,6 +4,7 @@ module.exports = {
     "./resources/**/*.{blade.php,vue,js}",
     "./node_modules/tw-elements/dist/js/**/*.js",
 ],
+darkMode:'class',
   theme: {
     extend: {
       translate: {

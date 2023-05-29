@@ -80,7 +80,7 @@
 
 <!-- edit faculty modal end -->
     
-<div class="flex flex-row bg-smokeywhite" id="body">
+<div class="flex flex-row bg-smokeywhite dark:bg-gray-800" id="body">
 
         <div class=" flex">
             <x-nav-bar />
@@ -99,7 +99,7 @@
       
     
 
-            <div class="flex flex-col justify-center  w-11/12 h-85p pb-8 pt-4 pl-4 pr-4 my-8 bg-white  shadow shadow-black  rounded-lg ">
+            <div class="flex flex-col justify-center  w-11/12 h-85p pb-8 pt-4 pl-4 pr-4 my-8 bg-white dark:bg-gray-700  shadow shadow-black  rounded-lg ">
                 <div class="flex flex-row justify-between">
                      
 

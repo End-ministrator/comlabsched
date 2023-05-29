@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="flex flex-col h-screen bg-gradient-to-tl from-pink-500 to-yellow-500">
+<div class="flex flex-col h-screen bg-smokeywhite dark:bg-gray-800">
   
 
 
@@ -15,7 +15,7 @@
       <div class="w-60 h-128 basis-1/3 flex  shadow-black shadow-md bg-[url('/images/bgg.jpg')] bg-no-repeat bg-cover rounded-l-md relative sm:hidden md:hidden lg:block hidden">
 
       </div>
-      <div class="w-30 h-128 basis-1/3 flex sm:w-30 md:36 lg:w-60  bg-white shadow-black shadow-md  rounded-r-md relative flex-col items-center justify-evenly  backdrop-filter backdrop-blur-sm bg-opacity-20 ">
+      <div class="w-30 h-128 basis-1/3 flex sm:w-30 md:36 lg:w-60  bg-yellow-400 shadow-black shadow-md  rounded-r-md relative flex-col items-center justify-evenly  backdrop-filter backdrop-blur-sm bg-opacity-100 ">
           <div class="ml-4">
               
               <div class="flex  justify-center items-center mb-10 sm:inset-y-20 md:inset-y-20 lg:inset-y-0 inset-y-20 relative mt-6 ">
@@ -48,7 +48,7 @@
                   
                   <br>
                   <div class=" flex items-center my-5">
-                  <input type="submit" value="Log in" class="bg-white hover:bg-gray-200 text-sm font-semibold flex w-full h-8 justify-center px-2 rounded-lg border border-transparent ">
+                  <input type="submit" value="Log in" class="bg-yellow-500 dark:bg-amber-700 hover:bg-gray-200 text-sm font-semibold flex w-full h-8 justify-center px-2 rounded-lg border border-transparent ">
                   </div>
                    
               </form>
