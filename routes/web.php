@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\FacultyShow;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/logout', function () {
 })->name('logout');
 
 Route::get('/test', function () {
-    ddd("test");
+    ("test");
     return view('test');
 });
 
@@ -63,18 +64,22 @@ Route::middleware(['auth'])->group(function () {
 
 // Faculty
 
-Route::resource("/faculty", FacultyController::class);
+// Route::resource("/faculty", FacultyController::class);
+
+
+Route::get('/facult',[FacultyController::class, 'test']);
+// Route::get('/faculty-show', FacultyShow::class);
 // Route::get("/editFaculty/{id}", [FacultyController::class, 'edit'])->name('edit');
 Route::resource('/schedule', ScheduleController::class);
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
-    Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');
-    Route::post('/schedule/save', [ScheduleController::class, 'saveSchedule'])->name('schedule.save');
-    Route::get('/schedule/{id}/edit', [ScheduleController::class, 'editSchedule'])->name('schedule.edit');
-    Route::post('/updateSchedule', [ScheduleController::class, 'updateSchedule'])->name('schedule.update');
-    Route::get('/schedule/{id}/delete', [ScheduleController::class, 'deleteSchedule'])->name('schedule.delete');
-    Route::get('/logs', function () {
-        return view('accessLogs');
-    })->name('logs');
-});
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
+//     Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');
+//     Route::post('/schedule/save', [ScheduleController::class, 'saveSchedule'])->name('schedule.save');
+//     Route::get('/schedule/{id}/edit', [ScheduleController::class, 'editSchedule'])->name('schedule.edit');
+//     Route::post('/updateSchedule', [ScheduleController::class, 'updateSchedule'])->name('schedule.update');
+//     Route::get('/schedule/{id}/delete', [ScheduleController::class, 'deleteSchedule'])->name('schedule.delete');
+//     Route::get('/logs', function () {
+//         return view('accessLogs');
+//     })->name('logs');
+// });
