@@ -168,34 +168,34 @@
 
 <script>
 
-const userTheme = localStorage.getItem("theme");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-// initial Theme check
-const themeCheck = () => {
-if(userTheme === "dark" || (!userTheme && systemTheme)){
-    document.documentElement.classList.add('dark');
-    return;
+// const userTheme = localStorage.getItem("theme");
+// const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+// // initial Theme check
+// const themeCheck = () => {
+// if(userTheme === "dark" || (!userTheme && systemTheme)){
+//     document.documentElement.classList.add('dark');
+//     return;
 
-}else {
-    document.documentElement.classList.remove('dark');
-    return;
-}
+// }else {
+//     document.documentElement.classList.remove('dark');
+//     return;
+// }
 
-};
+// };
 
-// manual Theme Switch
-const themeSwitch = () => {
-if(document.documentElement.classList.contains("dark")){
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme","light");
+// // manual Theme Switch
+// const themeSwitch = () => {
+// if(document.documentElement.classList.contains("dark")){
+//     document.documentElement.classList.remove("dark");
+//     localStorage.setItem("theme","light");
 
-    return;
-}
-document.documentElement.classList.add("dark");
-localStorage.setItem("theme","dark");
+//     return;
+// }
+// document.documentElement.classList.add("dark");
+// localStorage.setItem("theme","dark");
 
-}
-themeCheck();
+// }
+// themeCheck();
 
 
 
@@ -294,24 +294,24 @@ themeCheck();
     });
 
 
-    const theme = document.getElementById('themee');
+    // const theme = document.getElementById('themee');
 
     const sunIcon = document.getElementById('sun');
 
     const moonIcon = document.getElementById('moon');
     
-    theme.addEventListener('click', function (){
-        if (sunIcon.classList.contains('invisible')) {
-            sunIcon.classList.remove('invisible');
-            moonIcon.classList.add('invisible');
-            themeSwitch();
+    // theme.addEventListener('click', function (){
+    //     if (sunIcon.classList.contains('invisible')) {
+    //         sunIcon.classList.remove('invisible');
+    //         moonIcon.classList.add('invisible');
+    //         themeSwitch();
             
-    } else {
-            sunIcon.classList.add('invisible');
-            moonIcon.classList.remove('invisible');
-            themeSwitch();
-    }
-    });
+    // } else {
+    //         sunIcon.classList.add('invisible');
+    //         moonIcon.classList.remove('invisible');
+    //         themeSwitch();
+    // }
+    // });
     pbutton.addEventListener('click', function() {
     plabel1.classList.add('-translate-y-5','transition-transform');
     plabel2.classList.add('-translate-y-5','transition-transform');
