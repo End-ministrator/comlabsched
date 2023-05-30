@@ -1,25 +1,45 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en" class="dark">
+=======
+<html lang="en">
+
+>>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <script src="js\app.js"></script>
     <title>@yield('title')</title>
 
+=======
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>@yield('title')</title>
+
+    <!-- Styles -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    @livewireStyles
+    <!-- Scripts -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+>>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/f26d36d903.js" crossorigin="anonymous"></script>
     @livewireStyles
     <!-- Alpine v3 -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Chart Js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+<<<<<<< HEAD
     
     <style>
     /* For Webkit Browsers */
@@ -62,16 +82,60 @@
                     PROFILE.classList.add('lg:opacity-0','transition-opacity','lg:-translate-x-2', 'transition-transform');
                     
                 }
+=======
+>>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
 
-              
+    <style>
+        /* For Webkit Browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const LOGO = document.getElementById('logo');
+            const PROFILE = document.getElementById('profile');
+            const targetpoint = 47;
+            const scrollval = window.scrollY;
+            console.log(scrollval);
+            if (scrollval > targetpoint) {
+                LOGO.classList.remove('lg:opacity-0', 'lg:-translate-x-2');
+                LOGO.classList.add('lg:opacity-100', 'transition-opacity', 'lg:translate-x-2',
+                    'transition-transform');
+                PROFILE.classList.remove('lg:opacity-0', 'lg:-translate-x-2');
+                PROFILE.classList.add('lg:opacity-100', 'transition-opacity', 'lg:translate-x-2',
+                    'transition-transform');
+
+            } else {
+                LOGO.classList.remove('lg:opacity-100', 'lg:translate-x-2');
+                LOGO.classList.add('lg:opacity-0', 'transition-opacity', 'lg:-translate-x-2',
+                    'transition-transform');
+                PROFILE.classList.remove('lg:opacity-100', 'lg:translate-x-2');
+                PROFILE.classList.add('lg:opacity-0', 'transition-opacity', 'lg:-translate-x-2',
+                    'transition-transform');
+
+            }
+
+
 
 
 
         });
-
-        
- 
-            
     </script>
     <!-- full calendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.8/index.global.min.js'></script>
@@ -111,8 +175,13 @@
     </script>
 
 </head>
+<<<<<<< HEAD
    
 <body class=" bg-smokeywhite dark:bg-gray-800  text-red-500 sm:text-blue-500 md:text-teal-500 lg:text-fuchsia-500 " id="body"> 
+=======
+
+<body class="bg-white dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500 " id=" ">
+>>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
 
     @yield('content')
     @livewireScripts
@@ -123,4 +192,5 @@
          <h1>2023</h1>
     </div>
 </footer> -->
+
 </html>

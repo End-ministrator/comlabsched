@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Faculty;
 use Illuminate\Http\Request;
 
@@ -14,13 +15,11 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties = Faculty::all();
-        $editfaculties = Faculty::all()->toArray();
-        // $faculty = Faculty::find($id);
-        // dd($editfaculties);
-      
        
-        return view('facultycrud.faculty', compact('faculties', 'editfaculties'));
+
+        $faculties = User::all();
+        $faculty_id = $faculties->first()->id;
+        return view('facultycrud.faculty')->with(compact('faculties', 'faculty_id'));
         
     }
 
@@ -101,5 +100,10 @@ class FacultyController extends Controller
     {
         Faculty::destroy($id);
         return redirect('faculty')->with('flash_message', 'Faculty deleted!');  
+    }
+
+    public function test (){
+
+      
     }
 }
