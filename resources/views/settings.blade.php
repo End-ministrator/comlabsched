@@ -64,22 +64,22 @@
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Last Name</span>
                             <span class="opacity-50">Matullano</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44">
+                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>First Name</span>
                             <span class="opacity-50">Raymond</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44">
+                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Middle Initial</span>
                             <span class="opacity-50">Tampipi</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44">
+                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Email</span>
                             <span class="opacity-50">r.matullano@gmail.com</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44">
+                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                     </div>
                 
@@ -111,11 +111,11 @@
                             <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
                             <span id="label3" class="relative transform">Retype New Password</span>
                             <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
-                            <input id="current"type="password" required class="dark:bg-gray-600 hidden w-1/5     shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-1 ">
-                            <input id="new"type="password" required class="dark:bg-gray-600 hidden w-1/5     shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-14">
-                            <input id="rnew"type="password" required class="dark:bg-gray-600 hidden w-1/5     shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-26 ">
+                            <input id="current"type="password" required class="dark:bg-gray-600 hidden w-1/5  pl-1   shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-1 ">
+                            <input id="new"type="password" required class="dark:bg-gray-600 hidden w-1/5    pl-1 shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-14">
+                            <input id="rnew"type="password" required class="dark:bg-gray-600 hidden w-1/5   pl-1  shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-26 ">
                             
-                            <ul class="flex justify-center mr-5 md:translate-x-16 lg:translate-x-0">
+                            <ul class="flex justify-center mr-5 md:translate-x-16 lg:-translate-x-1">
                                 <li  class="eye hidden relative -translate-y-38 mt-1  ">
                                     <button id="revealpass1"class="text-sm absolute"><i class="fa-solid fa-eye"></i></button>
                                     <button id="hidepass1"class="text-sm hidden absolute"><i class=" fa-solid fa-eye-slash"></i></button>
@@ -296,9 +296,9 @@
 
     // const theme = document.getElementById('themee');
 
-    const sunIcon = document.getElementById('sun');
+    // const sunIcon = document.getElementById('sun');
 
-    const moonIcon = document.getElementById('moon');
+    // const moonIcon = document.getElementById('moon');
     
     // theme.addEventListener('click', function (){
     //     if (sunIcon.classList.contains('invisible')) {
