@@ -81,13 +81,13 @@
                 {
                     label: 'Laboratory 1',
                     data: [3, 5, 2, 4, 3],
-                    backgroundColor: '#ec4899',
+                    backgroundColor: '#06b6d4',
                     borderWidth: 1
                 },
                 {
                     label: 'Laboratory 2 ',
                     data: [4, 3, 5, 1, 2],
-                    backgroundColor: '#eab308',
+                    backgroundColor: '#6366f1',
                     borderWidth: 1
                 }
             ]

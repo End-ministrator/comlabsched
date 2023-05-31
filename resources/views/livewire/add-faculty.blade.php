@@ -26,9 +26,7 @@
                 <option value="faculty">Faculty</option>
                 <option value="admin">Admin</option>
             </select>
-            @error('role')
-                <p class="error">{{ $message }}</p>
-            @enderror
+
             <label>Tag Id</label>
             <input type="text" wire:model="tag_id" id="tag_id" class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-yellow-400  focus:outline-none">
             @error('tag_id')

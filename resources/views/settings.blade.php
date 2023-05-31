@@ -42,7 +42,7 @@
                         </div>
                         <div class="mr-10 flex flex-col justify-between h-72 ">
                             <button id="editbtn">
-                                <span class="flex bg-yellow-400 h-9 w-14 items-center justify-center rounded-lg"  >
+                                <span class="flex dark:bg-blue-700 bg-blue-600 h-9 w-14 items-center justify-center rounded-lg"  >
                                 <i class="fa-solid fa-pencil"></i>
                                     Edit
                                 </span>
@@ -106,14 +106,14 @@
                    
                         <div id="form"class="w-full mt-10 flex flex-col opacity-30  ">
                             <span id="label1" class="relative transform">Current Password</span>
-                            <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
+                            <div class="w-6/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                             <span id="label2" class="relative transform">New Password</span>
-                            <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
+                            <div class="w-6/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                             <span id="label3" class="relative transform">Retype New Password</span>
-                            <div class="w-6/12 mb-6 border border-yellow-500 dark:border-amber-700"></div>
-                            <input id="current"type="password" required class="dark:bg-gray-600 hidden w-1/5  pl-1   shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-1 ">
-                            <input id="new"type="password" required class="dark:bg-gray-600 hidden w-1/5    pl-1 shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-14">
-                            <input id="rnew"type="password" required class="dark:bg-gray-600 hidden w-1/5   pl-1  shadow-inner shadow-yellow-500 dark:shadow-amber-700 rounded-md focus:outline-none  absolute translate-y-26 ">
+                            <div class="w-6/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
+                            <input id="current"type="password" required class="dark:bg-gray-600 hidden w-1/5  pl-1   shadow-inner shadow-blue-600 dark:shadow-blue-700 rounded-md focus:outline-none  absolute translate-y-1 ">
+                            <input id="new"type="password" required class="dark:bg-gray-600 hidden w-1/5    pl-1 shadow-inner shadow-blue-600 dark:shadow-blue-700 rounded-md focus:outline-none  absolute translate-y-14">
+                            <input id="rnew"type="password" required class="dark:bg-gray-600 hidden w-1/5   pl-1  shadow-inner shadow-blue-600 dark:shadow-blue-700 rounded-md focus:outline-none  absolute translate-y-26 ">
                             
                             <ul class="flex justify-center mr-5 md:translate-x-16 lg:-translate-x-1">
                                 <li  class="eye hidden relative -translate-y-38 mt-1  ">
@@ -138,7 +138,7 @@
                     
 
                         <button id="editbutton" class="mr-10">
-                            <span class="flex bg-yellow-400 h-9 w-14 items-center justify-center rounded-lg"  >
+                            <span class="flex dark:bg-blue-700 bg-blue-600 h-9 w-14 items-center justify-center rounded-lg"  >
                                 <i class="fa-solid fa-pencil"></i>
                                 Edit
                             </span>

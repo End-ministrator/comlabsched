@@ -98,8 +98,8 @@
     views: {
       resourceTimeGridFourDay: {
         type: 'resourceTimeGrid',
-        duration: { days: 4 },
-        buttonText: '4 days'
+        duration: { days: 7 },
+        buttonText: '7 days'
       }
     },
     resources: [
@@ -119,7 +119,7 @@
 
 </head>
    
-<body class=" bg-smokeywhite dark:bg-gray-800  text-red-500 sm:text-blue-500 md:text-teal-500 lg:text-fuchsia-500 " id="body"> 
+<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white text-black " id="body"> 
 
     @yield('content')
     @livewireScripts

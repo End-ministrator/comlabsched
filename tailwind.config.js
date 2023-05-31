@@ -52,7 +52,7 @@ darkMode:'class',
       },
       margin:{
         'x':'208px',
-        'xsm':'144px',
+        'xsm':'100px',
         'xmd':'160px',
       },
 
