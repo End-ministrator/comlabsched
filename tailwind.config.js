@@ -26,7 +26,7 @@ darkMode:'class',
         smokeywhite:"#f5f5f5",
         bg:"#15051f",
         bluee:"#3149bf",
-        cyan:"#00ffcc",
+        
         reddishyellow:"#EBA411"
 
       },
@@ -52,7 +52,7 @@ darkMode:'class',
       },
       margin:{
         'x':'208px',
-        'xsm':'144px',
+        'xsm':'100px',
         'xmd':'160px',
       },
 

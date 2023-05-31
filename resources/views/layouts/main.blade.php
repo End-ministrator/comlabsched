@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="dark">
 <head>
 
     <meta charset="UTF-8">
@@ -99,8 +98,8 @@
     views: {
       resourceTimeGridFourDay: {
         type: 'resourceTimeGrid',
-        duration: { days: 4 },
-        buttonText: '4 days'
+        duration: { days: 7 },
+        buttonText: '7 days'
       }
     },
     resources: [
@@ -119,13 +118,8 @@
     </script>
 
 </head>
-<<<<<<< HEAD
    
-<body class=" bg-smokeywhite dark:bg-gray-700 dark:text-white  " id="body"> 
-=======
-
-<body class="bg-white dark:bg-gray-700 lg:text-black md:text-cyan sm:text-violet-600 text-green-500 " id=" ">
->>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
+<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white text-black " id="body"> 
 
     @yield('content')
     @livewireScripts

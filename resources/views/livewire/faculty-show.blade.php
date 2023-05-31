@@ -5,12 +5,11 @@
         <!--  -->
     </div>
 
-    <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full h-screen items-center flex   ">
+    <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full h-screen items-center flex  bg-gray-700 ">
         <x-topbar />
         <!-- main content goes here -->
 
-        <div
-            class="flex flex-col justify-center  w-11/12 h-85p pb-8 pt-4 pl-4 pr-4 my-8 bg-white  shadow shadow-black  rounded-lg ">
+        <div class="flex flex-col justify-center  w-11/12 h-85p pb-8 pt-4 pl-4 pr-4 my-8   shadow shadow-black  rounded-lg ">
             <div class="flex flex-row justify-between">
 
 
