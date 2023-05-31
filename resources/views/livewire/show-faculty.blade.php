@@ -10,7 +10,7 @@
         <!-- main content goes here -->
     
     
-    <div class="flex p-7 w-full h-screen bg-white justify-center items-center ">
+    <div class="flex p-7 w-full h-screen  justify-center items-center ">
         <div class="flex flex-col justify-center  w-full h-full pb-8 pt-4 my-8 bg-white dark:bg-gray-700 shadow shadow-black  rounded-lg ">
             <div class="flex flex-row justify-between">
 
