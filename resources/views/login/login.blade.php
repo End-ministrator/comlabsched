@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="flex flex-col h-screen bg-smokeywhite dark:bg-gray-800 b bg-cover bg-center" style="background-image: url('/images/tree.jpg');">
+<div class="flex flex-col h-screen text-black !important  bg-smokeywhite dark:bg-gray-800 b bg-cover bg-center" style="background-image: url('/images/tree.jpg');">
   
 
 

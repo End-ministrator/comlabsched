@@ -19,39 +19,40 @@
                 <!-- end categories -->
 
                 <!-- general category  -->
-            <div id="general"class=" dark:bg-gray-700 flex  mt-5 mb-3 py-6 w-11/12 h-screen bg-white shadow  rounded-md flex-col justify-between ">
+        <div class="flex w-full px-7"> 
+            <div id="general"class=" dark:bg-gray-700 flex  mt-5 mb-3 py-6 w-full h-96 bg-white shadow  rounded-md flex-col justify-between ">
                 <div class="flex flex-col">
 
                   
-                    <div class="w-full h-10 flex items-center ml-6 text-3xl">
+                    <div class="w-11/12 h-10 flex items-center ml-7 mb-2 text-3xl">
                         <span>Account Settings</span>
                     </div>
 
                     <div class="w-full h-20 flex justify-evenly">
                         <div class="flex  w-full">
-                            <button class="w-28 h-28 hover:brightness-75 group flex justify-center items-center mb-10 ml-6">
+                            <button class="w-28 h-28 hover:brightness-75 group flex justify-center items-center mb-12 ml-7">
                                 <span class="absolute text-white z-50 opacity-0 group-hover:opacity-100">Change</span>
                                 <img src="images\raymond.jpg" alt="" class="w-full h-full rounded-full"> 
                             </button>
                             <div class="flex flex-col justify-center mt-6 ml-6 space-y-4">
                                 <span class=" flex text-2xl ml-6 items-center">Raymond Matullano</span>
-                                <div class=" ml-6 h-9 w-14 flex items-center justify-center rounded-full bg-blue-500"><span>Admin</span></div>
+                                <div class=" ml-6 h-9 w-20 flex items-center justify-center rounded-full bg-blue-500"><span>Admin</span></div>
                             </div>
 
 
                         </div>
                         <div class="mr-10 flex flex-col justify-between h-72 ">
                             <button id="editbtn">
-                                <span class="flex dark:bg-blue-700 bg-blue-600 h-9 w-14 items-center justify-center rounded-lg"  >
+                                <span class="flex dark:bg-blue-700 bg-blue-600 h-9 w-20 items-center justify-center rounded-lg"  >
                                 <i class="fa-solid fa-pencil"></i>
                                     Edit
                                 </span>
                             </button>
                             <div class="flex justify-end w-1/3 space-x-3 translate-y-96 sm:translate-y-72 md:translate-y-72 lg:translate-y-64">
-                                <button id="Gcancel" class="relative  hidden -inset-y-3">
+                                <button id="Gcancel" class="relative border border-blue-500 hidden -inset-y-3">
                                     Cancel
                                 </button>
-                                <button id="Gsave" class="relative  hidden -inset-y-3">
+                                <button id="Gsave" class="relative bg-blue-700 rounded-lg w-16 hidden -inset-y-3">
                                     Save
                                 </button>
                             </div>  
@@ -60,7 +61,7 @@
 
                     </div>
                 </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10 sm:mt-10 md:mt-10 lg:mt-2  mb-10 ml-6 space-y-3 ">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10 sm:mt-10 md:mt-10 lg:mt-2  mb-10 ml-7 space-y-3 ">
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Last Name</span>
                             <span class="opacity-50">Matullano</span>
@@ -87,12 +88,15 @@
 
 
             </div>
-
+        </div>
             
                 <!-- end general category -->
 
                 <!-- Password Category -->
-            <div id="password"class="flex flex-col sm:flex-col md:flex-row lg:flex-row mb-12 justify-self-center w-11/12 h-140 sm:h-140 md:h-140  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
+        <div class="flex px-7 mt-3 w-full h-140 sm:h-140 md:h-140  lg:h-4/5">
+
+   
+            <div id="password"class="flex flex-col  sm:flex-col md:flex-row lg:flex-row mb-12 justify-self-center w-full  h-140 sm:h-140 md:h-140  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
                 
                  <div class="w-11/12 sm:w-11/12 m:w-11/12 lg:w-1/3 h-full  flex flex-col ml-6">
                     <div class="flex flex-col">
@@ -138,7 +142,7 @@
                     
 
                         <button id="editbutton" class="mr-10">
-                            <span class="flex dark:bg-blue-700 bg-blue-600 h-9 w-14 items-center justify-center rounded-lg"  >
+                            <span class="flex dark:bg-blue-700 bg-blue-600 h-9 w-20 items-center justify-center rounded-lg"  >
                                 <i class="fa-solid fa-pencil"></i>
                                 Edit
                             </span>
@@ -156,7 +160,9 @@
                     </div>
                 </div>
 
-            </div>
+            </div>  
+    
+        </div>
             <!-- end password category -->
 
         </div>    

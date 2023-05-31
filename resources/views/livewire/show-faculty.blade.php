@@ -8,14 +8,15 @@
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full h-screen items-center flex bg-smokeywhite dark:bg-gray-800  ">
         <x-topbar />
         <!-- main content goes here -->
-
-        <div
-            class="flex flex-col justify-center  w-11/12 h-85p pb-8 pt-4 pl-4 pr-4 my-8 bg-white dark:bg-gray-700 shadow shadow-black  rounded-lg ">
+    
+    
+    <div class="flex p-7 w-full h-screen bg-white justify-center items-center ">
+        <div class="flex flex-col justify-center  w-full h-full pb-8 pt-4 my-8 bg-white dark:bg-gray-700 shadow shadow-black  rounded-lg ">
             <div class="flex flex-row justify-between">
 
 
                 <button onclick="Livewire.emit('openModal', 'add-faculty')"
-                    class="btn btn-success btn-sm flex justify-center items-center bg-blue-700 border ml-14 mt-8 rounded-md  border-blue-700 w-28 h-10"
+                    class="btn btn-success btn-sm flex justify-center items-center bg-blue-500 dark:bg-blue-700 hover:bg-blue-600  border ml-14 mt-8 rounded-md  border-blue-700 w-28 h-10"
                     id="addfaculty" title="Add New Faculty">
                     <span class="text-lg">Add Faculty</span>
 
@@ -81,7 +82,7 @@
 
             </div>
         </div>
-
+    </div>
 
 
 

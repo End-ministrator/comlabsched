@@ -14,13 +14,16 @@
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
         <x-topbar/>
         <!-- main content goes here -->
-    <div class="flex flex-col w-full h-screen items-center bg-smokeywhite dark:bg-gray-800">
-        <div class="flex bg-white dark:bg-gray-700 rounded-md mt-10 p-4 w-11/12 h-screen items-center justify-center">
-            <div id='calendar' class="w-full py-16" style="max-width: 1750px; max-height: 800px; margin: 40px auto; ">
+    <div class="flex px-7 w-full ">
+
+    
+        <div class="flex flex-col w-full h-screen items-center bg-smokeywhite dark:bg-gray-800">
+            <div class="flex bg-white dark:bg-gray-700 rounded-md mt-7 p-4 w-full h-screen items-center justify-center">
+                <div id='calendar' class="w-full py-16" style="max-width: 1750px; max-height: 800px; margin: 40px auto; ">
+                </div>
             </div>
         </div>
     </div>
-
         <!-- content end -->
       
     </div>
