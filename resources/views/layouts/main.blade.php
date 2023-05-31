@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en" class="dark">
-=======
 <html lang="en">
 
->>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <script src="js\app.js"></script>
-    <title>@yield('title')</title>
-
-=======
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 
@@ -26,7 +16,6 @@
     <!-- Scripts -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
->>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/f26d36d903.js" crossorigin="anonymous"></script>
     @livewireStyles
@@ -39,51 +28,6 @@
 
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
-<<<<<<< HEAD
-    
-    <style>
-    /* For Webkit Browsers */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-    </style>
-   
-    
-    <script>
-
-      
-            window.addEventListener('scroll', ()=>
-        {   
-                const LOGO = document.getElementById('logo');
-                const PROFILE = document.getElementById('profile');
-                const targetpoint = 47;
-                const scrollval = window.scrollY;
-                console.log(scrollval);
-                if(scrollval > targetpoint){
-                    LOGO.classList.remove('lg:opacity-0','lg:-translate-x-2');
-                    LOGO.classList.add('lg:opacity-100','transition-opacity','lg:translate-x-2', 'transition-transform');
-                    PROFILE.classList.remove('lg:opacity-0','lg:-translate-x-2');
-                    PROFILE.classList.add('lg:opacity-100','transition-opacity','lg:translate-x-2', 'transition-transform');
-                    
-                }else {
-                    LOGO.classList.remove('lg:opacity-100','lg:translate-x-2');
-                    LOGO.classList.add('lg:opacity-0', 'transition-opacity','lg:-translate-x-2', 'transition-transform');
-                    PROFILE.classList.remove('lg:opacity-100','lg:translate-x-2');
-                    PROFILE.classList.add('lg:opacity-0','transition-opacity','lg:-translate-x-2', 'transition-transform');
-                    
-                }
-=======
->>>>>>> cb099b125d3cfacbb671814316d25b9b8efed340
 
     <style>
         /* For Webkit Browsers */

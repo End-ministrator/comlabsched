@@ -39,8 +39,11 @@
                 <p class="error">{{ $message }}</p>
             @enderror
 
-            <input type="submit"  value="Save" class="btn btn-success"></br>
+            <button type="submit" value="Save" class="btn btn-success">Add</button></br>
+            <button wire:click="closeModal">Close</button>
         </form>
+
+
 
     </div>
 </div>

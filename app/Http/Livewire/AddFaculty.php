@@ -17,8 +17,6 @@ class AddFaculty extends ModalComponent
     public $tag_id;
     public $permissions;
 
-
-
     public function render()
     {
         return view('livewire.add-faculty');
@@ -44,8 +42,6 @@ class AddFaculty extends ModalComponent
     ];
 
 
-
-
     public function updated($field)
     {
         $this->validateOnly($field);
@@ -64,6 +60,7 @@ class AddFaculty extends ModalComponent
         // Validate after submit button is clicked
         User::create($validatedData);
         $this->closeModal();
+        $this->emit('updateShowFaculty');
 
     }
 }

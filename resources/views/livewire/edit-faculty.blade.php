@@ -28,8 +28,9 @@
             <input type="text" wire:model="permissions" class="form-control"><br>
 
             <button type="submit" class="btn btn-success">Update</button><br>
+            <button wire:click="closeModal">Close</button>
         </form>
 
-
+       
     </div>
 </div>
