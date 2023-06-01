@@ -73,6 +73,19 @@
 </div>
 
 <script>
+
+
+
+        ds.classList.add('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        us.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        lg.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        mn.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        sc.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        st.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+
+ 
+    // chart
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',

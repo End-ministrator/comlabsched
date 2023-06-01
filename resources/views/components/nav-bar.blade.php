@@ -15,7 +15,7 @@
 
 </script>
 <aside id="nav"
-    class="   bg-blue-600 dark:bg-blue-700 h-screen lg:w-52 md:w-40 w-24 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
+    class="   bg-blue-600 dark:bg-blue-700 h-screen lg:w-52 md:w-40 sm:w-28 w-24 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
     <div id=""class="flex flex-col space-y-8 sm:space-y-6 md:space-y-6 lg:space-y-4 text-lg   mt-10 relative ">
         <a href="" id="logo"
             class="flex items-center space-x-2 -ml-1 sm:ml-0 md:ml-3 lg:ml-8 transition-opacity lg:-translate-x-2 lg:opacity-0 md:opacity-0 sm:opacity-100 opacity-100 translate-x-10 ">
@@ -23,32 +23,33 @@
             <span
                 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white lg:opacity-100 md:opacity-100 sm:opacity-0 opacity-0">LOGO</span>
         </a>
-        <a href="{{ route('dashboard') }}" id="menu"
-            class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
-                class="fa-solid fa-house mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
-                href="{{ route('dashboard') }}"
-                class="justify-self-start sm:hidden md:hidden lg:block hidden ">Dashboard</span></a>
-        <a href="" id="menu"
-            class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
-                class="fa-solid fa-magnifying-glass mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
-                href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Monitoring</span></a>
+        <a href="{{ route('dashboard') }}" id="menu"class="ds w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0">
+            <i class="fa-solid fa-house mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i>
+            <span href="{{ route('dashboard') }}" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Dashboard</span>
+        </a>
+
+        <a href="" id="menu" class="mn w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0">
+            <i class="fa-solid fa-magnifying-glass mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i>
+            <span href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Monitoring</span>
+        </a>
+
         <a href="{{ url('schedule') }}" id="menu"
-            class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
+            class="sc w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
                 class="fa-solid fa-calendar mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
                 href="" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Scheduling</span></a>
                 
         <a href="{{ url('faculty') }}" id="menu"
-            class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
+            class="us w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
                 class="fa-solid fa-users mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
                 href="#"
                 class="justify-self-start sm:hidden md:hidden lg:block hidden ">Users</span></a>
 
         <a href="{{ route('logs') }}" id="menu"
-            class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
+            class="lg w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
                 class="fa-solid fa-clipboard-list mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
                 class="justify-self-start sm:hidden md:hidden lg:block hidden ">Logs</span></a>
         <a href="{{ route('settings') }}" id="menu"
-            class="w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
+            class="st w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
                 class="fa-solid fa-gear mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
                 href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Settings</span></a>
     </div>
@@ -68,3 +69,19 @@
         </button>
     </div>
 </aside>
+<script>
+
+    const ds = document.querySelector('.ds');
+    const us = document.querySelector('.us');
+    const lg = document.querySelector('.lg');
+    const mn = document.querySelector('.mn');
+    const sc = document.querySelector('.sc');
+    const st = document.querySelector('.st');
+
+    function currentTab(event){
+        const clickedElement = event.target;
+        if(clickedElement.classList.contains('bg-blue-700'))
+        clickedElement.classList.add('bg-blue-700');
+    }
+
+</script>

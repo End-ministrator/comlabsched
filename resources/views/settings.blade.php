@@ -3,7 +3,7 @@
 @section('title', 'Department Head | Dashboard')
 
 @section('content')
-<div class="flex flex-row">
+<div class="flex flex-row ">
 
     <div class=" flex">
         <x-nav-bar/>
@@ -19,8 +19,8 @@
                 <!-- end categories -->
 
                 <!-- general category  -->
-        <div class="flex w-full px-7"> 
-            <div id="general"class=" dark:bg-gray-700 flex  mt-5 mb-3 py-6 w-full h-96 bg-white shadow  rounded-md flex-col justify-between ">
+        <div class="flex w-full px-7 "> 
+            <div id="general"class=" dark:bg-gray-700 flex  mt-5 mb-3 py-6 w-full h-128 sm:h-120 md:h-112 lg:h-96 bg-white shadow  rounded-md flex-col justify-evenly sm:justify-start md:justify-evenly lg:justify-between ">
                 <div class="flex flex-col">
 
                   
@@ -48,7 +48,7 @@
                                     Edit
                                 </span>
                             </button>
-                            <div class="flex justify-end w-1/3 space-x-3 translate-y-96 sm:translate-y-72 md:translate-y-72 lg:translate-y-64">
+                            <div class="flex justify-end w-1/3 space-x-3 translate-y-96 sm:translate-y-80 md:translate-y-80  lg:translate-y-64">
                                 <button id="Gcancel" class="relative border border-blue-500 hidden -inset-y-3">
                                     Cancel
                                 </button>
@@ -65,22 +65,22 @@
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Last Name</span>
                             <span class="opacity-50">Matullano</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
+                            <input type="text" class="gensen absolute hidden bg-white dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>First Name</span>
                             <span class="opacity-50">Raymond</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
+                            <input type="text" class="gensen absolute hidden bg-white dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Middle Initial</span>
                             <span class="opacity-50">Tampipi</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
+                            <input type="text" class="gensen absolute hidden bg-white dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                         <div class="space-y-2 flex justify-center flex-col">
                             <span>Email</span>
                             <span class="opacity-50">r.matullano@gmail.com</span>
-                            <input type="text" class="gensen absolute hidden bg-white translate-y-3 shadow-inner shadow-yellow-500 rounded-lg w-44 focus:outline-none pl-1 ">
+                            <input type="text" class="gensen absolute hidden bg-white dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                         </div>
                     </div>
                 
@@ -96,7 +96,7 @@
         <div class="flex px-7 mt-3 w-full h-140 sm:h-140 md:h-140  lg:h-4/5">
 
    
-            <div id="password"class="flex flex-col  sm:flex-col md:flex-row lg:flex-row mb-12 justify-self-center w-full  h-140 sm:h-140 md:h-140  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
+            <div id="password"class="flex flex-col  sm:flex-col md:flex-col lg:flex-row h-128 sm:h-120 md:h-106 lg:h-96 mb-12 justify-self-center w-full  h-140 sm:h-140 md:h-140  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
                 
                  <div class="w-11/12 sm:w-11/12 m:w-11/12 lg:w-1/3 h-full  flex flex-col ml-6">
                     <div class="flex flex-col">
@@ -106,20 +106,20 @@
                     </div>    
                  </div>
 
-                 <div class="flex w-1/2 space-x-20 justify-between">
+                    <div class="flex w-1/2 space-x-20 justify-between">
                    
                         <div id="form"class="w-full mt-10 flex flex-col opacity-30  ">
                             <span id="label1" class="relative transform">Current Password</span>
-                            <div class="w-6/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
+                            <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                             <span id="label2" class="relative transform">New Password</span>
-                            <div class="w-6/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
+                            <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                             <span id="label3" class="relative transform">Retype New Password</span>
-                            <div class="w-6/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
-                            <input id="current"type="password" required class="dark:bg-gray-600 hidden w-1/5  pl-1   shadow-inner shadow-blue-600 dark:shadow-blue-700 rounded-md focus:outline-none  absolute translate-y-1 ">
-                            <input id="new"type="password" required class="dark:bg-gray-600 hidden w-1/5    pl-1 shadow-inner shadow-blue-600 dark:shadow-blue-700 rounded-md focus:outline-none  absolute translate-y-14">
-                            <input id="rnew"type="password" required class="dark:bg-gray-600 hidden w-1/5   pl-1  shadow-inner shadow-blue-600 dark:shadow-blue-700 rounded-md focus:outline-none  absolute translate-y-26 ">
+                            <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
+                            <input id="current"type="password" required class="dark:bg-gray-500 hidden w-1/5  pl-1    rounded-md focus:outline-none  absolute translate-y-1 ">
+                            <input id="new"type="password" required class="dark:bg-gray-500 hidden w-1/5    pl-1  rounded-md focus:outline-none  absolute translate-y-14">
+                            <input id="rnew"type="password" required class="dark:bg-gray-500 hidden w-1/5   pl-1   rounded-md focus:outline-none  absolute translate-y-26 ">
                             
-                            <ul class="flex justify-center mr-5 md:translate-x-16 lg:-translate-x-1">
+                            <ul class="flex justify-center mr-5 -translate-x-1 sm:-translate-x-1 md:-translate-x-2 lg:-translate-x-6">
                                 <li  class="eye hidden relative -translate-y-38 mt-1  ">
                                     <button id="revealpass1"class="text-sm absolute"><i class="fa-solid fa-eye"></i></button>
                                     <button id="hidepass1"class="text-sm hidden absolute"><i class=" fa-solid fa-eye-slash"></i></button>
@@ -138,9 +138,6 @@
                    </div>
 
                     <div class="flex flex-col justify-between h-full pt-10 pb-8 ">
-
-                    
-
                         <button id="editbutton" class="mr-10">
                             <span class="flex dark:bg-blue-700 bg-blue-600 h-9 w-20 items-center justify-center rounded-lg"  >
                                 <i class="fa-solid fa-pencil"></i>
@@ -155,9 +152,9 @@
                                 Save
                             </button>
                         </div>
-
-
                     </div>
+
+
                 </div>
 
             </div>  
@@ -173,6 +170,13 @@
 
 
 <script>
+    // nav bar indicator style
+        ds.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        us.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        lg.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        mn.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        sc.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        st.classList.add('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
 
 // const userTheme = localStorage.getItem("theme");
 // const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;

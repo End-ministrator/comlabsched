@@ -39,6 +39,7 @@ darkMode:'class',
        
       },
       height: {
+        '106':'28rem',
         '112': '32rem', // set a custom utility class for width up to 1920px
         '120': '36rem',
         '128': '40rem',
@@ -52,7 +53,7 @@ darkMode:'class',
       },
       margin:{
         'x':'208px',
-        'xsm':'100px',
+        'xsm':'96px',
         'xmd':'160px',
       },
 

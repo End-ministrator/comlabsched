@@ -23,9 +23,9 @@
             @enderror
             <label>Role</label>
             <select wire:model="role" id="role" class="rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none  dark:bg-gray-700 bg-smokeywhite">
-                <option value="default">--Select a Role--</option>
-                <option value="faculty">Faculty</option>
-                <option value="admin">Admin</option>
+                <option class=""value="">--Select a Role--</option>
+                <option class=""value="faculty">Faculty</option>
+                <option class=""value="admin">Admin</option>
             </select>
 
             <label>Tag Id</label>

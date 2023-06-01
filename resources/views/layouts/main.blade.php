@@ -117,9 +117,15 @@
 
     </script>
 
+
+
+<script>
+     window.flag = 0;
+</script>
+
 </head>
    
-<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white text-black " id="body"> 
+<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white  " id="body"> 
 
     @yield('content')
     @livewireScripts
