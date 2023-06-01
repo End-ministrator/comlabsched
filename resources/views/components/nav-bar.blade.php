@@ -15,7 +15,7 @@
 
 </script>
 <aside id="nav"
-    class="   bg-blue-600 dark:bg-blue-700 h-screen lg:w-52 md:w-40 sm:w-28 w-24 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
+    class="  text-gray-200 dark:text-white !important bg-blue-700 dark:bg-blue-700 h-screen lg:w-52 md:w-40 sm:w-28 w-24 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
     <div id=""class="flex flex-col space-y-8 sm:space-y-6 md:space-y-6 lg:space-y-4 text-lg   mt-10 relative ">
         <a href="" id="logo"
             class="flex items-center space-x-2 -ml-1 sm:ml-0 md:ml-3 lg:ml-8 transition-opacity lg:-translate-x-2 lg:opacity-0 md:opacity-0 sm:opacity-100 opacity-100 translate-x-10 ">
@@ -78,10 +78,5 @@
     const sc = document.querySelector('.sc');
     const st = document.querySelector('.st');
 
-    function currentTab(event){
-        const clickedElement = event.target;
-        if(clickedElement.classList.contains('bg-blue-700'))
-        clickedElement.classList.add('bg-blue-700');
-    }
-
+ 
 </script>

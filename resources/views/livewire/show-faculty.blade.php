@@ -16,9 +16,9 @@
 
 
                 <button onclick="Livewire.emit('openModal', 'add-faculty')"
-                    class="btn btn-success btn-sm flex justify-center items-center bg-blue-500 dark:bg-blue-700 hover:bg-blue-600  border ml-14 mt-8 rounded-md  border-blue-700 w-28 h-10"
+                    class="btn btn-success btn-sm flex justify-center items-center bg-blue-700 dark:bg-blue-700 hover:bg-blue-600  border ml-14 mt-8 rounded-md  border-blue-700 w-28 h-10"
                     id="addfaculty" title="Add New Faculty">
-                    <span class="text-lg">Add Faculty</span>
+                    <span class="text-lg text-white !important">Add Faculty</span>
 
                 </button>
                 <div class=" flex  text-gray-600 ml-8 mt-8 mr-12">
@@ -129,10 +129,10 @@ for (let i = 0; i < rows.length; i++) {
   }
 }
 // navbar style indicator
-        ds.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
-        us.classList.add('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
-        lg.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
-        mn.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
-        sc.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
-        st.classList.remove('dark:bg-blue-800','bg-blue-700','shadow-inner','shadow-blue-700');
+        ds.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        us.classList.add('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        lg.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        mn.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        sc.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        st.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
 </script>

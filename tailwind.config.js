@@ -36,6 +36,7 @@ darkMode:'class',
         'min-112': '32rem',
         'max-100': '22rem',
         '95p': '95.5%',
+        '86p':'84%',
        
       },
       height: {
@@ -49,6 +50,7 @@ darkMode:'class',
         'min-112': '32rem',
         'max-100': '22rem',
         '85p': '85%',
+        '1200px':'1200px',
 
       },
       margin:{
