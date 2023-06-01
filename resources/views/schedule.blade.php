@@ -14,8 +14,50 @@
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
         <x-topbar/>
         <!-- main content goes here -->
-        {{--
-        <div class=" bg-black">
+    <div class="flex px-7 w-full h-screen">
+
+    
+        <div class="flex flex-col w-full h-full items-center bg-smokeywhite dark:bg-gray-800">
+            <div class="flex flex-col bg-white dark:bg-gray-700 rounded-md my-7 p-4  w-full h-full items-center justify-center">
+                <div id='calendar' class="w-full p-4" style="max-width: 1750px; max-height: 625px; ">
+                
+                </div>
+                <div class="w-full flex justify-end space-x-6 pr-4">
+                    <button id="calendarCancel" class="w-20 h-9 text-lg border border-blue-500 rounded-lg">Cancel</button>
+                    <button id="calendarSave" class=" text-white !important w-20 h-9 text-lg bg-blue-700 rounded-lg">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- content end -->
+      
+    </div>
+
+</div>
+
+<script>
+    // navbar indicator style
+        ds.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        us.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        lg.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        mn.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        sc.classList.add('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        st.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+</script>
+
+
+
+
+
+
+
+
+
+        <div class=" hidden bg-red-500">
+
+
+
+        
             <livewire:schedule-table theme="tailwind"/> 
                 {{-- @foreach ($schedules as $schedule)
                     <p>Time: {{$schedule->start_time}} - {{$schedule->end_time}}</p>
@@ -63,8 +105,9 @@
                 </div>      
      
         </div>
-
+       --}}
         <!-- content end -->
+<<<<<<< HEAD
         --}}
 
     </div>
@@ -85,6 +128,9 @@
 
 
 
+=======
+ 
+>>>>>>> 5f232589427702dbc30d56da21a0e32b325fca5d
 
 
 

@@ -4,6 +4,6 @@
 
 @section('content')
 
-<livewire:show-faculty :faculties="$faculties"/>
-
+<livewire:show-faculty :faculty="$faculties"/>
+<livewire:add-faculty/>
 @endsection

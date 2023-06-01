@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\FacultyShow;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/logout', function () {
 })->name('logout');
 
 Route::get('/test', function () {
-    ddd("test");
+    ("test");
     return view('test');
 });
 
@@ -62,8 +63,12 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Faculty
+// 
+// Route::resource("/faculty", FacultyController::class);
 
-Route::resource("/faculty", FacultyController::class);
+
+Route::resource('/faculty', FacultyController::class);
+// Route::get('/faculty-show', FacultyShow::class);
 // Route::get("/editFaculty/{id}", [FacultyController::class, 'edit'])->name('edit');
 Route::resource('/schedule', ScheduleController::class);
 

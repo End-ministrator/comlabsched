@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="flex flex-col h-screen bg-smokeywhite dark:bg-gray-800">
+<div class="flex flex-col h-screen text-black !important  bg-smokeywhite dark:bg-gray-800 b bg-cover bg-center" style="background-image: url('/images/tree.jpg');">
   
 
 
@@ -15,12 +15,12 @@
       <div class="w-60 h-128 basis-1/3 flex  shadow-black shadow-md bg-[url('/images/bgg.jpg')] bg-no-repeat bg-cover rounded-l-md relative sm:hidden md:hidden lg:block hidden">
 
       </div>
-      <div class="w-30 h-128 basis-1/3 flex sm:w-30 md:36 lg:w-60  bg-yellow-400 shadow-black shadow-md  rounded-r-md relative flex-col items-center justify-evenly  backdrop-filter backdrop-blur-sm bg-opacity-100 ">
+      <div class="w-30 h-128 basis-1/3 flex sm:w-30 md:36 lg:w-60  bg-blue-400 shadow-black shadow-md  rounded-r-md relative flex-col items-center justify-evenly  backdrop-filter backdrop-blur-sm bg-opacity-20 ">
           <div class="ml-4">
               
               <div class="flex  justify-center items-center mb-10 sm:inset-y-20 md:inset-y-20 lg:inset-y-0 inset-y-20 relative mt-6 ">
                   <!-- logo --><i class="fa-solid fa-user-secret text-5xl"></i>
-                  <span class="text-3xl">LOGO</span>
+                  <span class="text-3xl">LabSched</span>
               </div>
               <div class="font-semibold flex justify-start w-72  flex-col sm:opacity-0 md:opacity-0 lg:opacity-100 opacity-0">
                   <span class="text-4xl mb-4">Welcome Back</span>
@@ -48,7 +48,7 @@
                   
                   <br>
                   <div class=" flex items-center my-5">
-                  <input type="submit" value="Log in" class="bg-yellow-500 dark:bg-amber-700 hover:bg-gray-200 text-sm font-semibold flex w-full h-8 justify-center px-2 rounded-lg border border-transparent ">
+                  <input type="submit" value="Log in" class="bg-blue-700 dark:bg-blue-700 hover:bg-blue-500 text-sm font-semibold flex w-full h-8 justify-center px-2 rounded-lg border border-transparent ">
                   </div>
                    
               </form>

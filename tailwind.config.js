@@ -3,6 +3,9 @@ module.exports = {
   content: [
     "./resources/**/*.{blade.php,vue,js}",
     "./node_modules/tw-elements/dist/js/**/*.js",
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
 ],
 darkMode:'class',
   theme: {
@@ -23,7 +26,7 @@ darkMode:'class',
         smokeywhite:"#f5f5f5",
         bg:"#15051f",
         bluee:"#3149bf",
-        cyan:"#00ffcc",
+        
         reddishyellow:"#EBA411"
 
       },
@@ -33,9 +36,11 @@ darkMode:'class',
         'min-112': '32rem',
         'max-100': '22rem',
         '95p': '95.5%',
+        '86p':'84%',
        
       },
       height: {
+        '106':'28rem',
         '112': '32rem', // set a custom utility class for width up to 1920px
         '120': '36rem',
         '128': '40rem',
@@ -45,11 +50,12 @@ darkMode:'class',
         'min-112': '32rem',
         'max-100': '22rem',
         '85p': '85%',
+        '1200px':'1200px',
 
       },
       margin:{
         'x':'208px',
-        'xsm':'144px',
+        'xsm':'96px',
         'xmd':'160px',
       },
 
