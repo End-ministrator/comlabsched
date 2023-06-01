@@ -70,8 +70,13 @@
     </div>
 
 </div>
-
-<div id='calendar' style="max-width: 1750px; max-height: 800px; margin: 40px auto; padding-left: 200px"></div>
+{{-- <script>
+    if (calendar.view.type === 'resourceDayGridMonth') {
+          // how to rerender a calendar? copilot?
+          calendarEl.render();
+      }
+</script> --}}
+<div id='calendar' style="max-width: 1750px; margin: 40px auto; padding-left: 220px; padding-right: 10px"></div>
 
 
 

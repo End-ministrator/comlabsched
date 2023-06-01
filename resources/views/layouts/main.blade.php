@@ -63,10 +63,6 @@
                     
                 }
 
-              
-
-
-
         });
 
         
@@ -81,32 +77,47 @@
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    initialView: 'resourceTimeGridFourDay',
+    initialView: 'dayGridMonth',
+    nowIndicator: true,
+    slotMinTime: '08:00:00',
+    slotMaxTime: '20:00:00',
+    slotduration: '00:15:00',
+    height: 780,
     datesAboveResources: true,
     headerToolbar: {
       left: 'prev,next',
       center: 'title',
-      right: 'resourceTimeGridDay,resourceTimeGridFourDay'
+      right: 'resourceTimeGridDay,resourceTimeGridWeek,resourceDayGridMonth,resourceListMonth'
     },
     views: {
-      resourceTimeGridFourDay: {
+      resourceTimeGridWeek: {
         type: 'resourceTimeGrid',
-        duration: { days: 4 },
-        buttonText: '4 days'
+        duration: { days: 7 },
+        buttonText: 'week'
+      },
+      resourceDayGridMonth: {
+        type: 'dayGridMonth',
+        duration: { days: 30 },
+        buttonText: 'month',
+        // (make it render again when switching from other views)
+        lazyFetching: false
+      },
+      resourceListMonth: {
+        type: 'listMonth',
+        duration: { days: 30 },
+        buttonText: 'list'
       }
     },
     resources: [
       { id: 'a', title: 'Room A' },
       { id: 'b', title: 'Room B' }
     ],
-    events: 'https://fullcalendar.io/api/demo-feeds/events.json?with-resources=2'
+    events: 'https://fullcalendar.io/api/demo-feeds/events.json?with-resources=2',
+    editable: true,
   });
 
   calendar.render();
 });
-  
-
-
 
     </script>
 
