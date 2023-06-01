@@ -10,7 +10,7 @@ class EditFaculty extends ModalComponent
 {
     public $faculties;
     public $faculty;
- 
+
     public $facultyId;
     public $name;
     public $email;
@@ -19,6 +19,10 @@ class EditFaculty extends ModalComponent
     public $tag_id;
     public $permissions;
     public $faculty_id;
+
+
+
+
 
     public function mount($facultyId)
     {

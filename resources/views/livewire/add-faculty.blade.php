@@ -41,6 +41,11 @@
             <div class="flex items-center justify-center">
                 <input type="submit"  value="Save" class="btn btn-success bg-blue-500 w-14 h-7 rounded-lg ">
 
-            </div>
-           
+            <button type="submit" value="Save" class="btn btn-success">Add</button></br>
+            <button wire:click="closeModal">Close</button>
+        </form>
+
+
+
+    </div>
 </div>
