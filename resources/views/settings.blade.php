@@ -76,34 +76,28 @@
                         <form action="{{ route('profileUpdate') }}" method="POST">
                             @csrf
                             @method('PUT')
-                            <div
-                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10 sm:mt-10 md:mt-10 lg:mt-2  mb-10 ml-7 space-y-3 ">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10 sm:mt-10 md:mt-10 lg:mt-2  mb-10 ml-7 space-y-3 ">
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
                                 <div class="space-y-2 flex justify-center flex-col">
                                     <span>Last Name</span>
                                     <span class="opacity-50">{{ Auth::user()->lastname }}</span>
-                                    <input type="text" value="{{ Auth::user()->lastname }}" name="lastname"
-                                        id="lastname"
-                                        class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
+                                    <input type="text" value="{{ Auth::user()->lastname }}" name="lastname" id="lastname" class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                                 </div>
                                 <div class="space-y-2 flex justify-center flex-col">
                                     <span>First Name</span>
                                     <span class="opacity-50">{{ Auth::user()->firstname }}</span>
-                                    <input type="text" value="{{ Auth::user()->firstname }}" name="firstname"
-                                        id="firstname"
-                                        class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
+                                    <input type="text" value="{{ Auth::user()->firstname }}" name="firstname" id="firstname" class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                                 </div>
-                                {{-- <div class="space-y-2 flex justify-center flex-col">
-                            <span>Middle Initial</span>
-                            <span class="opacity-50">Tampipi</span>
-                            <input type="text" class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
-                        </div> --}}
+                            {{--<div class="space-y-2 flex justify-center flex-col">
+                                    <span>Middle Initial</span>
+                                    <span class="opacity-50">Tampipi</span>
+                                    <input type="text" class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
+                                </div> --}}
                                 <div class="space-y-2 flex justify-center flex-col">
                                     <span>Email</span>
                                     <span class="opacity-50">{{ Auth::user()->email }}</span>
-                                    <input type="text" value="{{ Auth::user()->email }}" name="email" id="email"
-                                        class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
+                                    <input type="text" value="{{ Auth::user()->email }}" name="email" id="email" class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                                 </div>
 
                                 <button id="Gcancel"
@@ -130,8 +124,7 @@
 
                 <div class="flex px-7 mt-3 w-full h-140 sm:h-140 md:h-140  lg:h-4/5">
 
-                    <div
-                        id="password"class="flex flex-col  sm:flex-col md:flex-col lg:flex-row h-128 sm:h-120 md:h-106 lg:h-96 mb-12 justify-self-center w-full  h-140 sm:h-140 md:h-140  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
+                    <div id="password"class="flex flex-col  sm:flex-col md:flex-col lg:flex-row h-128 sm:h-120 md:h-106 lg:h-96 mb-12 justify-self-center w-full  h-140 sm:h-140 md:h-5/6  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
 
                         <div class="w-11/12 sm:w-11/12 m:w-11/12 lg:w-1/3 h-full  flex flex-col ml-6">
                             <div class="flex flex-col">
@@ -140,84 +133,78 @@
 
                             </div>
                         </div>
-                        <form action="{{ route('updatePassword') }}" method="POST">
+                        <form action="{{ route('updatePassword') }}" method="POST" class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full h-full items-center justify-center">
                             @csrf
-                            <div class="flex w-1/2 space-x-20 justify-between">
+                            <div class="flex w-full space-x-20 justify-between">
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
                                 <div id="form"class="w-full mt-10 flex flex-col opacity-30  ">
                                     <span id="label1" class="relative transform">Current Password</span>
                                     <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
+                                    <input id="current" type="password" name="current_password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5  pl-1    rounded-md focus:outline-none  absolute translate-y-1 ">
+
                                     <span id="label2" class="relative transform">New Password</span>
                                     <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
+                                    <input id="new" type="password" name="new_password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5    pl-1  rounded-md focus:outline-none  absolute translate-y-14">
+
                                     <span id="label3" class="relative transform">Retype New Password</span>
                                     <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
+                                    <input id="rnew" type="password" name="new_password_confirmation" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5   pl-1   rounded-md focus:outline-none  absolute translate-y-26 ">
 
-                                    <input id="current" type="password" name="current_password" required
-                                        class="dark:bg-gray-500 bg-gray-200 hidden w-1/5  pl-1    rounded-md focus:outline-none  absolute translate-y-1 ">
-                                   
-
-                                    <input id="new" type="password" name="new_password" required
-                                        class="dark:bg-gray-500 bg-gray-200 hidden w-1/5    pl-1  rounded-md focus:outline-none  absolute translate-y-14">
-                                   
-
-                                    <input id="rnew" type="password" name="new_password_confirmation" required
-                                        class="dark:bg-gray-500 bg-gray-200 hidden w-1/5   pl-1   rounded-md focus:outline-none  absolute translate-y-26 ">
-
-                                    <ul
-                                        class="flex justify-center mr-5 -translate-x-1 sm:-translate-x-1 md:-translate-x-2 lg:-translate-x-6">
+                                    <ul class="flex justify-center mr-5 -translate-x-1 sm:-translate-x-1 md:-translate-x-2 lg:-translate-x-6">
                                         <li class="eye hidden relative -translate-y-38 mt-1  ">
-                                            <button id="revealpass1"class="text-sm absolute"><i
-                                                    class="fa-solid fa-eye"></i></button>
-                                            <button id="hidepass1"class="text-sm hidden absolute"><i
-                                                    class=" fa-solid fa-eye-slash"></i></button>
+                                            <button id="revealpass1"class="text-sm absolute">
+                                                <i class="fa-solid fa-eye"></i></button>
+                                            <button id="hidepass1"class="text-sm hidden absolute">
+                                                <i class=" fa-solid fa-eye-slash"></i></button>
                                         </li>
                                         <li class="eye hidden relative -translate-y-24 mt-1 ">
-                                            <button id="revealpass2"class="text-sm absolute"><i
-                                                    class="fa-solid fa-eye"></i></button>
-                                            <button id="hidepass2"class="text-sm hidden absolute"><i
-                                                    class="fa-solid fa-eye-slash"></i></button>
+                                            <button id="revealpass2"class="text-sm absolute">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button id="hidepass2"class="text-sm hidden absolute">
+                                                <i class="fa-solid fa-eye-slash"></i>
+                                            </button>
                                         </li>
                                         <li class="eye hidden relative -translate-y-12 mt-1  ">
-                                            <button id="revealpass3"class="text-sm absolute"><i
-                                                    class="fa-solid fa-eye"></i></button>
-                                            <button id="hidepass3"class="text-sm hidden absolute"><i
-                                                    class="fa-solid fa-eye-slash"></i></button>
+                                            <button id="revealpass3"class="text-sm absolute">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                            <button id="hidepass3"class="text-sm hidden absolute">
+                                                <i class="fa-solid fa-eye-slash"></i>
+                                            </button>
                                         </li>
                                     </ul>
 
                                 </div>
+
+
                             </div>
-                            <button id="Pcancel"
-                                class="relative hidden -inset-y-3 rounded-lg px-4 text-lg border border-blue-700 w-20 h-9">
-                                Cancel
-                            </button>
-                            <button id="Psave"
-                                class=" text-white !important relative hidden -inset-y-3 rounded-lg px-4 text-lg bg-blue-700 w-20 h-9">
-                                Save
-                            </button>
+ 
+                                <div class="flex rotate-180 pt-7 pl-7 w-full h-full justify-self-end  space-x-4">
+
+                                    <button id="Psave" class=" text-white rotate-180 !important relative hidden - rounded-lg px-4 text-lg bg-blue-700 w-20 h-9">
+                                        Save
+                                    </button>
+
+                                    <button id="Pcancel" class="relative hidden rotate-180  rounded-lg px-4 text-lg border border-blue-700 w-20 h-9">
+                                        Cancel
+                                    </button>
+                                    <div class="flex flex-col justify-between h-full pt-10 pb-8 ">
+                                        <button id="editbutton" class="mr-10 rotate-180 ">
+                                            <span class="flex text-white !important dark:bg-blue-700 bg-blue-600 h-9 w-20 items-center justify-center rounded-lg">
+                                                <i class="fa-solid fa-pencil"></i>
+                                                Edit
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            
 
                         </form>
-                        <div class="flex flex-col justify-between h-full pt-10 pb-8 ">
-                            <button id="editbutton" class="mr-10">
-                                <span
-                                    class="flex text-white !important dark:bg-blue-700 bg-blue-600 h-9 w-20 items-center justify-center rounded-lg">
-                                    <i class="fa-solid fa-pencil"></i>
-                                    Edit
-                                </span>
-                            </button>
-                            {{-- <div
-                                class="flex justify-end w-1/3 space-x-3 lg:-translate-x-2 sm:mt-10 md:translate-y-44 lg:translate-y-40  mr-12">
-                                <button id="Pcancel"
-                                    class="relative hidden -inset-y-3 rounded-lg px-4 text-lg border border-blue-700 w-20 h-9">
-                                    Cancel
-                                </button>
-                                <button id="Psave"
-                                    class=" text-white !important relative hidden -inset-y-3 rounded-lg px-4 text-lg bg-blue-700 w-20 h-9">
-                                    Save
-                                </button>
-                            </div> --}}
-                        </div>
+
+                        
 
 
                     </div>
