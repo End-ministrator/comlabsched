@@ -27,7 +27,7 @@
                             </button>
                         </li>
                         <li class="w-12 h-12 mt-2 sm:hidden md:hidden lg:block hidden"><img src="/images/usersample.jpg" alt="" class="rounded-full bg-contain bg-no-repeat "> </li>
-                        <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden">Welcome[First Name]</li>
+                        <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden">Welcome {{Auth::user()->firstname}}</li>
                     </ul>
                 </div>
             </div>

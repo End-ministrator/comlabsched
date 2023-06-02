@@ -12,7 +12,8 @@ class EditFaculty extends ModalComponent
     public $faculty;
 
     public $facultyId;
-    public $name;
+    public $firstname;
+    public $lastname;
     public $email;
     public $password;
     public $role;
@@ -20,17 +21,14 @@ class EditFaculty extends ModalComponent
     public $permissions;
     public $faculty_id;
 
-
-
-
-
     public function mount($facultyId)
     {
         // dd($id);
         $user = User::find($facultyId);
 
         $this->facultyId = $facultyId;
-        $this->name = $user->name;
+        $this->firstname = $user->firstname;
+        $this->lastname = $user->lastname;
         $this->email = $user->email;
         $this->password = $user->password;
         $this->role = $user->role;
@@ -39,7 +37,8 @@ class EditFaculty extends ModalComponent
     }
 
     protected $rules = [
-        'name' => 'required',
+        'firstname' => 'required',
+        'lastname' => 'required',
         'email' => 'required',
         'password' => 'required',
         'role' => 'required',
@@ -48,7 +47,8 @@ class EditFaculty extends ModalComponent
     ];
 
     protected $validationAttributes = [
-        'name' => 'Name',
+        'firstname' => 'required',
+        'lastname' => 'required',
         'email' => 'Email',
         'password' => 'Password',
         'role' => 'Role',
@@ -63,14 +63,23 @@ class EditFaculty extends ModalComponent
 
     public function editFaculty()
     {
+        $customMessages = [
+            'email.required' => 'The email field is required.',
+            'email.unique' => 'The email has already been taken.',
+            'email.email' => 'The email must be a valid email address.',
+            'email.required_if' => 'The email field is required when the role is faculty.',
+            'email.regex' => 'Required @tup.edu.ph.',
+        ];
+
         $validateData = $this->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email:rfc,dns,filter|required_if:role,faculty|regex:/^[A-Za-z0-9._%+-]+@tup\.edu\.ph$/i',
             'password' => 'required',
             'role' => 'required',
             'tag_id' => 'required',
             'permissions' => 'required',
-        ]);
+        ], $customMessages);
         User::find($this->facultyId)->update($validateData);
         $this->closeModal();
         $this->emit('updateShowFaculty');
