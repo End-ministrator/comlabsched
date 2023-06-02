@@ -115,9 +115,9 @@
                             <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                             <span id="label3" class="relative transform">Retype New Password</span>
                             <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
-                            <input id="current"type="password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5  pl-1    rounded-md focus:outline-none  absolute translate-y-1 ">
-                            <input id="new"type="password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5    pl-1  rounded-md focus:outline-none  absolute translate-y-14">
-                            <input id="rnew"type="password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5   pl-1   rounded-md focus:outline-none  absolute translate-y-26 ">
+                            <input id="current"type="password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5  pl-1  shadow-inner dark:shadow-blue-600 shadow-blue-600  rounded-md focus:outline-none  absolute translate-y-1 ">
+                            <input id="new"type="password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5    pl-1 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-md focus:outline-none  absolute translate-y-14">
+                            <input id="rnew"type="password" required class="dark:bg-gray-500 bg-gray-200 hidden w-1/5   pl-1  shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-md focus:outline-none  absolute translate-y-26 ">
                             
                             <ul class="flex justify-center mr-5 -translate-x-1 sm:-translate-x-1 md:-translate-x-2 lg:-translate-x-6">
                                 <li  class="eye hidden relative -translate-y-38 mt-1  ">

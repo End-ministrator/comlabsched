@@ -55,7 +55,7 @@ darkMode:'class',
       },
       margin:{
         'x':'208px',
-        'xsm':'96px',
+        'xsm':'110px',
         'xmd':'160px',
       },
 

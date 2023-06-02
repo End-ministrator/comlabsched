@@ -64,31 +64,6 @@
                 PROFILE.classList.add('lg:opacity-100', 'transition-opacity', 'lg:translate-x-2',
                     'transition-transform');
 
-<<<<<<< HEAD
-      
-            window.addEventListener('scroll', ()=>
-        {   
-                const LOGO = document.getElementById('logo');
-                const PROFILE = document.getElementById('profile');
-                const targetpoint = 47;
-                const scrollval = window.scrollY;
-                console.log(scrollval);
-                if(scrollval > targetpoint){
-                    LOGO.classList.remove('lg:opacity-0','lg:-translate-x-2');
-                    LOGO.classList.add('lg:opacity-100','transition-opacity','lg:translate-x-2', 'transition-transform');
-                    PROFILE.classList.remove('lg:opacity-0','lg:-translate-x-2');
-                    PROFILE.classList.add('lg:opacity-100','transition-opacity','lg:translate-x-2', 'transition-transform');
-                    
-                }else {
-                    LOGO.classList.remove('lg:opacity-100','lg:translate-x-2');
-                    LOGO.classList.add('lg:opacity-0', 'transition-opacity','lg:-translate-x-2', 'transition-transform');
-                    PROFILE.classList.remove('lg:opacity-100','lg:translate-x-2');
-                    PROFILE.classList.add('lg:opacity-0','transition-opacity','lg:-translate-x-2', 'transition-transform');
-                    
-                }
-
-        });
-=======
             } else {
                 LOGO.classList.remove('lg:opacity-100', 'lg:translate-x-2');
                 LOGO.classList.add('lg:opacity-0', 'transition-opacity', 'lg:-translate-x-2',
@@ -101,7 +76,6 @@
 
 
 
->>>>>>> 5f232589427702dbc30d56da21a0e32b325fca5d
 
 
         });
@@ -130,23 +104,7 @@
       resourceTimeGridWeek: {
         type: 'resourceTimeGrid',
         duration: { days: 7 },
-<<<<<<< HEAD
-        buttonText: 'week'
-      },
-      resourceDayGridMonth: {
-        type: 'dayGridMonth',
-        duration: { days: 30 },
-        buttonText: 'month',
-        // (make it render again when switching from other views)
-        lazyFetching: false
-      },
-      resourceListMonth: {
-        type: 'listMonth',
-        duration: { days: 30 },
-        buttonText: 'list'
-=======
         buttonText: '7 days'
->>>>>>> 5f232589427702dbc30d56da21a0e32b325fca5d
       }
     },
     resources: [

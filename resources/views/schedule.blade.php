@@ -19,7 +19,7 @@
     
         <div class="flex flex-col w-full h-full items-center bg-smokeywhite dark:bg-gray-800">
             <div class="flex flex-col bg-white dark:bg-gray-700 rounded-md my-7 p-4  w-full h-full items-center justify-center">
-                <div id='calendar' class="w-full p-4" style="max-width: 1750px; max-height: 625px; ">
+                <div id='calendar' class="w-full p-4" style="max-width: 1750px; max-height: 625px;">
                 
                 </div>
                 <div class="w-full flex justify-end space-x-6 pr-4">
@@ -53,7 +53,7 @@
 
 
 
-        <div class=" hidden bg-red-500">
+   
 
 
 
@@ -68,7 +68,7 @@
                 {{--
                 <!-- Outside of any Livewire component -->
                 @if(auth()->user()->role == 'department head')
-                    <button onclick="Livewire.emit('openModal', 'add-schedule')" class="z-50 inset-y-28 w-96 h-96">Add Schedule</button>
+                    <button onclick="Livewire.emit('openModal', 'add-schedule')" class="z-50 bg-red-500 inset-y-28 w-96 h-96">Add Schedule</button>
                 @endif
                 @if(Session::has('success'))
                     <div role="alert">
@@ -107,30 +107,7 @@
         </div>
        --}}
         <!-- content end -->
-<<<<<<< HEAD
-        --}}
-
-    </div>
-
-</div>
-{{-- <script>
-    if (calendar.view.type === 'resourceDayGridMonth') {
-          // how to rerender a calendar? copilot?
-          calendarEl.render();
-      }
-</script> --}}
-<div id='calendar' style="max-width: 1750px; margin: 40px auto; padding-left: 220px; padding-right: 10px"></div>
-
-
-
-
-
-
-
-
-=======
  
->>>>>>> 5f232589427702dbc30d56da21a0e32b325fca5d
 
 
 

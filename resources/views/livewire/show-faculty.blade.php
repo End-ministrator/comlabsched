@@ -28,29 +28,29 @@
                     </button>
                 </div>
             </div>
-            <div class="row dark:bg-gray-700  bg-white shadow shadow-black w-11/12 h-full rounded-lg  overflow-x-auto ml-14 mt-10">
+            <div class="row dark:bg-gray-700  bg-white shadow shadow-black w-10/12 sm:w-10/12 md:10/12 lg:w-11/12 h-full rounded-lg  overflow-x-auto ml-14 mt-10">
 
                 <div class="table-responsive flex justify-center items-center   ">
                     <table id="tableko" class=" w-full  rounded-lg  border-spacing-3  p-10 font-medium">
                         <thead class="  sticky top-0 ">
                             <tr class="h-12 bg-gray-700">
-                                <th class="">#</th>
-                                <th class="">Name</th>
-                                <th class="">Email</th>
-                                <th class="">Role</th>
-                                <th class="">Tag Id</th>
-                                <th class="">Action</th>
+                                <th class="invisible sm:invisible md:visible lg:visible">#</th>
+                                <th class=" text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">Name</th>
+                                <th class=" text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">Email</th>
+                                <th class=" text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">Role</th>
+                                <th class=" text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">Tag Id</th>
+                                <th class=" text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">Action</th>
                             </tr>
                         </thead>
                         <tbody class=" ">
                             @foreach ($faculties as $faculty)
                                 <tr class="h-12 ">
-                                    <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td class="text-center">{{ $faculty->name }}</td>
-                                    <td class="text-center">{{ $faculty->email }}</td>
-                                    <td class="text-center">{{ $faculty->role }}</td>
-                                    <td class="text-center">{{ $faculty->tag_id }}</td>
-                                    <td class="text-center">
+                                    <td class="text-center invisible sm:invisible md:visible lg:visible">{{ $loop->iteration }}</td>
+                                    <td class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">{{ $faculty->name }}</td>
+                                    <td class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">{{ $faculty->email }}</td>
+                                    <td class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">{{ $faculty->role }}</td>
+                                    <td class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">{{ $faculty->tag_id }}</td>
+                                    <td class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
 
 
                                         <button onclick="Livewire.emit('openModal', 'edit-faculty', { facultyId: {{ $faculty->id }}}) "

@@ -10,12 +10,12 @@
         <!--  -->
     </div>
 
-    <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
+    <div class=" lg:ml-x sm:ml-xsm  md:ml-xsm ml-xsm  flex-col w-full ">
             <x-topbar/>
             <!-- main content goes here -->
             <div class="flex px-7 w-full ">
                 <div class="h-full w-full   flex flex-col rounded-none dark:bg-gray-800 bg-smokeywhite ">
-                    <div class="grid gap-7 grid-flow-row w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-4  ">
+                    <div class="grid gap-7 grid-flow-row w-full px-7 sm:px-1 md:px-1 lg:px-0 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-4  ">
 
                         
                         <div class="flex w-full h-40 rounded-md shadow-sm shadow-black  my-1 bg-cyan-500  flex-col ">
@@ -59,7 +59,7 @@
                             
                         
                     </div> 
-                    <div class="flex  bg-white my-5 justify-center items-center rounded-md shadow-black shadow-sm">
+                    <div class="flex px-3 sm:px-1 md:mx-1 lg:px-0 bg-white my-5 justify-center items-center rounded-md shadow-black shadow-sm">
                         <canvas id="myChart" class="relative w-full h-auto m-2"></canvas>
                     </div> 
                     

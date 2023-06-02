@@ -21,13 +21,13 @@
                 <div>
                     <ul class="flex  flex-row h-full items-center mr-2  ">
                         <li>
-                            <button id="themee"class="flex justify-center items-center translate-y-3 lg:translate-y-0 -translate-x-10 sm:-translate-x-4 text-2xl">
+                            <button id="themee"class="flex justify-center items-center translate-y-3 lg:translate-y-0 -translate-x-10 sm:-translate-x-6 text-2xl">
                                 <i id="sun"class="fa-solid fa-sun absolute"></i>
                                 <i id="moon"class="fa-solid fa-moon invisible absolute"></i>
                             </button>
                         </li>
                         <li class="w-12 h-12 mt-2 sm:hidden md:hidden lg:block hidden"><img src="/images/usersample.jpg" alt="" class="rounded-full bg-contain bg-no-repeat "> </li>
-                        <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden">Welcome[First Name]</li>
+                        <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden ml-2">Welcome[First Name]</li>
                     </ul>
                 </div>
             </div>
