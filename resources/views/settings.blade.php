@@ -31,12 +31,16 @@
 
                             <div class="w-full h-20 flex justify-evenly">
                                 <div class="flex  w-full">
-                                    <button
-                                        class="w-28 h-28 hover:brightness-75 group flex justify-center items-center mb-12 ml-7">
-                                        <span
-                                            class="absolute text-white z-50 opacity-0 group-hover:opacity-100">Change</span>
+                                    <button id="profileButton"class="w-28 h-28 hover:brightness-75 group flex justify-center items-center mb-12 ml-7">
+                                        <span class="absolute text-white z-50 opacity-0 group-hover:opacity-100">Change</span>
                                         <img src="images\raymond.jpg" alt="" class="w-full h-full rounded-full">
+                                        
+         
                                     </button>
+
+                                        <div id="pictureUpdate" class="absolute hidden transition-transform transform duration-500">
+                                            <input type="file" name="fileUpload" class="absolute w-60 rounded-lg translate-y-32 bg-white">
+                                        </div>
                                     <div class="flex flex-col justify-center mt-6 ml-6 space-y-4">
                                         <span
                                             class=" flex text-2xl ml-6 items-center">{{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}
@@ -223,6 +227,28 @@
 
 
     <script>
+
+// profile picture JS
+const profileButton = document.getElementById('profileButton');
+const profileUpdate = document.getElementById('pictureUpdate');
+
+profileButton.addEventListener('click', function(){
+if(profileUpdate.classList.contains('hidden')){
+    profileUpdate.classList.add('translate-x-3');
+    profileUpdate.classList.remove('hidden');
+
+}else{
+    profileUpdate.classList.remove('translate-x-3');
+    profileUpdate.classList.add('hidden');
+
+}
+
+
+});
+
+
+
+
         // nav bar indicator style
         ds.classList.remove('dark:bg-blue-800', 'bg-blue-800', 'shadow-inner', 'shadow-blue-800');
         us.classList.remove('dark:bg-blue-800', 'bg-blue-800', 'shadow-inner', 'shadow-blue-800');
