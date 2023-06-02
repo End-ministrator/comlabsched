@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function () {
 //Settings Tab
 Route::put('/settings-account', [UserController::class, 'updateProfile'])->name('profileUpdate');
 Route::post('/settings-password', [UserController::class, 'updatePassword'])->name('updatePassword');
+Route::post('/settings-upload', [UserController::class, 'uploadProfile'])->name('uploadProfile');
 
 //Users Tab
 Route::resource('/faculty', FacultyController::class);
