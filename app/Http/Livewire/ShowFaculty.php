@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Faculty;
 use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 
@@ -10,8 +9,7 @@ use LivewireUI\Modal\ModalComponent;
 class ShowFaculty extends ModalComponent
 {
 
-    // public Faculty $faculties
-    public User $users;
+    public $users;
     public $faculties;
     public $openEditFacultyModal = false;
 
@@ -23,16 +21,12 @@ class ShowFaculty extends ModalComponent
     public function mount()
     {
         $this->users = new User();
+        $this->emit('updateShowFaculty');
     }
 
     public function render()
     {
-        
-        return view('livewire.show-faculty');
-    }
 
-    public function openEditFacultyModal()
-    {
-        $this->openEditFacultyModal = true;
+        return view('livewire.show-faculty');
     }
 }

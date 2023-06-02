@@ -19,19 +19,21 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         User::create([
-            'name' => 'John Doe',
+            'firstname' => 'John',
+            'lastname' => 'Doe',
             'email' => 'admin@example.com',
             'password' => bcrypt('password'),
-            'role' => 'department head',
+            'role' => 'Admin',
             'tag_id' => '1234567890',
             'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}'
         ]);
 
         User::create([
-            'name' => 'Jane Doe',
+            'firstname' => 'Jane',
+            'lastname' => 'Doe',
             'email' => 'faculty@example.com',
             'password' => bcrypt('password'),
-            'role' => 'faculty',
+            'role' => 'Faculty',
             'tag_id' => '2345678901',
             'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}'
         ]);

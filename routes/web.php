@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\FacultyShow;
 
@@ -62,14 +63,15 @@ Route::middleware(['auth'])->group(function () {
     })->name('logs');
 });
 
-// Faculty
-// 
-// Route::resource("/faculty", FacultyController::class);
 
 
+//Settings Tab
+Route::put('/settings-account', [UserController::class, 'updateProfile'])->name('profileUpdate');
+Route::post('/settings-password', [UserController::class, 'updatePassword'])->name('updatePassword');
+
+//Users Tab
 Route::resource('/faculty', FacultyController::class);
-// Route::get('/faculty-show', FacultyShow::class);
-// Route::get("/editFaculty/{id}", [FacultyController::class, 'edit'])->name('edit');
+
 Route::resource('/schedule', ScheduleController::class);
 
 Route::middleware(['auth'])->group(function () {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
 
     <meta charset="UTF-8">
@@ -84,51 +85,68 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.8/index.global.min.js'></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
+            var calendarEl = document.getElementById('calendar');
 
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    initialView: 'dayGridMonth',
-    nowIndicator: true,
-    slotMinTime: '08:00:00',
-    slotMaxTime: '20:00:00',
-    slotduration: '00:15:00',
-    height: 780,
-    datesAboveResources: true,
-    headerToolbar: {
-      left: 'prev,next',
-      center: 'title',
-      right: 'resourceTimeGridDay,resourceTimeGridWeek,resourceDayGridMonth,resourceListMonth'
-    },
-    views: {
-      resourceTimeGridWeek: {
-        type: 'resourceTimeGrid',
-        duration: { days: 7 },
-        buttonText: '7 days'
-      }
-    },
-    resources: [
-      { id: 'a', title: 'Room A' },
-      { id: 'b', title: 'Room B' }
-    ],
-    events: 'https://fullcalendar.io/api/demo-feeds/events.json?with-resources=2',
-    editable: true,
-  });
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+                initialView: 'dayGridMonth',
+                nowIndicator: true,
+                slotMinTime: '08:00:00',
+                slotMaxTime: '20:00:00',
+                slotduration: '00:15:00',
+                height: 780,
+                datesAboveResources: true,
+                headerToolbar: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'resourceTimeGridDay,resourceTimeGridWeek,resourceDayGridMonth,resourceListMonth'
+                },
+                views: {
+                    resourceTimeGridWeek: {
+                        type: 'resourceTimeGrid',
+                        duration: {
+                            days: 7
+                        },
+                        buttonText: '7 days'
+                    }
+                },
+                resources: [{
+                        id: 'a',
+                        title: 'Room A'
+                    },
+                    {
+                        id: 'b',
+                        title: 'Room B'
+                    }
+                ],
+                events: 'https://fullcalendar.io/api/demo-feeds/events.json?with-resources=2',
+                editable: true,
+            });
 
-  calendar.render();
-});
-
+            calendar.render();
+        });
     </script>
 
 
 
-<script>
-     window.flag = 0;
-</script>
+    <script>
+        window.flag = 0;
+    </script>
 
 </head>
-   
-<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white  " id="body"> 
+
+<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white  " id="body">
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    
+    @if (session('error'))
+        <div class="alert alert-error">
+            {{ session('error') }}
+        </div>
+    @endif
 
     @yield('content')
     @livewireScripts
