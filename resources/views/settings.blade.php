@@ -20,8 +20,7 @@
 
                 <!-- general category  -->
                 <div class="flex w-full px-7 ">
-                    <div
-                        id="general"class=" dark:bg-gray-700 flex  mt-5 mb-3 py-6 w-full h-128 sm:h-120 md:h-112 lg:h-96 bg-white shadow  rounded-md flex-col justify-evenly sm:justify-start md:justify-evenly lg:justify-between ">
+                    <div id="general"class=" dark:bg-gray-700 flex  mt-5 mb-3 py-6 w-full h-128 sm:h-120 md:h-112 lg:h-96 bg-white shadow  rounded-md flex-col justify-evenly sm:justify-start md:justify-evenly lg:justify-between ">
                         <div class="flex flex-col">
 
 
@@ -29,29 +28,30 @@
                                 <span>Account Settings</span>
                             </div>
 
-                            <div class="w-full h-20 flex justify-evenly">
-                                <button
-                                    id="profileButton"class="w-28 h-28 hover:brightness-75 group flex justify-center items-center mb-12 ml-7">
-                                    <span class="absolute text-white z-50 opacity-0 group-hover:opacity-100">Change</span>
-                                    <img src=" {{ asset(Auth::user()->image) }} " alt="Profile Picture" class="w-full h-full rounded-full">
+                            <div class="w-full h-20 flex pl-7 justify-between px-7 space-x-6">
+                                <div class="flex">
 
-                                      
+                                
+                                    <button id="profileButton"class="w-28 h-28 hover:brightness-75 group flex justify-center items-center ">
+                                        <span class="absolute text-white z-50 opacity-0 group-hover:opacity-100">Change</span>
+                                        <img src=" {{ asset(Auth::user()->image) }} " alt="Profile Picture" class="w-full h-full rounded-full">
+                                    </button>
 
-                                </button>
+                                    <form action="{{ route('uploadProfile') }}" method="POST" enctype="multipart/form-data" class="flex">
+                                        @csrf
+                                        <div class="flex w-full h-20 ">
+                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
-                                <form action="{{ route('uploadProfile') }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="flex  w-full">
-                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                            <div id="pictureUpdate" class="absolute hidden transition-transform transform duration-500">
+                                                <input type="file" name="profile_picture" class=" translate-y-32 -translate-x-32 h-7 absolute w-48 rounded-l-lg  bg-white">
+                                                <button id="profileUpload" class="translate-y-32 translate-x-16 text-white absolute hidden transition-transform transform  !important w-20 h-7  bg-blue-700 rounded-r-lg " type="submit">Upload</button>
+                                            </div>
 
-                                        <div id="pictureUpdate"
-                                            class="absolute hidden transition-transform transform duration-500">
-                                            <input type="file" name="profile_picture"
-                                                class="absolute w-60 rounded-lg translate-y-32 bg-white">
-                                        </div>
 
-                                        <button class=" text-white !important w-20 h-9 px-4  bg-blue-700 rounded-lg -inset-y-3" type="submit">Upload</button>
-                                </form>
+                                        
+                                    
+                                    </form>
+                                </div>
 
                                 <div class="flex flex-col justify-center mt-6 ml-6 space-y-4">
                                     <span
@@ -73,17 +73,7 @@
                                         Edit
                                     </span>
                                 </button>
-                                {{-- <div
-                                        class="flex justify-end w-1/3 space-x-3 translate-y-96 sm:translate-y-80 md:translate-y-80  lg:translate-y-64">
-                                        <button id="Gcancel"
-                                            class=" text-lg px-4 border w-20 h-9 border-blue-700 rounded-lg hidden -inset-y-3">
-                                            Cancel
-                                        </button>
-                                        <button id="Gsave"
-                                            class=" text-white !important w-20 h-9 px-4 text-lg bg-blue-700 rounded-lg hidden -inset-y-3">
-                                            Save
-                                        </button>
-                                    </div> --}}
+        
 
                             </div>
 
@@ -92,8 +82,7 @@
                     <form action="{{ route('profileUpdate') }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10 sm:mt-10 md:mt-10 lg:mt-2  mb-10 ml-7 space-y-3 ">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10 sm:mt-10 md:mt-10 lg:mt-2  mb-10 ml-7 space-y-3 ">
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
                             <div class="space-y-2 flex justify-center flex-col">
@@ -119,7 +108,11 @@
                                 <input type="text" value="{{ Auth::user()->email }}" name="email" id="email"
                                     class="gensen absolute hidden bg-gray-200 dark:bg-gray-500  translate-y-3 shadow-inner dark:shadow-blue-600 shadow-blue-600 rounded-lg w-44 focus:outline-none pl-1 ">
                             </div>
+                        </div>
 
+
+
+                        <div class="w-full flex justify-end pr-7 space-x-3">
                             <button id="Gcancel"
                                 class=" text-lg px-4 border w-20 h-9 border-blue-700 rounded-lg hidden -inset-y-3">
                                 Cancel
@@ -128,9 +121,9 @@
                                 class=" text-white !important w-20 h-9 px-4 text-lg bg-blue-700 rounded-lg hidden -inset-y-3">
                                 Save
                             </button>
-
-
                         </div>
+
+                       
                     </form>
 
 
@@ -255,15 +248,20 @@
         // profile picture JS
         const profileButton = document.getElementById('profileButton');
         const profileUpdate = document.getElementById('pictureUpdate');
+        const profileUpload = document.getElementById('profileUpload');
 
         profileButton.addEventListener('click', function() {
             if (profileUpdate.classList.contains('hidden')) {
                 profileUpdate.classList.add('translate-x-3');
                 profileUpdate.classList.remove('hidden');
+                profileUpload.classList.add('translate-x-3');
+                profileUpload.classList.remove('hidden');
 
             } else {
                 profileUpdate.classList.remove('translate-x-3');
                 profileUpdate.classList.add('hidden');
+                profileUpload.classList.remove('translate-x-3');
+                profileUpload.classList.add('hidden');
 
             }
 
