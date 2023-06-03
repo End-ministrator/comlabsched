@@ -138,9 +138,9 @@
             <div class="flex px-7 mt-3 w-full h-140 sm:h-140 md:h-140  lg:h-4/5">
 
                 <div
-                    id="password"class="flex flex-col  sm:flex-col md:flex-col lg:flex-row h-128 sm:h-120 md:h-106 lg:h-96 mb-12 justify-self-center w-full  h-140 sm:h-140 md:h-5/6  lg:h-4/5 bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
+                    id="password"class="flex flex-col pb-7 sm:flex-col md:flex-col lg:flex-row  mb-12 justify-self-center w-full h-full bg-white dark:bg-gray-700 shadow rounded-md justify-between items-center">
 
-                    <div class="w-11/12 sm:w-11/12 m:w-11/12 lg:w-1/3 h-full  flex flex-col ml-6">
+                    <div class="w-11/12 sm:w-11/12 m:w-11/12 lg:w-1/3 h-1/4 sm:h-1/4 md:h-full lg:h-full flex flex-col ml-6">
                         <div class="flex flex-col">
                             <span class="text-3xl my-10">Password Settings</span>
                             <span>Please enter your password to change your password</span>
@@ -157,20 +157,19 @@
                                 <span id="label1" class="relative transform">Current Password</span>
                                 <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                                 <input id="current" type="password" name="current_password" required
-                                    class="dark:bg-gray-500 bg-gray-200 hidden w-1/5  pl-1    rounded-md focus:outline-none  absolute translate-y-1 ">
+                                    class="dark:bg-gray-500 bg-gray-200 hidden w-1/2 sm:w-1/3 md:w-1/5 lg:w-1/5  pl-1    rounded-md focus:outline-none  absolute translate-y-1 ">
 
                                 <span id="label2" class="relative transform">New Password</span>
                                 <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                                 <input id="new" type="password" name="new_password" required
-                                    class="dark:bg-gray-500 bg-gray-200 hidden w-1/5    pl-1  rounded-md focus:outline-none  absolute translate-y-14">
+                                    class="dark:bg-gray-500 bg-gray-200 hidden w-1/2 sm:w-1/3 md:w-1/5 lg:w-1/5    pl-1  rounded-md focus:outline-none  absolute translate-y-14">
 
                                 <span id="label3" class="relative transform">Retype New Password</span>
                                 <div class="w-5/12 mb-6 border border-blue-600 dark:border-blue-700"></div>
                                 <input id="rnew" type="password" name="new_password_confirmation" required
-                                    class="dark:bg-gray-500 bg-gray-200 hidden w-1/5   pl-1   rounded-md focus:outline-none  absolute translate-y-26 ">
+                                    class="dark:bg-gray-500 bg-gray-200 hidden w-1/2 sm:w-1/3 md:w-1/5 lg:w-1/5   pl-1   rounded-md focus:outline-none  absolute translate-y-26 ">
 
-                                <ul
-                                    class="flex justify-center mr-5 -translate-x-1 sm:-translate-x-1 md:-translate-x-2 lg:-translate-x-6">
+                                <ul class="flex justify-center mr-5 translate-x-28 sm:-translate-x-1 md:translate-x-8 lg:translate-x-24">
                                     <li class="eye hidden relative -translate-y-38 mt-1  ">
                                         <button id="revealpass1"class="text-sm absolute">
                                             <i class="fa-solid fa-eye"></i></button>
