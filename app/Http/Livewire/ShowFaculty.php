@@ -9,19 +9,24 @@ use LivewireUI\Modal\ModalComponent;
 class ShowFaculty extends ModalComponent
 {
 
-    public $users;
+    // public $users;
     public $faculties;
     public $openEditFacultyModal = false;
 
     protected $listeners = [
-        'updateShowFaculty' => '$refresh'
+        'updateShowFaculty' => 'refreshData'
     ];
 
 
-    public function mount()
+    // public function mount()
+    // {
+    //     $this->users = new User();
+    //     $this->refreshData();
+    // }
+
+    public function refreshData()
     {
-        $this->users = new User();
-        $this->emit('updateShowFaculty');
+        $this->faculties = User::all(); // Refresh the faculties data
     }
 
     public function render()

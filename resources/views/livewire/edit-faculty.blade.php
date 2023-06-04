@@ -59,9 +59,10 @@
         @enderror
 
         <div class="w-full items-center justify-end pr-7 my-2 flex space-x-3">
-                      <button wire:click="closeModal" class="rounded-lg border border-blue-700 w-20 h-8">Close</button>
-            <button type="submit" class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Update</button>
-  
+            <button wire:click="closeModal" class="rounded-lg border border-blue-700 w-20 h-8">Close</button>
+            <button type="submit"
+                class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Update</button>
+
         </div>
 
     </form>

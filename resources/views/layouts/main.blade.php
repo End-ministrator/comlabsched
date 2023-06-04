@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <script src="{{ asset('js/app.js') }}"></script>
-   
+
 
 
     <!-- font awesome -->
@@ -37,7 +37,6 @@
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
 
     <style>
-
         /* For Webkit Browsers */
         ::-webkit-scrollbar {
             width: 8px;
@@ -59,8 +58,6 @@
 
 
     <script>
-
-
         window.addEventListener('scroll', () => {
             const LOGO = document.getElementById('logo');
             const PROFILE = document.getElementById('profile');
@@ -90,7 +87,6 @@
 
 
         });
-
     </script>
     <!-- full calendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.8/index.global.min.js'></script>
@@ -140,30 +136,28 @@
 
 
 
-<script>
+    <script>
+        const success = document.getElementById('toastsuccess');
 
-
-const success = document.getElementById('toastsuccess');
-
-// Hide the element after 3 seconds (3000 milliseconds)
-setTimeout(() => {
-        success.classList.add('hidden');
-    }, 3000);
-</script>
+        // Hide the element after 3 seconds (3000 milliseconds)
+        setTimeout(() => {
+            success.classList.add('hidden');
+        }, 3000);
+    </script>
 </head>
 
 <body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white  " id="body">
-@if (session('success'))
-    <script>
-        localStorage.setItem('successMessage', "{{ session('success') }}");
-    </script>
-@endif
+    @if (session('success'))
+        <script>
+            localStorage.setItem('successMessage', "{{ session('success') }}");
+        </script>
+    @endif
 
-@if (session('error'))
-    <script>
-        localStorage.setItem('errorMessage', "{{ session('error') }}");
-    </script>
-@endif
+    @if (session('error'))
+        <script>
+            localStorage.setItem('errorMessage', "{{ session('error') }}");
+        </script>
+    @endif
 
     @yield('content')
     @livewireScripts

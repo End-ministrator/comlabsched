@@ -22,6 +22,7 @@ class EditFaculty extends ModalComponent
     public $permissions;
     public $faculty_id;
 
+    
     public function mount($facultyId)
     {
         // dd($id);
@@ -71,19 +72,6 @@ class EditFaculty extends ModalComponent
             'email.required_if' => 'The email field is required when the role is faculty.',
             'email.regex' => 'Required @tup.edu.ph.',
         ];
-
-        // $validateData = $this->validate([
-        //     'firstname' => 'required',
-        //     'lastname' => 'required',
-        //     'email' => 'required|email:rfc,dns,filter|required_if:role,faculty|regex:/^[A-Za-z0-9._%+-]+@tup\.edu\.ph$/i',
-        //     // 'password' => 'required|min:8|',
-        //     'role' => 'required',
-        //     'tag_id' => 'required',
-        //     'permissions' => 'required',
-        // ], $customMessages);
-
-
-        // $validateData['password'] = Hash::make($validateData['password']);
 
         
         $rules = [

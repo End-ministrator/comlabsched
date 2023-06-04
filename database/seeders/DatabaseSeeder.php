@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role' => 'Admin',
             'tag_id' => '1234567890',
-            'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}'
+            'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}',
+            'image' =>  '/images/usersample.jpg'
         ]);
 
         User::create([
@@ -35,7 +36,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role' => 'Faculty',
             'tag_id' => '2345678901',
-            'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}'
+            'permissions' => '{"view_schedules": true, "create_schedules": true, "edit_schedules": true, "delete_schedules": true, "view_users": true, "create_users": true, "edit_users": true, "delete_users": true, "view_logs": true}',
+            'image' =>  '/images/usersample.jpg'
         ]);
 
         Schedule::create([
