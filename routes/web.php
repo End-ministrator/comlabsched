@@ -71,7 +71,7 @@ Route::post('/settings-password', [UserController::class, 'updatePassword'])->na
 Route::post('/settings-upload', [UserController::class, 'uploadProfile'])->name('uploadProfile');
 
 //Users Tab
-Route::resource('/faculty', FacultyController::class);
+Route::get('/faculty', [UserController::class, 'index']);
 
 Route::resource('/schedule', ScheduleController::class);
 

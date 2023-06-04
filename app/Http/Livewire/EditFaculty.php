@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
+use Illuminate\Support\Facades\Hash;
 use LivewireUI\Modal\ModalComponent;
 
 class EditFaculty extends ModalComponent
@@ -30,7 +31,7 @@ class EditFaculty extends ModalComponent
         $this->firstname = $user->firstname;
         $this->lastname = $user->lastname;
         $this->email = $user->email;
-        $this->password = $user->password;
+        // $this->password = $user->password;
         $this->role = $user->role;
         $this->tag_id = $user->tag_id;
         $this->permissions = $user->permissions;
@@ -40,7 +41,7 @@ class EditFaculty extends ModalComponent
         'firstname' => 'required',
         'lastname' => 'required',
         'email' => 'required',
-        'password' => 'required',
+        'password' => 'required|min:8',
         'role' => 'required',
         'tag_id' => 'required',
         'permissions' => 'required',
@@ -69,17 +70,21 @@ class EditFaculty extends ModalComponent
             'email.email' => 'The email must be a valid email address.',
             'email.required_if' => 'The email field is required when the role is faculty.',
             'email.regex' => 'Required @tup.edu.ph.',
+            'password.required' => 'You need to change the password',
         ];
 
         $validateData = $this->validate([
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => 'required|email:rfc,dns,filter|required_if:role,faculty|regex:/^[A-Za-z0-9._%+-]+@tup\.edu\.ph$/i',
-            'password' => 'required',
+            'password' => 'required|min:8|',
             'role' => 'required',
             'tag_id' => 'required',
             'permissions' => 'required',
         ], $customMessages);
+
+        $validateData['password'] = Hash::make($validateData['password']);
+        
         User::find($this->facultyId)->update($validateData);
         $this->closeModal();
         $this->emit('updateShowFaculty');
