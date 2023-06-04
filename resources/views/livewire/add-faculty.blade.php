@@ -54,13 +54,27 @@
             <p class="error text-red-500">{{ $message }}</p>
         @enderror
         <div class="flex items-center justify-center">
+            <div class="w-full my-2 space-x-3 flex justify-end pr-7">
+                <button wire:click="closeModal" onclick="refreshPage()" id="closeRefresh" class="rounded-lg border border-blue-700 w-20 h-8">Close</button> 
+                <button onclick="refreshPage()" id="addRefresh"type="submit" value="Save" class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
+                
             
-
-            <button type="submit" value="Save" class="btn btn-success bg-blue-500 w-14 h-7 rounded-lg ">Add</button></br>
-            <button wire:click="closeModal">Close</button>
+            </div>
+    
     </form>
 
 
 
 </div>
 </div>
+
+<script>
+    function refreshPage() {
+        location.reload();
+    }
+
+    function refreshPage() {
+        location.reload();
+    }
+
+</script>

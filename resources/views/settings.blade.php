@@ -244,6 +244,24 @@
 
 
     <script>
+
+        // 
+
+        document.addEventListener('DOMContentLoaded', function() {
+        var successMessage = localStorage.getItem('successMessage');
+        var errorMessage = localStorage.getItem('errorMessage');
+        
+        if (successMessage) {
+            toastr.success(successMessage, 'Success');
+            localStorage.removeItem('successMessage');
+        }
+        
+        if (errorMessage) {
+            toastr.error(errorMessage, 'Error');
+            localStorage.removeItem('errorMessage');
+        }
+    });
+
         // profile picture JS
         const profileButton = document.getElementById('profileButton');
         const profileUpdate = document.getElementById('pictureUpdate');
@@ -380,9 +398,9 @@
 
         });
         Gsave.addEventListener('click', function() {
-
+          
             gensens.forEach(gensen => {
-
+               
                 if (gensen.classList.contains('hidden')) {
                     gensen.classList.remove('hidden');
                     editbtn.classList.add('hidden');
