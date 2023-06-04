@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
         'role',
         'tag_id',
-        'permissions',
+        // 'permissions',
         'image'
     ];
 

@@ -38,7 +38,7 @@ class FacultyController extends Controller
     {
         $input = $request->all();
         Faculty::create($input);
-        return redirect('faculty')->with('success', 'Faculty Addedd!');
+        return redirect('facultycrud.faculty')->with('success', 'Faculty Addedd!');
     }
 
 
@@ -74,7 +74,7 @@ class FacultyController extends Controller
             'password' => 'required',
             'role' => 'required',
             'tag_id' => 'required',
-            'permissions' => 'required',
+            // 'permissions' => 'required',
         ]);
 
         Faculty::where('id', $id)->update([
@@ -84,7 +84,7 @@ class FacultyController extends Controller
             'password' => $request->password,
             'role' => $request->role,
             'tag_id' => $request->tag_id,
-            'permissions' => $request->permissions,
+            // 'permissions' => $request->permissions,
 
         ]);
         return redirect('faculty')->with('success', 'Faculty Updated!');
@@ -99,7 +99,7 @@ class FacultyController extends Controller
     public function destroy($id)
     {
         Faculty::destroy($id);
-        return redirect('faculty')->with('flash_message', 'Faculty deleted!');  
+        return redirect('facultycrud.faculty')->with('flash_message', 'Faculty deleted!');  
     }
 
     public function test (){

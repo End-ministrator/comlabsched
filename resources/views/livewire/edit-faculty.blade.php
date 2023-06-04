@@ -51,12 +51,12 @@
         @enderror
 
 
-        <label>Permissions</label>
+        {{-- <label>Permissions</label>
         <input type="text" wire:model="permissions"
             class="form-control rounded-lg h-8 mb-3 pl-1 bg-smokeywhite dark:bg-gray-800">
         @error('permissions')
             <p class="error text-red-500">{{ $message }}</p>
-        @enderror
+        @enderror --}}
 
         <div class="w-full items-center justify-center flex">
             <button type="submit"

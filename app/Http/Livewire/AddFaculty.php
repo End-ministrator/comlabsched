@@ -28,7 +28,7 @@ class AddFaculty extends ModalComponent
         'password' => 'required',
         'role' => 'required',
         'tag_id' => 'required',
-        'permissions' => 'required',
+        // 'permissions' => 'required',
     ];
 
     protected $validationAttributes = [
@@ -65,7 +65,7 @@ class AddFaculty extends ModalComponent
             'password' => 'required',
             'role' => 'required',
             'tag_id' => 'required',
-            'permissions' => 'required',
+            // 'permissions' => 'required',
 
         ], $customMessages);
         

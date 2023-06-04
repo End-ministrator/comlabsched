@@ -23,9 +23,9 @@
             </select></br>
             <label>Tag Id</label></br>
             <input type="text" name="tag_id" id="tag_id" value="{{ $faculties->tag_id }}" class="form-control"></br>
-            <label>Permissions</label></br>
+            {{-- <label>Permissions</label></br>
             <input type="text" name="permissions" id="permissions" value="{{ $faculties->permissions }}"
-                class="form-control"></br>
+                class="form-control"></br> --}}
 
             <button type="submit" value="Update" class="btn btn-success">Update</button></br>
         </form>

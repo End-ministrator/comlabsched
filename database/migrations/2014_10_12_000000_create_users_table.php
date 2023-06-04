@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('role');
             $table->string('tag_id')->unique();
-            $table->string('permissions');
+            // $table->string('permissions');
             $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();

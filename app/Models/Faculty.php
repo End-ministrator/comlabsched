@@ -16,7 +16,7 @@ class Faculty extends Model
         'password',
         'role',
         'tag_id',
-        'permissions',
+        // 'permissions',
 
     ];
 }

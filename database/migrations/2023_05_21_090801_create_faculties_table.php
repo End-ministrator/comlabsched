@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('role');
             $table->string('tag_id')->unique();
-            $table->string('permissions');
+            // $table->string('permissions');
             $table->rememberToken();
             $table->timestamps();
         });
