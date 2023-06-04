@@ -85,7 +85,7 @@ class EditFaculty extends ModalComponent
 
         // $validateData['password'] = Hash::make($validateData['password']);
 
-
+        
         $rules = [
             'firstname' => 'required',
             'lastname' => 'required',
@@ -107,7 +107,7 @@ class EditFaculty extends ModalComponent
             $validateData['password'] = Hash::make($validateData['password']);
         }
 
-        User::0-----find($this->facultyId)->update($validateData);
+        User::find($this->facultyId)->update($validateData);
         $this->closeModal();
         $this->emit('updateShowFaculty');
     }
