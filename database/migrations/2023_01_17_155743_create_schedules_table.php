@@ -14,24 +14,19 @@ class CreateSchedulesTable extends Migration
     public function up()
     {
         Schema::create('schedule', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->string('name');
-            $table->string('start_time');
-            $table->string('end_time');
+            $table->datetime('start_time');
+            $table->datetime('end_time');
             $table->string('days');
             $table->foreign('user_id')->references('id')->on('users'); // foreign key for user_id to identify the user who owns the schedule
             $table->string('laboratory');
             $table->string('school_year');
             $table->string('semester');
-            $table->timestamps();
-            $table->softDeletes();
-            $table->datetime('start_time');
-            $table->datetime('end_time');
-            $table->string('laboratory');
-            $table->string('school_year');
-            $table->string('semester');
             $table->string('recurrence');
             $table->integer('recurrence_value')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

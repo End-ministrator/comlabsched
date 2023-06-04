@@ -14,22 +14,33 @@ class Schedule extends Model
      * @var array
      */
     protected $fillable = [
-        'start_time', 'end_time', 'days', 'faculty_id', 'laboratory', 'school_year', 'semester',
+        'name',
+        'user_id',
+        'start_time',
+        'end_time',
+        'laboratory',
+        'school_year',
+        'semester',
+        'recurrence',
+        'recurrence_value',
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     /**
-     * Get the faculty member that owns the schedule.
+     * Get the user that owns the schedule.
      */
-    public function faculty()
+    public function user()
     {
-        return $this->belongsTo(Faculty::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    /**
-     * Get the laboratory that the schedule belongs to.
-     */
-    public function laboratory()
-    {
-        return $this->belongsTo(Laboratory::class);
-    }
+    // /**
+    //  * Get the laboratory that the schedule belongs to.
+    //  */
+    // public function laboratory()
+    // {
+    //     return $this->belongsTo(Laboratory::class);
+    // }
 }
