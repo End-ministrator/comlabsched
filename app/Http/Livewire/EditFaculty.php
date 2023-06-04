@@ -41,7 +41,7 @@ class EditFaculty extends ModalComponent
         'firstname' => 'required',
         'lastname' => 'required',
         'email' => 'required',
-        'password' => 'required|min:8',
+        // 'password' => 'required|min:8',
         'role' => 'required',
         'tag_id' => 'required',
         'permissions' => 'required',
@@ -70,22 +70,44 @@ class EditFaculty extends ModalComponent
             'email.email' => 'The email must be a valid email address.',
             'email.required_if' => 'The email field is required when the role is faculty.',
             'email.regex' => 'Required @tup.edu.ph.',
-            'password.required' => 'You need to change the password',
         ];
 
-        $validateData = $this->validate([
+        // $validateData = $this->validate([
+        //     'firstname' => 'required',
+        //     'lastname' => 'required',
+        //     'email' => 'required|email:rfc,dns,filter|required_if:role,faculty|regex:/^[A-Za-z0-9._%+-]+@tup\.edu\.ph$/i',
+        //     // 'password' => 'required|min:8|',
+        //     'role' => 'required',
+        //     'tag_id' => 'required',
+        //     'permissions' => 'required',
+        // ], $customMessages);
+
+
+        // $validateData['password'] = Hash::make($validateData['password']);
+
+
+        $rules = [
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => 'required|email:rfc,dns,filter|required_if:role,faculty|regex:/^[A-Za-z0-9._%+-]+@tup\.edu\.ph$/i',
-            'password' => 'required|min:8|',
             'role' => 'required',
             'tag_id' => 'required',
             'permissions' => 'required',
-        ], $customMessages);
+        ];
 
-        $validateData['password'] = Hash::make($validateData['password']);
-        
-        User::find($this->facultyId)->update($validateData);
+        // Check if the password field is set and add the required rule if present
+        if (isset($this->password)) {
+            $rules['password'] = 'required|min:8';
+        }
+
+        $validateData = $this->validate($rules, $customMessages);
+
+        // Hash the password only if it is set
+        if (isset($validateData['password'])) {
+            $validateData['password'] = Hash::make($validateData['password']);
+        }
+
+        User::0-----find($this->facultyId)->update($validateData);
         $this->closeModal();
         $this->emit('updateShowFaculty');
     }

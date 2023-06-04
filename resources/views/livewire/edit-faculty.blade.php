@@ -27,7 +27,7 @@
             <p class="error text-red-500">{{ $message }}</p>
         @enderror
 
-        <label>Password</label>
+        <label>New Password</label>
         <input type="text" wire:model="password"
             class="form-control rounded-lg h-8 mb-3 pl-1 bg-smokeywhite dark:bg-gray-800">
         @error('password')
