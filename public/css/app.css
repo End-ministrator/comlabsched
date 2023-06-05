@@ -683,6 +683,12 @@ video {
 .top-\[13px\] {
   top: 13px;
 }
+.bottom-4 {
+  bottom: 1rem;
+}
+.right-4 {
+  right: 1rem;
+}
 .z-0 {
   z-index: 0;
 }
@@ -943,6 +949,14 @@ video {
 .mt-\[0\.15rem\] {
   margin-top: 0.15rem;
 }
+.me-auto {
+  -webkit-margin-end: auto;
+          margin-inline-end: auto;
+}
+.ms-auto {
+  -webkit-margin-start: auto;
+          margin-inline-start: auto;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1159,6 +1173,9 @@ video {
 .w-12 {
   width: 3rem;
 }
+.w-14 {
+  width: 3.5rem;
+}
 .w-16 {
   width: 4rem;
 }
@@ -1206,9 +1223,6 @@ video {
 }
 .w-60 {
   width: 15rem;
-}
-.w-64 {
-  width: 16rem;
 }
 .w-7 {
   width: 1.75rem;
@@ -1272,6 +1286,12 @@ video {
 }
 .w-screen {
   width: 100vw;
+}
+.w-56 {
+  width: 14rem;
+}
+.w-64 {
+  width: 16rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1469,10 +1489,6 @@ video {
   --tw-translate-y: 105px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.translate-y-28 {
-  --tw-translate-y: 7rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 .translate-y-3 {
   --tw-translate-y: 0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1483,6 +1499,30 @@ video {
 }
 .translate-y-4 {
   --tw-translate-y: 1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-52 {
+  --tw-translate-y: 13rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-52 {
+  --tw-translate-x: 13rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-96 {
+  --tw-translate-x: 24rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-20 {
+  --tw-translate-y: 5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-16 {
+  --tw-translate-y: 4rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-28 {
+  --tw-translate-y: 7rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .rotate-180 {
@@ -1658,6 +1698,9 @@ video {
 }
 .flex-row {
   flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 .flex-col {
   flex-direction: column;
@@ -2372,6 +2415,10 @@ video {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -2380,9 +2427,6 @@ video {
 }
 .pb-2 {
   padding-bottom: 0.5rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
 }
 .pb-5 {
   padding-bottom: 1.25rem;
@@ -2453,6 +2497,9 @@ video {
 .pt-\[0\.37rem\] {
   padding-top: 0.37rem;
 }
+.pb-4 {
+  padding-bottom: 1rem;
+}
 .text-left {
   text-align: left;
 }
@@ -2461,6 +2508,9 @@ video {
 }
 .text-right {
   text-align: right;
+}
+.align-baseline {
+  vertical-align: baseline;
 }
 .align-middle {
   vertical-align: middle;
