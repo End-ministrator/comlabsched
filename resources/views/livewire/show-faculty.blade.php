@@ -1,8 +1,11 @@
 <div class="flex flex-row bg-smokeywhite" id="body">
 
     <div class=" flex">
-        <x-nav-bar />
-        <!--  -->
+                @if(auth()->user()->role == 'Admin')
+
+                <x-nav-bar/>
+                @endif
+     
     </div>
 
     <div

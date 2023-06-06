@@ -33,16 +33,7 @@
             <span href="#" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Monitoring</span>
         </a>
 
-        <a href="{{ url('schedule') }}" id="menu"
-            class="sc w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
-                class="fa-solid fa-calendar mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
-                href="" class="justify-self-start sm:hidden md:hidden lg:block hidden ">Scheduling</span></a>
-                
-        <a href="{{ url('faculty') }}" id="menu"
-            class="us w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
-                class="fa-solid fa-users mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i><span
-                href="#"
-                class="justify-self-start sm:hidden md:hidden lg:block hidden ">Users</span></a>
+
 
         <a href="{{ route('logs') }}" id="menu"
             class="lg w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0"><i
@@ -72,16 +63,11 @@
 <script>
 
     const ds = document.querySelector('.ds');
-    const us = document.querySelector('.us');
+  
     const lg = document.querySelector('.lg');
     const mn = document.querySelector('.mn');
-    const sc = document.querySelector('.sc');
+  
     const st = document.querySelector('.st');
 
-    function currentTab(event){
-        const clickedElement = event.target;
-        if(clickedElement.classList.contains('bg-blue-700'))
-        clickedElement.classList.add('bg-blue-700');
-    }
 
 </script>

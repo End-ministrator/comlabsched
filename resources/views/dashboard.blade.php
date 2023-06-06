@@ -6,8 +6,14 @@
 <div class="flex flex-row">
 
     <div class=" flex">
-        <x-nav-bar/>
-        <!--  -->
+                @if(auth()->user()->role == 'Admin')
+                <script>const flag = 1;</script>
+                <x-nav-bar/>
+                @endif
+                @if(auth()->user()->role == 'Faculty')
+                <script>const flag = 2;</script>
+                <x-nav-bar-user/>
+                @endif
     </div>
 
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xsm ml-xsm  flex-col w-full ">
@@ -74,8 +80,10 @@
 
 <script>
 
+ // Replace this with your own logic
 
-
+// Check the user's role and show/hide the button accordingly
+if (flag === 1) {
         ds.classList.add('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
         us.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
         lg.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
@@ -83,6 +91,16 @@
         sc.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
         st.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
 
+   
+} else {
+        ds.classList.add('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        lg.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        mn.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+        st.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
+
+}
+
+        
  
     // chart
 

@@ -67,7 +67,7 @@
                 @endforeach --}}
                 {{--
                 <!-- Outside of any Livewire component -->
-                @if(auth()->user()->role == 'department head')
+                @if(auth()->user()->role == 'Admin')
                     <button onclick="Livewire.emit('openModal', 'add-schedule')" class="z-50 bg-red-500 inset-y-28 w-96 h-96">Add Schedule</button>
                 @endif
                 @if(Session::has('success'))
