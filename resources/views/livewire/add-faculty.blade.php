@@ -42,27 +42,24 @@
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
 
-            <label>Tag Id</label>
-            <input type="text" wire:model="tag_id" id="tag_id"
-                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
-            @error('tag_id')
-                <p class="error text-red-500">{{ $message }}</p>
-            @enderror
-            <label>Permissions</label>
-            <input type="text" wire:model="permissions" id="permissions"
-                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
-            @error('permissions')
-                <p class="error text-red-500">{{ $message }}</p>
-            @enderror
-            <div class="flex items-center justify-center">
-                <div class="w-full my-2 space-x-3 flex justify-end pr-7">
-                    <button wire:click="closeModal" onclick="refreshPage()" id="closeRefresh"
-                        class="rounded-lg border border-blue-700 w-20 h-8">Close</button>
-                    <button onclick="refreshPage()" id="addRefresh"type="submit" value="Save"
-                        class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
-
-
-                </div>
+        <label>Tag Id</label>
+        <input type="text" wire:model="tag_id" id="tag_id"
+            class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+        @error('tag_id')
+            <p class="error text-red-500">{{ $message }}</p>
+        @enderror
+        <label>Permissions</label>
+        <input type="text" wire:model="permissions" id="permissions"
+            class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+        @error('permissions')
+            <p class="error text-red-500">{{ $message }}</p>
+        @enderror
+        <div class="flex items-center justify-center">
+            <div class="w-full my-2 space-x-3 flex justify-end pr-7">
+                <button wire:click="closeModal"  id="closeRefresh" class="rounded-lg border border-blue-700 w-20 h-8">Close</button> 
+                <button  id="addRefresh"type="submit" value="Save" class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
+                
+            
             </div>
 
         </form>
@@ -76,3 +73,10 @@
         }
     </script>
 </div>
+</div>
+
+<script>
+
+
+
+</script>

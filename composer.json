@@ -11,10 +11,10 @@
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^4.2",
         "livewire/livewire": "^2.12",
         "rappasoft/laravel-livewire-tables": "^2.10",
         "wire-elements/modal": "^1.0"
-        
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
