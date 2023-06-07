@@ -48,8 +48,8 @@
         <ul id="profile"
             class="flex inset-x-4 inset-y-16 relative flex-row h-full items-center mr-2  transition-opacity  lg:-translate-x-2 lg:opacity-0 md:opacity-100 sm:opacity-100 opacity-100 translate-x-10  ">
             <li class="w-12 h-12 relative mt-2 mr-3 sm:-inset-x-6 md:-inset-x-3 lg:inset-x-0 -inset-x-6"><img
-                    src="/images/usersample.jpg" alt="" class="rounded-full bg-contain bg-no-repeat "> </li>
-            <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden "><span class="text-sm ">Welcome!</br>[First Name]</span> </li>
+                    src="/images/usersample.jpg" alt="" class="w-10 h-10 rounded-full bg-contain bg-no-repeat "> </li>
+            <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden "><span class="text-sm ">Welcome!</br>{Auth::user()->firstname}}</span> </li>
         </ul>
     </div>
     <div class=" flex flex-col text-lg   mb-10 justify-center">
@@ -63,10 +63,8 @@
 <script>
 
     const ds = document.querySelector('.ds');
-  
     const lg = document.querySelector('.lg');
     const mn = document.querySelector('.mn');
-  
     const st = document.querySelector('.st');
 
 

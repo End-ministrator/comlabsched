@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center p-2 bg-white dark:bg-gray-700">
+<div class="flex items-center justify-center p-2 bg-white dark:bg-gray-700 z-0">
 
 
     <form wire:submit.prevent="saveFaculty" method="POST" class=" w-full flex flex-col py-2 px-1
@@ -55,8 +55,8 @@
         @enderror
         <div class="flex items-center justify-center">
             <div class="w-full my-2 space-x-3 flex justify-end pr-7">
-                <button wire:click="closeModal" onclick="refreshPage()" id="closeRefresh" class="rounded-lg border border-blue-700 w-20 h-8">Close</button> 
-                <button onclick="refreshPage()" id="addRefresh"type="submit" value="Save" class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
+                <button wire:click="closeModal"  id="closeRefresh" class="rounded-lg border border-blue-700 w-20 h-8">Close</button> 
+                <button  id="addRefresh"type="submit" value="Save" class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
                 
             
             </div>
@@ -69,12 +69,7 @@
 </div>
 
 <script>
-    function refreshPage() {
-        location.reload();
-    }
 
-    function refreshPage() {
-        location.reload();
-    }
+
 
 </script>

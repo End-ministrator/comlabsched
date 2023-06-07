@@ -26,7 +26,7 @@
                                 <i id="moon"class="fa-solid fa-moon invisible absolute"></i>
                             </button>
                         </li>
-                        <li class="w-12 h-12 mt-2 sm:hidden md:hidden lg:block hidden"><img src="/images/usersample.jpg" alt="" class="rounded-full bg-contain bg-no-repeat "> </li>
+                        <li class="w-12 h-12 mt-2 sm:hidden md:hidden lg:block hidden"><img src="/images/usersample.jpg" alt="" class="w-10 h-10 rounded-full bg-contain bg-no-repeat "> </li>
                         <li class="-inset-y-4 sm:hidden md:hidden lg:block hidden ml-2">Welcome {{Auth::user()->firstname}}</li>
                     </ul>
                 </div>

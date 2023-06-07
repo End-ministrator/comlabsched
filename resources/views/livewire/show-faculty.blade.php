@@ -1,4 +1,4 @@
-<div class="flex flex-row bg-smokeywhite" id="body">
+<div class="flex flex-row bg-smokeywhite z-50" id="body">
 
     <div class=" flex">
                 @if(auth()->user()->role == 'Admin')
