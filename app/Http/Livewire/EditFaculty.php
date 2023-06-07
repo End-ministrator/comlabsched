@@ -76,7 +76,7 @@ class EditFaculty extends ModalComponent
             'email' => 'required|email:rfc,dns,filter|required_if:role,faculty|regex:/^[A-Za-z0-9._%+-]+@tup\.edu\.ph$/i',
             'role' => 'required',
             'tag_id' => 'required',
-            'permissions' => 'required',
+            
         ];
 
         // Check if the password field is set and add the required rule if present
