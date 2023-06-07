@@ -15,36 +15,50 @@ class ScheduleController extends Controller
     {
         $this->data = Schedule::all();
     }
-    public function index (){
-   
-    }
     
+    public function index()
+    {
+        $schedules = Schedule::all();
+        // dd($data);
+        return view('schedulecrud.schedule', compact('schedules'));
+    }
 
-    public function dashboard(){
+    public function dashboard()
+    {
         $data = Schedule::all();
         return view('dashboard', compact('data'));
     }
-    public function schedule(){
+
+
+    public function schedule()
+    {
+
         $data = Schedule::all();
-        return view('schedule', compact('data'));
+        // dd($data);
+        return view('schedulecrud.schedule')->with(compact('data'));
     }
 
-    public function addSchedule(){
+
+
+    public function addSchedule()
+    {
         return view('addSchedule');
     }
-    
-    public function editSchedule ($id){
-        $sch = Schedule::where('id','=',$id)->first();
-        return view('editSchedule',compact('sch'));
+
+    public function editSchedule($id)
+    {
+        $sch = Schedule::where('id', '=', $id)->first();
+        return view('editSchedule', compact('sch'));
     }
 
-    public function updateSchedule(Request $request){
+    public function updateSchedule(Request $request)
+    {
         $request->validate([
-            'start_time'=> 'required',
-            'end_time'=>'required',
-            'days'=>'required',
-            'faculty_id'=>'required',
-            'laboratory'=>'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'days' => 'required',
+            'faculty_id' => 'required',
+            'laboratory' => 'required',
         ]);
         $id = $request->id;
         $start_time = $request->start_time;
@@ -53,19 +67,19 @@ class ScheduleController extends Controller
         $faculty_id = $request->faculty_id;
         $laboratory = $request->laboratory;
 
-        Schedule::where('id','=',$id)->update([
-            'start_time'=>$start_time,
-            'end_time'=>$end_time,
-            'days'=>$days,
-            'faculty_id'=>$faculty_id,
-            'laboratory'=>$laboratory
+        Schedule::where('id', '=', $id)->update([
+            'start_time' => $start_time,
+            'end_time' => $end_time,
+            'days' => $days,
+            'faculty_id' => $faculty_id,
+            'laboratory' => $laboratory
         ]);
-        return redirect()->back()->with('success','Schedule updated successfully!');
+        return redirect()->back()->with('success', 'Schedule updated successfully!');
     }
 
-    public function deleteSchedule($id){
-        Schedule::where('id','=',$id)->delete();
-        return redirect()->back()->with('success','Schedule deleted successfully!');
+    public function deleteSchedule($id)
+    {
+        Schedule::where('id', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Schedule deleted successfully!');
     }
-
 }

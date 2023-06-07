@@ -10,7 +10,6 @@
         <x-nav-bar/>
         <!--  -->
     </div>
-
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
         <x-topbar/>
         <!-- main content goes here -->
@@ -44,16 +43,6 @@
         sc.classList.add('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
         st.classList.remove('dark:bg-blue-800','bg-blue-800','shadow-inner','shadow-blue-800');
 </script>
-
-
-
-
-
-
-
-
-
-   
 
 
 

@@ -45,9 +45,9 @@ Route::get('/settings', function () {
     return view('settings');
 })->name('settings');
 
-Route::get('/schedule', function () {
-    return view('schedule');
-})->name('schedule');
+// Route::get('/schedule', function () {
+//     return view('schedule');
+// })->name('schedule');
 
 
 
@@ -73,16 +73,6 @@ Route::post('/settings-upload', [UserController::class, 'uploadProfile'])->name(
 //Users Tab
 Route::get('/faculty', [UserController::class, 'index']);
 
-Route::resource('/schedule', ScheduleController::class);
+Route::get('/schedule', [ScheduleController::class, 'index']);
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
-    Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');
-    Route::post('/schedule/save', [ScheduleController::class, 'saveSchedule'])->name('schedule.save');
-    Route::get('/schedule/{id}/edit', [ScheduleController::class, 'editSchedule'])->name('schedule.edit');
-    Route::post('/updateSchedule', [ScheduleController::class, 'updateSchedule'])->name('schedule.update');
-    Route::get('/schedule/{id}/delete', [ScheduleController::class, 'deleteSchedule'])->name('schedule.delete');
-    Route::get('/logs', function () {
-        return view('accessLogs');
-    })->name('logs');
-});
+
