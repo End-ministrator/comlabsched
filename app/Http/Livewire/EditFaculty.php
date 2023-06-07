@@ -18,7 +18,6 @@ class EditFaculty extends ModalComponent
     public $password;
     public $role;
     public $tag_id;
-    public $permissions;
     public $faculty_id;
 
     public function mount($facultyId)
@@ -33,7 +32,6 @@ class EditFaculty extends ModalComponent
         $this->password = $user->password;
         $this->role = $user->role;
         $this->tag_id = $user->tag_id;
-        // $this->permissions = $user->permissions;
     }
 
     protected $rules = [
@@ -43,7 +41,6 @@ class EditFaculty extends ModalComponent
         'password' => 'required',
         'role' => 'required',
         'tag_id' => 'required',
-        // 'permissions' => 'required',
     ];
 
     protected $validationAttributes = [
@@ -53,7 +50,6 @@ class EditFaculty extends ModalComponent
         'password' => 'Password',
         'role' => 'Role',
         'tag_id' => 'Tag id',
-        // 'permissions' => 'Permissions',
     ];
 
     public function updated($field)
@@ -78,7 +74,6 @@ class EditFaculty extends ModalComponent
             'password' => 'required',
             'role' => 'required',
             'tag_id' => 'required',
-            // 'permissions' => 'required',
         ], $customMessages);
         User::find($this->facultyId)->update($validateData);
         $this->closeModal();

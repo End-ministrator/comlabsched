@@ -18,7 +18,6 @@ class CreateSchedulesTable extends Migration
             $table->string('name');
             $table->datetime('start_time');
             $table->datetime('end_time');
-            $table->string('days');
             $table->foreign('user_id')->references('id')->on('users'); // foreign key for user_id to identify the user who owns the schedule
             $table->string('laboratory');
             $table->string('school_year');

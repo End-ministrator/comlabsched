@@ -14,6 +14,7 @@ class Schedule extends Model
      * @var array
      */
     protected $fillable = [
+        'schedule_id',
         'name',
         'user_id',
         'start_time',
@@ -34,6 +35,17 @@ class Schedule extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    // following are for the schedule relationships, mainly used for the reoccuring schedules
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class, 'schedule_id', 'id');
+    }
+
+    public function schedule()
+    {
+        return $this->belongsTo(Schedule::class, 'schedule_id');
     }
 
     // /**
