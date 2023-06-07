@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/settings-upload', [UserController::class, 'uploadProfile'])->name('uploadProfile');
 });
 
-// Admin routes
+// Admin routes ROUTES N KAY ADMIN LNG PWEDE DITO LALAGAY
 Route::middleware(['auth', 'auth.admin'])->group(function () {
     // Faculty
     Route::resource('/faculty', UserController::class);
@@ -73,7 +73,7 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
   
 });
 
-// User routes
+// User routes HOME LANG NANDITO KASE BOTH USER AND ADMIN MAY ACCESS SA COMMON TABS KAYA LABAS N YONG ROUTES NON SA GROUP FUNCTION
 Route::middleware(['auth', 'auth.user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
