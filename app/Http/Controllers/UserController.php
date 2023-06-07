@@ -14,7 +14,6 @@ class UserController extends Controller
     public function index()
     {
 
-
         $faculties = User::all();
         $faculty_id = $faculties->first()->id;
         return view('facultycrud.faculty')->with(compact('faculties', 'faculty_id'));

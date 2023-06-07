@@ -2,11 +2,6 @@
 @section('title', 'Access Logs')
 @section('content')
 
-
-
-
-
-
 <div class="flex flex-row">
 
     <div class=" flex">

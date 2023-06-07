@@ -35,13 +35,13 @@ class AddSchedule extends ModalComponent
         'semester' => 'Semester',
     ];
 
-    public function mount()
-    {
-        $this->school_year = '2022-2023';
-        $this->semester = '1st Semester';
-        $this->laboratory = 'Lab 1';
-        $this->days = 'Monday';
-    }
+    // public function mount()
+    // {
+    //     $this->school_year = '2022-2023';
+    //     $this->semester = '1st Semester';
+    //     $this->laboratory = 'Lab 1';
+    //     $this->days = 'Monday';
+    // }
 
     //Realtime Validation - Kada input, vinavalidate agad
     public function updated($field)
@@ -54,6 +54,7 @@ class AddSchedule extends ModalComponent
         $validatedData = $this->validate(); // Validate after submit button is clicked
         Schedule::create($validatedData);
         $this->closeModal();
+        $this->emit('updateShowFaculty');
         
 
     

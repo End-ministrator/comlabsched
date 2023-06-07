@@ -2,15 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
+use App\Models\Schedule;
+use Livewire\Component;
 use LivewireUI\Modal\ModalComponent;
 
-
-class ShowFaculty extends ModalComponent
+class ShowSchedule extends ModalComponent
 {
 
-    // public $users;
-    public $faculties;
+    public $schedules;
 
     protected $listeners = [
         'updateShowFaculty' => 'refreshData'
@@ -19,12 +18,12 @@ class ShowFaculty extends ModalComponent
 
     public function refreshData()
     {
-        $this->faculties = User::all(); // Refresh the faculties data
+        $this->schedules = Schedule::all(); // Refresh the faculties data
     }
+    
 
     public function render()
     {
-
-        return view('livewire.show-faculty');
+        return view('livewire.show-schedule');
     }
 }
