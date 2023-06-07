@@ -38,19 +38,21 @@ class DatabaseSeeder extends Seeder
             'image' =>  '/images/usersample.jpg',
         ]);
 
-        // Schedule::create([
-        //     'name' => 'Schedule 1',
-        //     'start_time' => '2023-06-5 08:00:00',
-        //     'end_time' => '2023-06-5 09:00:00',
-        //     'user_id'=>1,
-        //     'laboratory'=>'lab1',
-        //     'school_year' => '2022-2023',
-        //     'semester' => '2nd Semester',
-        //     'recurrence' => 'daily',
-        //     'recurrence_value' => 2,
-        //     'created_at'=> Carbon::now(),
-        //     'updated_at' => Carbon::now(),
-        // ]);
+        Schedule::create([
+            'name' => 'Schedule 1',
+            'start_time' => '2023-06-5 08:00:00',
+            'end_time' => '2023-06-5 09:00:00',
+            'user_id'=>1,
+            'laboratory'=>'lab1',
+            'school_year' => '2022-2023',
+            'semester' => '2nd Semester',
+            'recurrence' => 'daily',
+            'recurrence_value' => 2,
+            'created_at'=> Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        
+        // template for schedules table
         // $table->id('id');
         //     $table->string('name');
         //     $table->datetime('start_time');
@@ -65,6 +67,7 @@ class DatabaseSeeder extends Seeder
         //     $table->timestamps();
         //     $table->softDeletes();
 
+        // old schedules template
         // Schedule::create([
         //     'start_time' => '00:00',
         //     'end_time' => '23:59',
