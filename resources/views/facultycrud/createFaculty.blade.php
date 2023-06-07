@@ -23,8 +23,6 @@
                 </select></br>
                 <label>Tag Id</label></br>
                 <input type="text" name="tag_id" id="tag_id" class="form-control"></br>
-                <label>Permissions</label></br>
-                <input type="text" name="permissions" id="permissions" class="form-control"></br>
                 
                 <input type="submit" value="Save" class="btn btn-success"></br>
             </form>

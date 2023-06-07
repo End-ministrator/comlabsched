@@ -1,7 +1,6 @@
 <div class="flex bg-white dark:bg-gray-700 flex-col justify-center items-center p-1">
     <!-- <span class="text-center w-full flex text-3xl ">Edit Faculty</span> -->
 
-
     <form wire:submit.prevent="editFaculty" method="post" class="w-full flex flex-col">
         @csrf
         <input type="hidden" value="{{ $facultyId }}" wire:model="faculty_id" />
@@ -47,14 +46,6 @@
         <input type="text" wire:model="tag_id"
             class="form-control rounded-lg h-8 mb-3 pl-1 bg-smokeywhite dark:bg-gray-800">
         @error('tag_id')
-            <p class="error text-red-500">{{ $message }}</p>
-        @enderror
-
-
-        <label>Permissions</label>
-        <input type="text" wire:model="permissions"
-            class="form-control rounded-lg h-8 mb-3 pl-1 bg-smokeywhite dark:bg-gray-800">
-        @error('permissions')
             <p class="error text-red-500">{{ $message }}</p>
         @enderror
 

@@ -19,7 +19,6 @@ class EditFaculty extends ModalComponent
     public $password;
     public $role;
     public $tag_id;
-    public $permissions;
     public $faculty_id;
 
     
@@ -35,7 +34,6 @@ class EditFaculty extends ModalComponent
         // $this->password = $user->password;
         $this->role = $user->role;
         $this->tag_id = $user->tag_id;
-        $this->permissions = $user->permissions;
     }
 
     protected $rules = [
@@ -45,7 +43,6 @@ class EditFaculty extends ModalComponent
         // 'password' => 'required|min:8',
         'role' => 'required',
         'tag_id' => 'required',
-        'permissions' => 'required',
     ];
 
     protected $validationAttributes = [
@@ -55,7 +52,6 @@ class EditFaculty extends ModalComponent
         'password' => 'Password',
         'role' => 'Role',
         'tag_id' => 'Tag id',
-        'permissions' => 'Permissions',
     ];
 
     public function updated($field)

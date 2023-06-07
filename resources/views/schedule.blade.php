@@ -58,7 +58,7 @@
 
 
         
-            <livewire:schedule-table theme="tailwind"/> 
+            {{-- <livewire:schedule-table theme="tailwind"/>  --}}
                 {{-- @foreach ($schedules as $schedule)
                     <p>Time: {{$schedule->start_time}} - {{$schedule->end_time}}</p>
                     <p>Day: {{$schedule->days}}</p>

@@ -88,6 +88,13 @@
 
         });
     </script>
+
+    {{-- <!-- moment lib -->
+    <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
+
+    <!-- the moment-to-fullcalendar connector. must go AFTER the moment lib -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@6.1.8/index.global.min.js'></script> --}}
+
     <!-- full calendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.8/index.global.min.js'></script>
     <script>
@@ -96,38 +103,39 @@
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-                initialView: 'dayGridMonth',
+                initialView: 'resourceTimeGridDay',
                 nowIndicator: true,
-                slotMinTime: '08:00:00',
+                slotMinTime: '07:00:00',
                 slotMaxTime: '20:00:00',
-                slotduration: '00:15:00',
-                height: 780,
+                slotduration: '00:30:00',
+                height: 800,
                 datesAboveResources: true,
                 headerToolbar: {
-                    left: 'prev,next',
+                    left: 'prev,next,today',
                     center: 'title',
-                    right: 'resourceTimeGridDay,resourceTimeGridWeek,resourceDayGridMonth,resourceListMonth'
+                    right: 'resourceTimeGridDay,resourceTimeGridWeek,listWeek'
                 },
                 views: {
                     resourceTimeGridWeek: {
-                        type: 'resourceTimeGrid',
+                        type: 'resourceTimeGridWeek',
                         duration: {
                             days: 7
                         },
-                        buttonText: '7 days'
+                        buttonText: 'week'
                     }
                 },
                 resources: [{
-                        id: 'a',
-                        title: 'Room A'
+                        id: 'lab1',
+                        title: 'Lab 1'
                     },
                     {
-                        id: 'b',
-                        title: 'Room B'
+                        id: 'lab2',
+                        title: 'Lab 2'
                     }
                 ],
-                events: 'https://fullcalendar.io/api/demo-feeds/events.json?with-resources=2',
+                // events: 'https://fullcalendar.io/api/demo-feeds/events.json?with-resources=2',
                 editable: true,
+                allDaySlot: false,
             });
 
             calendar.render();
@@ -162,7 +170,6 @@
     @yield('content')
     @livewireScripts
     @livewire('livewire-ui-modal')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 <!-- <footer>
     <div class="flex w-full bg-zinc-500 h-12 text-center -mb-28">
