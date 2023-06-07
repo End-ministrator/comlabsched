@@ -15,7 +15,7 @@ class Schedule extends Model
      */
     protected $fillable = [
         'schedule_id',
-        'name',
+        'title',
         'user_id',
         'start_time',
         'end_time',

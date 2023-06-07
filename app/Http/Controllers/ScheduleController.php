@@ -38,9 +38,9 @@ class ScheduleController extends Controller
     public function schedule()
     {
 
-        $data = Schedule::all();
-        // dd($data);
-        return view('schedulecrud.schedule')->with(compact('data'));
+        $schedules = Schedule::all();
+        // dd($schedules);
+        return view('schedulecrud.schedule')->with(compact('schedules'));
     }
 
     // public function addSchedule(){

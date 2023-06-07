@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 
+   
+
+
     <!-- Styles -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     @livewireStyles
@@ -20,8 +23,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <script src="{{ asset('js/app.js') }}"></script>
-
-
 
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/f26d36d903.js" crossorigin="anonymous"></script>

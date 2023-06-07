@@ -7,6 +7,9 @@ use LivewireUI\Modal\ModalComponent;
 
 class AddSchedule extends ModalComponent
 {
+    public $title;
+
+    public $user_id;
     public $start_time;
     public $end_time;
     public $days;
@@ -16,20 +19,21 @@ class AddSchedule extends ModalComponent
     public $semester;
 
     protected $rules = [
+        'title' => 'required',
+        'user_id' => 'required',
         'start_time' => 'required',
         'end_time' => 'required',
-        'days' => 'required',
-        'faculty_id' => 'required',
         'laboratory' => 'required',
         'school_year' => 'required',
         'semester' => 'required',
     ];
 
     protected $validationAttributes = [
+        
+        'title' => 'Title',
+        'user_id' => 'User ID',
         'start_time' => 'Start Time',
         'end_time' => 'End Time',
-        'days' => 'Days',
-        'faculty_id' => 'Faculty',
         'laboratory' => 'Laboratory',
         'school_year' => 'School Year',
         'semester' => 'Semester',
@@ -55,9 +59,6 @@ class AddSchedule extends ModalComponent
         Schedule::create($validatedData);
         $this->closeModal();
         $this->emit('updateShowFaculty');
-        
-
-    
     }
 
 

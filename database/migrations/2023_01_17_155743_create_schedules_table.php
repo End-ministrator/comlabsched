@@ -15,13 +15,13 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name');
+            $table->string('title');
             $table->datetime('start_time');
             $table->datetime('end_time');
             $table->string('laboratory');
             $table->string('school_year');
             $table->string('semester');
-            $table->string('recurrence');
+            $table->string('recurrence')->nullable();
             $table->integer('recurrence_value')->nullable();
             $table->timestamps();
             $table->softDeletes();
