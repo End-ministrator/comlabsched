@@ -49,10 +49,11 @@
             <p class="error text-red-500">{{ $message }}</p>
         @enderror
 
-        <div class="w-full items-center justify-center flex">
-            <button type="submit"
-                class="btn btn-success  bg-blue-500 dark:bg-blue-700 w-16 h-7 rounded-lg ">Update</button>
-            <button wire:click="closeModal">Close</button>
+        <div class="w-full items-center justify-end pr-7 my-2 flex space-x-3">
+                      <button wire:click="closeModal" class="rounded-lg border border-blue-700 w-20 h-8">Close</button>
+            <button type="submit" class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Update</button>
+  
+>>>>>>> main
         </div>
 
     </form>
