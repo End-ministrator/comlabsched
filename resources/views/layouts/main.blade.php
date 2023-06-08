@@ -10,30 +10,21 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 
-   
-
-
     <!-- Styles -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    @livewireStyles
-    <!-- Scripts -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Toastr -->
     <!-- <link rel="stylesheet" href="{{ asset('node_modules/toastr/build/toastr.css') }}" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <script src="{{ asset('js/app.js') }}"></script>
-
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/f26d36d903.js" crossorigin="anonymous"></script>
-    @livewireStyles
-    <!-- Alpine v3 -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Chart Js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    {{-- jQuery --}}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!-- Alpine v3 -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
 
@@ -164,7 +155,6 @@
     @yield('content')
     @livewireScripts
     @livewire('livewire-ui-modal')
-
     @livewireStyles
 </body>
 <!-- <footer>
