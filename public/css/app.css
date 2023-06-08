@@ -605,6 +605,14 @@ video {
   top: 8rem;
   bottom: 8rem;
 }
+.inset-y-14 {
+  top: 3.5rem;
+  bottom: 3.5rem;
+}
+.inset-y-12 {
+  top: 3rem;
+  bottom: 3rem;
+}
 .\!left-auto {
   left: auto !important;
 }
@@ -957,6 +965,12 @@ video {
   -webkit-margin-start: auto;
           margin-inline-start: auto;
 }
+.mt-7 {
+  margin-top: 1.75rem;
+}
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1139,6 +1153,9 @@ video {
 }
 .max-h-\[calc\(100\%-64px\)\] {
   max-height: calc(100% - 64px);
+}
+.max-h-screen {
+  max-height: 100vh;
 }
 .min-h-\[305px\] {
   min-height: 305px;
@@ -1716,6 +1733,9 @@ video {
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.items-start {
+  align-items: flex-start;
 }
 .items-end {
   align-items: flex-end;

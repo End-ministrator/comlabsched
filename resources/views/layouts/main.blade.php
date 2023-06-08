@@ -145,14 +145,7 @@
 
 
 
-    <script>
-        const success = document.getElementById('toastsuccess');
-
-        // Hide the element after 3 seconds (3000 milliseconds)
-        setTimeout(() => {
-            success.classList.add('hidden');
-        }, 3000);
-    </script>
+ 
 </head>
 
 <body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white  " id="body">
@@ -171,6 +164,8 @@
     @yield('content')
     @livewireScripts
     @livewire('livewire-ui-modal')
+
+    @livewireStyles
 </body>
 <!-- <footer>
     <div class="flex w-full bg-zinc-500 h-12 text-center -mb-28">

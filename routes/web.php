@@ -51,6 +51,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/logs', function () {
         return view('accessLogs');
     })->name('logs');
+  
+ 
 
     // Settings
     Route::get('/settings', function () {
@@ -61,14 +63,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/settings-upload', [UserController::class, 'uploadProfile'])->name('uploadProfile');
 });
 
+    // Monitoring
+    Route::get('/monitoring', [MonitoringCalendarController::class, 'getEvent'])->name('monitoring');
+
+
+    
 // Admin routes ROUTES N KAY ADMIN LNG PWEDE DITO LALAGAY
 Route::middleware(['auth', 'auth.admin'])->group(function () {
     // Faculty
     Route::get('/faculty', [UserController::class, 'index']);
     // Schedule
     Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
-    // Monitoring
-    Route::get('/monitoring', [MonitoringCalendarController::class, 'getEvent'])->name('monitoring');
+
 
 
     //   Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');

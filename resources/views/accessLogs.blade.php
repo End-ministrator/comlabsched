@@ -18,13 +18,16 @@
     <div class=" lg:ml-x sm:ml-xsm  md:ml-xmd ml-xsm  flex-col w-full ">
             <x-topbar/>
             <!-- main content goes here -->
-            <div class="flex justify-center items-center h-screen w-full ">
-                <div class="w-11/12 h-auto bg-white dark:bg-gray-700 p-4 rounded-md ">
+            <div class="flex justify-center items-start h-screen w-full ">
+                <div class="w-11/12 mt-8 h-auto  bg-white dark:bg-gray-700 p-4 rounded-md ">
                     <div class="mb-6">
                         <span class="text-3xl">
                             List of Logs
                         </span>
                     </div>
+                    
+
+
                     <livewire:log-table theme="tailwind"/> 
                     
                 </div>
