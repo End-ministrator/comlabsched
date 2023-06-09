@@ -22,7 +22,7 @@ class RfidController extends Controller
     private function rfidReader()
     {
         $tagId = shell_exec("python3 /app/access_control/access_control.py");
-        // return trim($tagId);
+        //return trim($tagId);
         dd($tagId);
     }
 }
