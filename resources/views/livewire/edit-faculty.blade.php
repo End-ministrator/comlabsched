@@ -50,9 +50,12 @@
         @enderror
 
         <div class="w-full items-center justify-end pr-7 my-2 flex space-x-3">
-            <button wire:click="closeModal" class=" closeModal rounded-lg border border-blue-700 w-20 h-8">Close</button>
+
             <button type="submit"
                 class="btn btn-success closeModal  bg-blue-500 w-20 h-8 text-white rounded-lg !important">Update</button>
+
+            <button wire:click="closeModal" id="closeRefresh"
+                class=" closeModal rounded-lg border border-blue-700 w-20 h-8">Close</button>
 
         </div>
 
@@ -61,13 +64,13 @@
 
 </div>
 <script>
-var closeModals = document.querySelectorAll('.closeModal');
+    var closeModals = document.querySelectorAll('.closeModal');
 
-closeModals.forEach(function(closeModal) {
-  closeModal.addEventListener('click', function() {
-    setTimeout(function() {
-      location.reload();
-    }, 15); // Delay of 3 seconds before refreshing
-  });
-});
+    closeModals.forEach(function(closeModal) {
+        closeModal.addEventListener('click', function() {
+            setTimeout(function() {
+                location.reload();
+            }, 15); // Delay of 3 seconds before refreshing
+        });
+    });
 </script>
