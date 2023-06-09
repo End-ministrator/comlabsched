@@ -50,8 +50,8 @@
         @enderror
         <div class="flex items-center justify-center">
             <div class="w-full my-2 space-x-3 flex justify-end pr-7">
-                <button wire:click="closeModal"  id="closeRefresh" class="rounded-lg border border-blue-700 w-20 h-8">Close</button> 
-                <button  id="addRefresh"type="submit" value="Save" class="btn btn-success bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
+                <button wire:click="closeModal"  id="closeRefresh" class="rounded-lg border closeModal  border-blue-700 w-20 h-8">Close</button> 
+                <button  id="addRefresh"type="submit" value="Save" class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
                 
             
             </div>
@@ -70,7 +70,11 @@
 </div>
 
 <script>
+var closeModals = document.querySelectorAll('.closeModal');
 
-
-
+closeModals.forEach(function(closeModal) {
+  closeModal.addEventListener('click', function() {
+    location.reload();
+  });
+});
 </script>
