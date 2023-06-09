@@ -122,22 +122,56 @@
 
             function handleSearch() {
                 const searchValue = searchInput.value.toLowerCase();
-
-                // Get all table rows
                 const rows = document.querySelectorAll('table tbody tr');
+                let noResultsFound = true; // Flag to track if any matching rows are found
 
-                // Iterate over each row and check if it matches the search query
                 rows.forEach(row => {
                     const rowData = row.textContent.toLowerCase();
                     if (rowData.includes(searchValue)) {
                         row.style.display = ''; // Show the row if it matches
+                        noResultsFound = false; // Set the flag to false since a matching row is found
                     } else {
                         row.style.display = 'none'; // Hide the row if it doesn't match
                     }
                 });
+
+                const table = document.getElementById('tableko');
+                const tbody = table.querySelector('tbody');
+                let noResultsRow = tbody.querySelector('.no-results-row');
+
+                // Remove the existing "No Results Found" row if it exists
+                if (noResultsRow) {
+                    noResultsRow.remove();
+                }
+
+                // Display "No Results Found" message if no matching rows are found
+                if (noResultsFound) {
+                    noResultsRow = document.createElement('tr');
+                    noResultsRow.classList.add('no-results-row');
+                    const noResultsCell = document.createElement('td');
+                    noResultsCell.textContent = 'No Results Found';
+                    noResultsCell.setAttribute('colspan', '8'); // Adjust the colspan based on the number of columns in your table
+                    noResultsRow.appendChild(noResultsCell);
+
+                    // Calculate the number of columns in the table
+                    const numColumns = table.querySelector('thead tr').childElementCount;
+                    const emptyRow = document.createElement('tr');
+                    const emptyCell = document.createElement('td');
+                    emptyCell.setAttribute('colspan', numColumns);
+                    emptyRow.appendChild(emptyCell);
+
+                    tbody.appendChild(emptyRow);
+                    tbody.appendChild(noResultsRow);
+                } else {
+                    // Remove the empty row if there are matching rows
+                    const emptyRow = tbody.querySelector('.empty-row');
+                    if (emptyRow) {
+                        emptyRow.remove();
+                    }
+                }
             }
 
-            // table colors
+                        // table colors
             // Add alternating row colors to the table
             const table = document.getElementById('tableko');
             const rows = table.getElementsByTagName('tr');

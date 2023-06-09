@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Log;
-
+use Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter;
 use Illuminate\Database\Eloquent\Builder;
 
 class LogTable extends DataTableComponent
@@ -18,7 +18,19 @@ class LogTable extends DataTableComponent
     {
         $this->setPrimaryKey('id');
         $this->setSingleSortingEnabled();
+        $this->setFiltersStatus(true);
     }
+
+
+
+    public function filters(): array
+    {
+        return [
+            DateFilter::make('Verified From'),
+        ];
+    }
+
+
 
 
     public function columns(): array
@@ -29,7 +41,8 @@ class LogTable extends DataTableComponent
                 ->searchable(),
 
             Column::make("RFID Tag", "rfid")
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
             Column::make("Status", "status")
                 ->sortable(),

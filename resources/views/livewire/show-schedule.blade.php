@@ -1,4 +1,5 @@
-    <div>
+   <!-- c -->
+   <div>
         <div class="flex flex-row bg-smokeywhite">
 
             <div class="flex">
@@ -122,28 +123,50 @@
 <script>
 // search bar
 document.addEventListener("DOMContentLoaded", function() {
-        var searchInput = document.getElementById('searchInput');
-        var dataTable = document.getElementById('tableko');
+    var searchInput = document.getElementById('searchInput');
+    var dataTable = document.getElementById('tableko');
+    var tableBody = dataTable.getElementsByTagName('tbody')[0];
+    var noResultsRow = document.createElement('tr');
+    var noResultsCell = document.createElement('td');
+    noResultsCell.setAttribute('colspan', '8');
+    noResultsCell.classList.add('text-center');
+    noResultsCell.textContent = 'No Results Found';
+    noResultsRow.appendChild(noResultsCell);
 
-        searchInput.addEventListener('input', filterTable);
+    var originalTableHTML = tableBody.innerHTML; // Store the original table HTML
 
-        function filterTable() {
-            var filterValue = searchInput.value.toLowerCase();
-            var rows = dataTable.getElementsByTagName('tr');
+    searchInput.addEventListener('input', filterTable);
 
-            for (var i = 1; i < rows.length; i++) {
-                var row = rows[i];
-                var titleCell = row.cells[1]; // Adjust the index to match the "Title" column
+    function filterTable() {
+        var filterValue = searchInput.value.toLowerCase();
+        var rows = tableBody.getElementsByTagName('tr');
+        var matchingRowCount = 0;
 
-                var title = titleCell.innerText.toLowerCase();
-                if (title.includes(filterValue)) {
-                    row.style.display = ""; // Display the row if the title matches the search input
-                } else {
-                    row.style.display = "none"; // Hide the row if the title does not match
-                }
+        if (filterValue.trim() === '') {
+            // Search bar is empty, revert to original table
+            tableBody.innerHTML = originalTableHTML;
+            return;
+        }
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var rowData = row.textContent.toLowerCase();
+
+            if (rowData.includes(filterValue)) {
+                row.style.display = ''; // Show the row if it matches
+                matchingRowCount++;
+            } else {
+                row.style.display = 'none'; // Hide the row if it doesn't match
             }
         }
-    });
+
+        if (matchingRowCount === 0) {
+            tableBody.innerHTML = ''; // Clear existing rows
+            tableBody.appendChild(noResultsRow); // Append the "No Results Found" row
+        }
+    }
+});
+
 
             // table colors
             // Add alternating row colors to the table
