@@ -65,7 +65,9 @@ var closeModals = document.querySelectorAll('.closeModal');
 
 closeModals.forEach(function(closeModal) {
   closeModal.addEventListener('click', function() {
-    location.reload();
+    setTimeout(function() {
+      location.reload();
+    }, 15); // Delay of 3 seconds before refreshing
   });
 });
 </script>
