@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Schedule 1',
             'date' => '2023-06-5',
             'start_time' => '08:00:00',
-            'end_time' => '09:00:00',
+            'end_time' => '23:00:00',
             'user_id'=>1,
             'laboratory'=>'lab1',
             'school_year' => '2022-2023',
