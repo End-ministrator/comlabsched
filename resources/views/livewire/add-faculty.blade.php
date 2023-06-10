@@ -71,9 +71,20 @@
 
     closeModals.forEach(function(closeModal) {
         closeModal.addEventListener('click', function() {
-            setTimeout(function() {
-                location.reload();
-            }, 15); // Delay of 3 seconds before refreshing
+            // Check if any input field is empty or email does not contain "@tup.edu.ph"
+            var inputs = document.querySelectorAll(
+                'input[type="text"], input[type="time"], select');
+            var isEmpty = Array.from(inputs).some(function(input) {
+                return input.value.trim() === '';
+            });
+            var emailInput = document.getElementById('email');
+            var isInvalidEmail = !emailInput.value.includes('@tup.edu.ph');
+
+            if (!isEmpty && !isInvalidEmail) {
+                setTimeout(function() {
+                    location.reload();
+                }, 15); // Delay of 3 seconds before refreshing
+            }
         });
     });
 </script>

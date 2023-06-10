@@ -19,6 +19,7 @@ class LogTable extends DataTableComponent
         $this->setPrimaryKey('id');
         $this->setSingleSortingEnabled();
         $this->setFiltersStatus(true);
+        
     }
 
 
