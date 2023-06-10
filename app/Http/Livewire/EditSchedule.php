@@ -9,13 +9,15 @@ class EditSchedule extends ModalComponent
 {
     public $scheduleId;
     public $title;
+    public $date;
     public $user_id;
     public $start_time;
     public $end_time;
-
     public $laboratory;
     public $school_year;
     public $semester;
+    public $recurrence;
+    public $recurrence_value;
     public $schedule_id;
 
     public function mount($scheduleId)
@@ -23,9 +25,12 @@ class EditSchedule extends ModalComponent
         $schedule = Schedule::find($scheduleId);
         $this->scheduleId = $scheduleId;
         $this->title = $schedule->title;
+        $this->date = $schedule->date;
         $this->user_id = $schedule->user_id;
         $this->start_time = $schedule->start_time;
         $this->end_time = $schedule->end_time;
+        $this->recurrence = $schedule->recurrence;
+        $this->recurrence_value = $schedule->recurrence_value;
         $this->laboratory = $schedule->laboratory;
         $this->school_year = $schedule->school_year;
         $this->semester = $schedule->semester;
@@ -33,22 +38,28 @@ class EditSchedule extends ModalComponent
 
     protected $rules = [
         'title' => 'required',
+        'date' => 'required',
         'user_id' => 'required',
         'start_time' => 'required',
         'end_time' => 'required',
         'laboratory' => 'required',
         'school_year' => 'required',
         'semester' => 'required',
+        'recurrence' => 'required',
+        'recurrence_value' => 'required',
     ];
 
     protected $validationAttributes = [
         'title' => 'Title',
+        'date' => 'required',
         'user_id' => 'User ID',
         'start_time' => 'Start Time',
         'end_time' => 'End Time',
         'laboratory' => 'Laboratory',
         'school_year' => 'School Year',
         'semester' => 'Semester',
+        'recurrence' => 'Recurrence',
+        'recurrence_value' => 'Recurrence Value',
     ];
 
     //Realtime Validation - Kada input, vinavalidate agad

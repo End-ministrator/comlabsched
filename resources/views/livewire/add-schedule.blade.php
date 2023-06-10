@@ -21,10 +21,20 @@
 
             </div>
         </div>
+
+        <div class="flex flex-col mb-3 grow">
+            <label class="mb-2">Date</label>
+            <input type="date" wire:model="date" id="date"
+                class=" rounded p-2 shadow-inner text-black bg-smokeywhite ">
+            @error('date')
+                <span class="text-red-400 text-sm py-1">{{ $message }}</span>
+            @enderror
+        </div>
+
         <div class="flex w-full gap-2">
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">Start Time</label>
-                <input type="datetime-local" class=" rounded p-2 shadow-inner text-black  bg-smokeywhite"
+                <input type="time" class=" rounded p-2 shadow-inner text-black  bg-smokeywhite"
                     wire:model="start_time">
                 @error('start_time')
                     <span class="text-red-400 text-sm py-1">{{ $message }}</span>
@@ -33,9 +43,33 @@
 
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">End Time</label>
-                <input type="datetime-local" class=" rounded p-2 shadow-inner text-black bg-smokeywhite"
-                    wire:model="end_time">
+                <input type="time" class=" rounded p-2 shadow-inner text-black bg-smokeywhite" wire:model="end_time">
                 @error('end_time')
+                    <span class="text-red-400 text-sm py-1">{{ $message }}</span>
+                @enderror
+
+            </div>
+        </div>
+
+        <div class="flex w-full gap-2">
+            <div class="flex flex-col mb-3 grow">
+                <label class="mb-2">Recurrence</label>
+                <select class=" rounded p-2 shadow-inner text-black bg-smokeywhite" wire:model="recurrence">
+                    <option hidden value="">Select Recurrence</option>
+                    <option value="none">None</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+                @error('recurrence')
+                    <span class="text-red-400 text-sm py-1">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="flex flex-col mb-3 grow">
+                <label class="mb-2">Recurrence Value</label>
+                <input type="text" class=" rounded p-2 shadow-inner text-black bg-smokeywhite"
+                    wire:model="recurrence_value">
+                @error('recurrence_value')
                     <span class="text-red-400 text-sm py-1">{{ $message }}</span>
                 @enderror
 
@@ -80,9 +114,16 @@
             @enderror
 
         </div>
+        <div class="flex items-center justify-center">
+            <div class="w-full my-2 space-x-3 flex justify-end pr-7">
 
-        <button type="submit" class="w-full rounded p-2 text-white closeModal bg-blue-500 hover:bg-blue-700 mt-2"
-            wire:click="addSched">Submit</button>
+                <button id="addRefresh" type="submit" wire:click="addSched"
+                    class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
+
+                <button wire:click="closeModal" id="closeRefresh"
+                    class="rounded-lg border  border-blue-700 w-20 h-8">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -90,10 +131,19 @@
     var closeModals = document.querySelectorAll('.closeModal');
 
     closeModals.forEach(function(closeModal) {
-    closeModal.addEventListener('click', function() {
-        setTimeout(function() {
-        location.reload();
-        }, 15); // Delay of 3 seconds before refreshing
-    });
+        closeModal.addEventListener('click', function() {
+            // Check if any input field is empty
+            var inputs = document.querySelectorAll(
+                'input[type="text"], input[type="time"], select');
+            var isEmpty = Array.from(inputs).some(function(input) {
+                return input.value.trim() === '';
+            });
+
+            if (!isEmpty) {
+                setTimeout(function() {
+                    location.reload();
+                }, 15); // Delay of 3 seconds before refreshing
+            }
+        });
     });
 </script>
