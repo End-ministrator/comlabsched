@@ -73,45 +73,45 @@
                                                    {{ $loop->iteration }}</td>
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->title }}</td>
+                                                   {{ $sch['title'] }}</td>
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->date }}</td>
+                                                   {{ $sch['date'] }}</td>
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->start_time }}</td>
+                                                   {{ $sch['start_time'] }}</td>
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->end_time }}</td>
+                                                   {{ $sch['end_time'] }}</td>
 
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->laboratory }}</td>
+                                                   {{ $sch['laboratory'] }}</td>
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->school_year }}</td>
+                                                   {{ $sch['school_year'] }}</td>
 
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->recurrence }}</td>
+                                                   {{ $sch['recurrence'] }}</td>
                                                <td
                                                    class="text-center -text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->recurrence_value }}</td>
+                                                   {{ $sch['recurrence_value'] }}</td>
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                   {{ $sch->semester }}</td>
+                                                   {{ $sch['semester'] }}</td>
 
                                                <td
                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
 
                                                    <button
-                                                       onclick="Livewire.emit('openModal', 'edit-schedule', { scheduleId: {{ $sch->id }}}) "
+                                                       onclick="Livewire.emit('openModal', 'edit-schedule', { scheduleId: {{ $sch['id'] }}}) "
                                                        class="btn btn-primary btn-sm">
                                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>|
                                                    </button>
 
                                                    <button
-                                                       onclick="Livewire.emit('openModal', 'delete-schedule', { scheduleId: {{ $sch->id }}}) "
+                                                       onclick="Livewire.emit('openModal', 'delete-schedule', { scheduleId: {{ $sch['id'] }}}) "
                                                        class="btn btn-primary btn-sm">
                                                        <i class="fa fa-trash-o" aria-hidden="true"></i>|
                                                    </button>

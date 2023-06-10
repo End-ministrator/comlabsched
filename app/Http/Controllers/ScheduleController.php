@@ -38,8 +38,9 @@ class ScheduleController extends Controller
     public function schedule()
     {
 
-        $schedules = Schedule::all();
-        // dd($schedules);
+        // $schedules = Schedule::all();
+        $schedules = Schedule::all()->toArray();
+      
         return view('schedulecrud.schedule')->with(compact('schedules'));
     }
 
