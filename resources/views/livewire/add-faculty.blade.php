@@ -1,7 +1,5 @@
 <div>
     <div class="flex items-center justify-center p-2 bg-white dark:bg-gray-700">
-
-
         <form wire:submit.prevent="saveFaculty" method="POST" class=" w-full flex flex-col py-2 px-1
         ">
             @csrf
@@ -42,41 +40,40 @@
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
 
-        <label>Tag Id</label>
-        <input type="text" wire:model="tag_id" id="tag_id"
-            class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
-        @error('tag_id')
-            <p class="error text-red-500">{{ $message }}</p>
-        @enderror
-        <div class="flex items-center justify-center">
-            <div class="w-full my-2 space-x-3 flex justify-end pr-7">
-                <button wire:click="closeModal"  id="closeRefresh" class="rounded-lg border closeModal  border-blue-700 w-20 h-8">Close</button> 
-                <button  id="addRefresh"type="submit" value="Save" class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
-                
-            
+            <label>Tag Id</label>
+            <input type="text" wire:model="tag_id" id="tag_id"
+                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+            @error('tag_id')
+                <p class="error text-red-500">{{ $message }}</p>
+            @enderror
+            <div class="flex items-center justify-center">
+                <div class="w-full my-2 space-x-3 flex justify-end pr-7">
+
+                    <button id="addRefresh"type="submit" value="Save"
+                        class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
+                        
+                    <button wire:click="closeModal" id="closeRefresh"
+                        class="rounded-lg border closeModal  border-blue-700 w-20 h-8">Close</button>
+
+
+                </div>
             </div>
 
         </form>
     </div>
 
 
+</div>
 
-    <script>
-        function refreshPage() {
-            location.reload();
-        }
-    </script>
-</div>
-</div>
 
 <script>
-var closeModals = document.querySelectorAll('.closeModal');
+    var closeModals = document.querySelectorAll('.closeModal');
 
-closeModals.forEach(function(closeModal) {
-  closeModal.addEventListener('click', function() {
-    setTimeout(function() {
-      location.reload();
-    }, 15); // Delay of 3 seconds before refreshing
-  });
-});
+    closeModals.forEach(function(closeModal) {
+        closeModal.addEventListener('click', function() {
+            setTimeout(function() {
+                location.reload();
+            }, 15); // Delay of 3 seconds before refreshing
+        });
+    });
 </script>
