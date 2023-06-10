@@ -15,7 +15,7 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tag_id');
+            // $table->foreignId('rfid');
             $table->boolean('access_granted');
             $table->dateTime('created_at');
         });

@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('logs', function (Blueprint $table) {
-            $table->unsignedBigInteger('tag_id')->nullable();
-            $table->foreign('tag_id')->references('tag_id')->on('users');
+            $table->unsignedBigInteger('rfid');
+            $table->foreign('rfid')->references('tag_id')->on('users');
         });
     }
 

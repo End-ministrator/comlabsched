@@ -40,7 +40,7 @@ class LogTable extends DataTableComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::make("Tag ID", "tag_id")
+            Column::make("Tag ID", "rfid")
                 ->sortable()
                 ->searchable(),
 
