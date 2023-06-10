@@ -7,12 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Log extends Model
 {
     protected $fillable = [
-        'rfid',
-        'status',
+        'user_id',
+        'tag_id',
+        'access_granted',
+        'created_at',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+
 }

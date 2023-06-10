@@ -40,17 +40,17 @@ class DatabaseSeeder extends Seeder
 
         Schedule::create([
             'title' => 'Schedule 1',
-            'date' => '2023-06-5',
-            'start_time' => '08:00:00',
+            'date' => '2023-06-10',
+            'start_time' => '04:00:00',
             'end_time' => '23:00:00',
-            'user_id'=>1,
+            'user_id'=>2,
             'laboratory'=>'lab1',
             'school_year' => '2022-2023',
             'semester' => '2nd Semester',
             'recurrence' => 'daily',
             'recurrence_value' => 2,
-            'created_at'=> Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
+            'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
         ]);
 
         // template for schedules table
@@ -75,8 +75,8 @@ class DatabaseSeeder extends Seeder
         //     'days'=> 'Tuesday',
         //     'faculty_id'=>1,
         //     'laboratory'=>'lab1',
-        //     'created_at'=> Carbon::now(),
-        //     'updated_at' => Carbon::now(),
+        //     'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
+        //     'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
         //     'school_year' => '2022-2023',
         //     'semester' => '1st',
         // ]);
@@ -87,8 +87,8 @@ class DatabaseSeeder extends Seeder
         //     'days'=> 'Friday',
         //     'faculty_id'=>2,
         //     'laboratory'=>'lab2',
-        //     'created_at'=> Carbon::now(),
-        //     'updated_at' => Carbon::now(),
+        //     'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
+        //     'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
         //     'school_year' => '2022-2023',
         //     'semester' => '1st',
         // ]);
@@ -99,8 +99,8 @@ class DatabaseSeeder extends Seeder
         //     'days'=> 'Friday',
         //     'faculty_id'=>1,
         //     'laboratory'=>'lab2',
-        //     'created_at'=> Carbon::now(),
-        //     'updated_at' => Carbon::now(),
+        //     'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
+        //     'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
         //     'school_year' => '2022-2023',
         //     'semester' => '1st',
         // ]);

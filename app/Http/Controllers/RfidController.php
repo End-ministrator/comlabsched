@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Schedule;
+use App\Models\Log;
 use Illuminate\Http\Request;
-use carbon\carbon;
+use Carbon\Carbon;
 
 class RfidController extends Controller
 {
@@ -19,77 +20,65 @@ class RfidController extends Controller
 
     private function rfidReader()
     {
-        //dd("hello");
         $tagId = shell_exec("python3 ~/Desktop/comlabsched/app/access_control/access_control.py");
         return trim($tagId);
-        //dd($tagId);
     }
 
     private function verifyAccess($tagId)
     {
-<<<<<<< HEAD
-        // TODO: Implement the access verification logic here
         $user = $this->retrieveUser($tagId);
-        // dd($user);
-        // if ($this->isFacultyUser($user)) {
         $schedule = $this->retrieveFacultySchedule($user);
+        $accessResponse = $this->grantOrDenyAccess($user, $schedule);
 
-            if ($this->hasCurrentSchedule($schedule)) {
-                // Access granted
-                return response()->json(['status' => 'success', 'message' => 'Access granted']);
-            } else {
-                // No schedule for the current time slot
-                return response()->json(['status' => 'error', 'message' => 'No schedule for the current time slot']);
-            }
-        // } else {
-        // // User is not a faculty
-        // return response()->json(['status' => 'error', 'message' => 'Access denied']);
-    // }
-=======
-        $tagId = shell_exec("python3 /app/access_control/access_control.py");
-        //return trim($tagId);
-        dd($tagId);
->>>>>>> 516b15ac5e8beba788150697da81424cc9c046ac
+        if ($accessResponse['status'] === 'success') {
+            // Access granted
+            $this->logAccess($user, $tagId, true);
+            // Perform any additional actions for granting access
+        } else {
+            // Access denied or other error
+            $this->logAccess($user, $tagId, false);
+            // Perform any additional actions for denying access
+        }
+
+        return $accessResponse;
     }
 
     private function retrieveUser($tagId)
-{
-    // Assuming you have a 'rfid_tag' column in the users table to store the RFID tag ID
-    $user = User::where('tag_id', $tagId)->first();
-    return $user;
-}
+    {
+        $user = User::where('tag_id', $tagId)->first();
+        return $user;
+    }
 
-private function retrieveFacultySchedule($user)
-{
+    private function retrieveFacultySchedule($user)
+    {
+        $currentDateTime = Carbon::now()->setTimezone('Asia/Manila');
+        $schedule = Schedule::where('user_id', $user->id)
+            ->whereDate('date', $currentDateTime->toDateString())
+            ->whereTime('start_time', '<=', $currentDateTime->toTimeString())
+            ->whereTime('end_time', '>=', $currentDateTime->toTimeString())
+            ->first();
+        return $schedule;
+    }
 
-    // $currentDateTime = $user->schedules()->first()->start_time;;
-    $currentDateTime = Carbon::now();
+    private function grantOrDenyAccess($user, $schedule)
+    {
+        if ($user && $schedule) {
+            // Access granted
+            return ['status' => 'success', 'message' => 'Access granted'];
+        } else {
+            // Access denied or other error
+            return ['status' => 'error', 'message' => 'Access denied'];
+        }
+    }
 
-    // $schedule = $user->schedules()->whereDate('date', $currentDateTime->toDateString())
-    //     ->whereTime('start_time', '<=', $currentDateTime->toTimeString())
-    //     ->whereTime('end_time', '>=', $currentDateTime->toTimeString())
-    //     ->first();
-    $schedule = Schedule::where('user_id', $user->id)
-        ->whereDate('date', $currentDateTime->toDateString())
-        ->whereTime('start_time', '<=', $currentDateTime->toTimeString())
-        ->whereTime('end_time', '>=', $currentDateTime->toTimeString())
-        ->first();
-    dd($schedule);
-    return $schedule;
-}
-
-private function hasCurrentSchedule($schedule)
-{
-    return $schedule !== null;
-}
-
-// private function grantOrDenyAccess($user, $hasCurrentSchedule)
-// {
-//     if ($user && $hasCurrentSchedule) {
-//         // Access granted
-//         return response()->json(['status' => 'success', 'message' => 'Access granted']);
-//     }
-//     return response()->json(['status' => 'error', 'message' => 'Access denied']);
-// }
-
+    private function logAccess($user, $tagId, $accessGranted)
+    {
+        $log = new Log();
+        $log->user_id = $user->id;
+        $log->tag_id = $tagId;
+        $log->access_granted = $accessGranted;
+        $log->created_at = Carbon::now()->setTimezone('Asia/Manila');
+        $log->save();
+        dd($log);
+    }
 }

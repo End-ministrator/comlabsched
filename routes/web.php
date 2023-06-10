@@ -31,6 +31,9 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('login');
 });
 
+// Python RFID route
+Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
+
 // Authenticated routes
 Route::middleware('auth')->group(function () {
     // Logout
@@ -93,6 +96,5 @@ Route::middleware(['auth', 'auth.user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
-// Python RFID route
-Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
+
 

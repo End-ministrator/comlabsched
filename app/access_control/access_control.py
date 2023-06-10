@@ -2,12 +2,7 @@ import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 
 reader = SimpleMFRC522()
-while True:
-    tag_id, _ = reader.read()
+tag_id = None
+while tag_id is None:
+    tag_id = reader.read_id()
     print(tag_id)
-<<<<<<< HEAD
-finally:
-    GPIO.cleanup()
-=======
-    GPIO.cleanup()
->>>>>>> 516b15ac5e8beba788150697da81424cc9c046ac
