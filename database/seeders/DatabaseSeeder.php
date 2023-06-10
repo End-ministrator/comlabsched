@@ -106,27 +106,27 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Log::create([
-            'tag_id' => '1093887689476',
-            'status' => 'granted',
+            'rfid' => '1093887689476',
+            'access_granted' => false,
             'created_at' => Carbon::now(),
         ]);
 
         // Log::create([
-        //     'tag_id' => '1093887689476',
+        //     'rfid' => '1093887689476',
         //     'status' => 'granted',
         //     'created_at' => Carbon::now(),
 
         // ]);
 
         Log::create([
-            'tag_id' => '1093887689476',
-            'status' => 'denied',
+            'rfid' => '1093887689476',
+            'access_granted' => true,
             'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
 
         ]);
 
         // Log::create([
-        //     'tag_id' => '1093887689476',
+        //     'rfid' => '1093887689476',
         //     'status' => 'granted',
         //     'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
 

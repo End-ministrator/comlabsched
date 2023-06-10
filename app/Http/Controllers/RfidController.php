@@ -74,7 +74,7 @@ class RfidController extends Controller
     private function logAccess($tagId, $accessGranted)
     {
         $log = new Log();
-        $log->tag_id = $tagId;
+        $log->rfid = $tagId;
         $log->access_granted = $accessGranted;
         $log->created_at = Carbon::now()->setTimezone('Asia/Manila');
         $log->save();

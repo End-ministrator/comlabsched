@@ -9,7 +9,6 @@ class Log extends Model
     protected $fillable = [
         'rfid',
         'access_granted',
-        'created_at',
     ];
 
     public function user()

@@ -17,7 +17,7 @@ class CreateLogsTable extends Migration
             $table->id();
             // $table->foreignId('rfid');
             $table->boolean('access_granted');
-            $table->dateTime('created_at');
+            $table->timestamps();
         });
     }
 
