@@ -50,7 +50,7 @@
 
             </div>
         </div>
-        
+
         <div class="flex w-full gap-2">
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">Recurrence</label>
@@ -132,9 +132,18 @@
 
     closeModals.forEach(function(closeModal) {
         closeModal.addEventListener('click', function() {
-            setTimeout(function() {
-                location.reload();
-            }, 15); // Delay of 3 seconds before refreshing
+            // Check if any input field is empty
+            var inputs = document.querySelectorAll(
+                'input[type="text"], input[type="time"], select');
+            var isEmpty = Array.from(inputs).some(function(input) {
+                return input.value.trim() === '';
+            });
+
+            if (!isEmpty) {
+                setTimeout(function() {
+                    location.reload();
+                }, 15); // Delay of 3 seconds before refreshing
+            }
         });
     });
 </script>

@@ -47,6 +47,17 @@ class AddSchedule extends ModalComponent
         'recurrence_value' => 'Recurrence Value',
     ];
 
+    protected function getScheduleValidationRules()
+    {
+        $rules = $this->rules;
+
+        $rules['date'] .= '|unique:schedules,date,NULL,id,start_time,' . $this->start_time . ',end_time,' . $this->end_time . ',laboratory,' . $this->laboratory;
+        $rules['start_time'] .= '|before:end_time|unique:schedules,start_time,NULL,id,date,' . $this->date . ',end_time,' . $this->end_time . ',laboratory,' . $this->laboratory;
+        $rules['end_time'] .= '|after:start_time|unique:schedules,end_time,NULL,id,date,' . $this->date . ',start_time,' . $this->start_time . ',laboratory,' . $this->laboratory;
+
+        return $rules;
+    }
+
 
     //Realtime Validation - Kada input, vinavalidate agad
     public function updated($field)
@@ -56,7 +67,8 @@ class AddSchedule extends ModalComponent
 
     public function addSched()
     {
-        $validatedData = $this->validate(); // Validate after submit button is clicked
+        $validatedData = $this->validate($this->getScheduleValidationRules());
+        // $validatedData = $this->validate(); // Validate after submit button is clicked
         Schedule::create($validatedData);
         $this->closeModal();
         $this->emit('updateShowFaculty');
