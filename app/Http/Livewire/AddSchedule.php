@@ -59,7 +59,7 @@ class AddSchedule extends ModalComponent
         Schedule::create($validatedData);
         $this->closeModal();
         $this->emit('updateShowFaculty');
-    }
+    } 
 
 
     public function render()
