@@ -8,6 +8,9 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\FacultyShow;
+// hardware integration
+use App\Http\Controllers\RfidController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +92,7 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
 Route::middleware(['auth', 'auth.user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
+
+// Python RFID route
+Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
+
