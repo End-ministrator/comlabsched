@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="flex flex-col h-screen text-black !important  bg-smokeywhite dark:bg-gray-800 b bg-cover bg-center" style="background-image: url('/images/tree.jpg');">
+<div class="flex flex-col h-screen text-black dark:text-white !important  bg-smokeywhite dark:bg-gray-800 b bg-cover bg-center" >
   
 
 
@@ -12,10 +12,10 @@
     
     <!-- main content start -->
     <div class="flex flex-row items-center justify-center mx-24 my-24 basis-4/5">
-      <div class="w-60 h-128 basis-1/3 flex  shadow-black shadow-md bg-[url('/images/bgg.jpg')] bg-no-repeat bg-cover rounded-l-md relative sm:hidden md:hidden lg:block hidden">
+      <div class="w-60 h-128 basis-2/5 flex  shadow-black shadow-md bg-[url('/images/loginbanner.jpeg')] bg-no-repeat bg-cover rounded-l-md relative sm:hidden md:hidden lg:block hidden">
 
       </div>
-      <div class="w-30 h-128 basis-1/3 flex sm:w-30 md:36 lg:w-60  bg-blue-400 shadow-black shadow-md  rounded-r-md relative flex-col items-center justify-evenly  backdrop-filter backdrop-blur-sm bg-opacity-20 ">
+      <div class="w-30 h-128  basis-3/5 sm:basis-3/5 md:basis-3/5 lg:basis-2/5 flex   bg-blue-400 shadow-black shadow-md  rounded-r-md relative flex-col items-center justify-evenly  backdrop-filter backdrop-blur-sm bg-opacity-20 ">
           <div class="ml-4">
               
               <div class="flex  justify-center items-center mb-10 sm:inset-y-20 md:inset-y-20 lg:inset-y-0 inset-y-20 relative mt-6 ">
