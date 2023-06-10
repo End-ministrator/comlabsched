@@ -32,11 +32,11 @@ class RfidController extends Controller
 
         if ($accessResponse['status'] === 'success') {
             // Access granted
-            $this->logAccess($user, $tagId, true);
+            $this->logAccess($tagId, true);
             // Perform any additional actions for granting access
         } else {
             // Access denied or other error
-            $this->logAccess($user, $tagId, false);
+            $this->logAccess($tagId, false);
             // Perform any additional actions for denying access
         }
 
@@ -71,14 +71,12 @@ class RfidController extends Controller
         }
     }
 
-    private function logAccess($user, $tagId, $accessGranted)
+    private function logAccess($tagId, $accessGranted)
     {
         $log = new Log();
-        $log->user_id = $user->id;
         $log->tag_id = $tagId;
         $log->access_granted = $accessGranted;
         $log->created_at = Carbon::now()->setTimezone('Asia/Manila');
         $log->save();
-        dd($log);
     }
 }

@@ -49,8 +49,8 @@ class DatabaseSeeder extends Seeder
             'semester' => '2nd Semester',
             'recurrence' => 'daily',
             'recurrence_value' => 2,
-            'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
-            'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
+            'created_at'=> Carbon::now()->setTimezone('Asia/Manila'),
+            'updated_at' => Carbon::now()->setTimezone('Asia/Manila'),
         ]);
 
         // template for schedules table
@@ -106,23 +106,30 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Log::create([
-            'rfid' => '2345678901',
+            'tag_id' => '1093887689476',
             'status' => 'granted',
+            'created_at' => Carbon::now(),
         ]);
 
-        Log::create([
-            'rfid' => '2345678901',
-            'status' => 'granted',
-        ]);
+        // Log::create([
+        //     'tag_id' => '1093887689476',
+        //     'status' => 'granted',
+        //     'created_at' => Carbon::now(),
+
+        // ]);
 
         Log::create([
-            'rfid' => '2345678901',
+            'tag_id' => '1093887689476',
             'status' => 'denied',
+            'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
+
         ]);
 
-        Log::create([
-            'rfid' => '1234567890',
-            'status' => 'granted',
-        ]);
+        // Log::create([
+        //     'tag_id' => '1093887689476',
+        //     'status' => 'granted',
+        //     'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
+
+        // ]);
     }
 }

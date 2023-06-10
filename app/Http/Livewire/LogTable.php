@@ -40,11 +40,11 @@ class LogTable extends DataTableComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::make("RFID Tag", "rfid")
+            Column::make("Tag ID", "tag_id")
                 ->sortable()
                 ->searchable(),
 
-            Column::make("Status", "status")
+            Column::make("Access Granted", "access_granted")
                 ->sortable(),
 
             Column::make("Logged at", "created_at")
