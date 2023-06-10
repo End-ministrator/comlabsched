@@ -34,15 +34,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'faculty@tup.edu.ph',
             'password' => bcrypt('password'),
             'role' => 'Faculty',
-            'tag_id' => '2345678901',
+            'tag_id' => '1093887689476',
             'image' =>  '/images/usersample.jpg',
         ]);
 
         Schedule::create([
             'title' => 'Schedule 1',
             'start_time' => '2023-06-5 08:00:00',
-            'end_time' => '2023-06-5 09:00:00',
-            'user_id'=>1,
+            'end_time' => '2023-06-5 10:00:00',
+            'user_id'=>2,
             'laboratory'=>'lab1',
             'school_year' => '2022-2023',
             'semester' => '2nd Semester',
@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
             'created_at'=> Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        
+
         // template for schedules table
         // $table->id('id');
         //     $table->string('name');
