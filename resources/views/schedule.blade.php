@@ -18,7 +18,7 @@
     
         <div class="flex flex-col w-full h-full items-center bg-smokeywhite dark:bg-gray-800">
             <div class="flex flex-col bg-white dark:bg-gray-700 rounded-md my-7 p-4  w-full h-full items-center justify-center">
-                <div id='calendar' class="w-full p-4" style="max-width: 1750px; max-height: 625px;">
+                {{-- <div id='calendar' class="w-full p-4" style="max-width: 1750px; max-height: 625px;"> --}}
                 
                 </div>
                 <div class="w-full flex justify-end space-x-6 pr-4">

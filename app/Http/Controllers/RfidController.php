@@ -27,6 +27,7 @@ class RfidController extends Controller
 
     private function verifyAccess($tagId)
     {
+<<<<<<< HEAD
         // TODO: Implement the access verification logic here
         $user = $this->retrieveUser($tagId);
         // dd($user);
@@ -44,6 +45,11 @@ class RfidController extends Controller
         // // User is not a faculty
         // return response()->json(['status' => 'error', 'message' => 'Access denied']);
     // }
+=======
+        $tagId = shell_exec("python3 /app/access_control/access_control.py");
+        //return trim($tagId);
+        dd($tagId);
+>>>>>>> 516b15ac5e8beba788150697da81424cc9c046ac
     }
 
     private function retrieveUser($tagId)
