@@ -13,16 +13,12 @@
 
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">User ID</label>
-                <select required wire:model="user_id" id="user_id"
-                    class="rounded p-2 shadow-inner text-black bg-smokeywhite">
-                    <option value="" disabled selected hidden>Enter User ID</option>
-                    @foreach ($schedules as $schedule)
-                        <option value="{{ $schedule['id'] }}">{{ $schedule['firstname'] . ' ' . $schedule['lastname']  }}</option>
-                    @endforeach
-                </select>
+                <input type="text" wire:model="user_id" id="user_id"
+                    class=" rounded p-2 shadow-inner text-black bg-smokeywhite ">
                 @error('user_id')
                     <p class="error text-red-500">{{ $message }}</p>
                 @enderror
+
             </div>
         </div>
 

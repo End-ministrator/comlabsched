@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Schedule;
-use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 
 class AddSchedule extends ModalComponent
@@ -20,7 +19,6 @@ class AddSchedule extends ModalComponent
     public $semester;
     public $recurrence;
     public $recurrence_value;
-    public $schedules;
 
     protected $rules = [
         'title' => 'required',
@@ -58,12 +56,6 @@ class AddSchedule extends ModalComponent
         $rules['end_time'] .= '|after:start_time|unique:schedules,end_time,NULL,id,date,' . $this->date . ',start_time,' . $this->start_time . ',laboratory,' . $this->laboratory;
 
         return $rules;
-    }
-
-    public function mount()
-    {
-        $this->schedules = User::all()->toArray();
-        // dd($this->schedules);
     }
 
 

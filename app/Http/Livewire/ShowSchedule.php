@@ -16,7 +16,6 @@ class ShowSchedule extends ModalComponent
     ];
 
 
-    
     public function refreshData()
     {
         $this->schedules = Schedule::all(); // Refresh the faculties data

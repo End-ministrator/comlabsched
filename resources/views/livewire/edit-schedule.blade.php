@@ -15,17 +15,12 @@
 
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">User ID</label>
-                <select required wire:model="user_id" id="user_id"
-                    class="rounded p-2 shadow-inner text-black bg-smokeywhite">
-                    <option value="" disabled selected hidden>Enter User ID</option>
-                    @foreach ($schedules as $schedule)
-                        <option value="{{ $schedule['id'] }}">{{ $schedule['firstname'] . ' ' . $schedule['lastname'] }}
-                        </option>
-                    @endforeach
-                </select>
+                <input type="text" wire:model="user_id" id="user_id"
+                    class=" rounded p-2 shadow-inner text-black bg-smokeywhite ">
                 @error('user_id')
                     <p class="error text-red-500">{{ $message }}</p>
                 @enderror
+
             </div>
         </div>
 
@@ -124,7 +119,7 @@
         <div class="flex items-center justify-center">
             <div class="w-full my-2 space-x-3 flex justify-end pr-7">
                 <button id="addRefresh" type="submit" wire:click="editSched"
-                    class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
+                class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
 
                 <button wire:click="closeModal" id="closeRefresh"
                     class="rounded-lg border  border-blue-700 w-20 h-8">Close</button>
