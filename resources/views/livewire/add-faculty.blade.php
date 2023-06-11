@@ -5,33 +5,39 @@
             @csrf
             <label>First Name</label>
             <input type="text" wire:model="firstname" id="firstname"
-                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+                class="form-control text-black rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none  bg-smokeywhite">
             @error('firstname')
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
 
             <label>Last Name</label>
             <input type="text" wire:model="lastname" id="lastname"
-                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none  bg-smokeywhite">
             @error('lastname')
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
 
             <label>Email</label>
             <input type="text" wire:model="email" id="email"
-                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none  bg-smokeywhite">
             @error('email')
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
             <label>Password</label>
-            <input type="text" wire:model="password" id="password"
-                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+            <div class="w-full">
+                <input type="password" wire:model="password" id="password" class="form-control pass rounded-lg h-8 mb-3 w-full shadow-inner shadow-blue-700  focus:outline-none  bg-smokeywhite">
+                
+                <button id="revealpass" type="button" class="text-sm absolute -translate-x-5 text-black translate-y-2"><i class="fa-solid fa-eye"></i></button>
+                <button id="hidepass" type="button" class="text-sm hidden absolute -translate-x-5 text-black translate-y-2"><i class="fa-solid fa-eye-slash"></i></button>
+
+            </div>
+
             @error('password')
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
             <label>Role</label>
             <select wire:model="role" id="role"
-                class="rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none  dark:bg-gray-700 bg-smokeywhite">
+                class="rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none   bg-smokeywhite">
                 <option class=""value="">--Select a Role--</option>
                 <option class=""value="Faculty">Faculty</option>
                 <option class=""value="Admin">Admin</option>
@@ -42,7 +48,7 @@
 
             <label>Tag Id</label>
             <input type="text" wire:model="tag_id" id="tag_id"
-                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none dark:bg-gray-700 bg-smokeywhite">
+                class="form-control rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none bg-smokeywhite">
             @error('tag_id')
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
@@ -67,7 +73,23 @@
 
 
 <script>
+    const revealp = document.getElementById('revealpass');
+    const hidep = document.getElementById('hidepass');
+    const password = document.querySelector('.pass');
     var closeModals = document.querySelectorAll('.closeModal');
+
+
+    revealp.addEventListener('click', function(){
+        
+        revealp.classList.add('hidden');
+        hidep.classList.remove('hidden');
+        password.type = "text";
+    });
+    hidep.addEventListener('click', function(){
+        revealp.classList.remove('hidden');
+        hidep.classList.add('hidden');
+        password.type = "password";
+    });
 
     closeModals.forEach(function(closeModal) {
         closeModal.addEventListener('click', function() {
