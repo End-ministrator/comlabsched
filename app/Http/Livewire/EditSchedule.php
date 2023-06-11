@@ -6,7 +6,7 @@ use App\Models\Schedule;
 use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 
-class EditSchedule extends ModalComponent
+class EditSchedule extends ModalComponent{
     public $recurrence;
     public $recurrence_value;
     public $schedule_id;
