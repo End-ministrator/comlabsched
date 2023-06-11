@@ -15,7 +15,10 @@
     <!-- Toastr -->
     <!-- <link rel="stylesheet" href="{{ asset('node_modules/toastr/build/toastr.css') }}" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+    <!-- Select2 -->
+    <link href="/path/to/select2.min.css" rel="stylesheet" />
+    <script src="/path/to/select2.min.js"></script>
+    <!--  -->
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/f26d36d903.js" crossorigin="anonymous"></script>
