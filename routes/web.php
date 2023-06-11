@@ -32,7 +32,7 @@ Route::middleware('guest')->group(function () {
 });
 
 // Python RFID route
-Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
+Route::post('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
 
 // Authenticated routes
 Route::middleware('auth')->group(function () {

@@ -12,17 +12,17 @@ class RfidController extends Controller
 {
     public function startRfidScanning(Request $request)
     {
-        $tagId = $this->rfidReader();
+        $tagId = $request->tag_id;
 
         // Pass the tag ID to the access verification process
         $this->verifyAccess($tagId);
     }
 
-    private function rfidReader()
-    {
-        $tagId = shell_exec("python3 ~/Desktop/comlabsched/app/access_control/access_control.py");
-        return trim($tagId);
-    }
+    // private function rfidReader()
+    // {
+    //     $tagId = shell_exec("python3 ~/Desktop/comlabsched/app/access_control/access_control.py");
+    //     return trim($tagId);
+    // }
 
     private function verifyAccess($tagId)
     {
