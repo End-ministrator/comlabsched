@@ -20,7 +20,7 @@
               
               <div class="flex  justify-center items-center mb-10 sm:inset-y-20 md:inset-y-20 lg:inset-y-0 inset-y-20 relative mt-6 ">
                   <!-- logo --><i class="fa-solid fa-user-secret text-5xl"></i>
-                  <span class="text-3xl">LabSched</span>
+                  <span class="text-3xl">Lab </span><span class="text-3xl text-blue-700"> SCHED</span>
               </div>
               <div class="font-semibold flex justify-start w-72  flex-col sm:opacity-0 md:opacity-0 lg:opacity-100 opacity-0">
                   <span class="text-4xl mb-4">Welcome Back</span>
