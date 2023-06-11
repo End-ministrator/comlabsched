@@ -22,9 +22,9 @@
             <x-topbar/>
             <!-- main content goes here -->
             <div class="flex px-7 py-7 w-full h-full bg-smokeywhite dark:bg-gray-800">
-                <div class="flex w-full h-full bg-white dark:bg-gray-700 rounded-lg">
-                    <div id='calendar' class="w-full p-4" style="max-width: 1750px; max-height: 625px;">
-                </div> 
+                <div class="flex w-full h-full bg-white dark:bg-gray-700 rounded-lg text-black !important">
+                    <livewire:monitoring-calendar year="2023" month="12" />
+                </div>
             </div>
     </div>
 

@@ -13,7 +13,7 @@
     </nav>
 </div> -->
 
-</script>
+
 <aside id="nav" class="  text-gray-200 dark:text-white !important bg-blue-700 dark:bg-blue-700 h-screen lg:w-52 md:w-28 sm:w-28 w-28 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
     <div id=""class="flex flex-col space-y-8 sm:space-y-6 md:space-y-6 lg:space-y-4 text-lg   mt-10 relative ">
         <a href="" id="logo"
