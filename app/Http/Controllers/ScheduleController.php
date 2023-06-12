@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use App\Exports\MonitoringExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ScheduleController extends Controller
 {
@@ -15,9 +17,6 @@ class ScheduleController extends Controller
     public function __construct()
     {
         $this->data = Schedule::all();
-    }
-    public function index (){
-   
     }
 
     public function show(Schedule $schedule)
@@ -29,7 +28,8 @@ class ScheduleController extends Controller
         return view('admin.schedules.show', compact('schedule'));
     }
 
-    public function dashboard(){
+    public function dashboard()
+    {
         $data = Schedule::all();
         return view('dashboard', compact('data'));
     }
@@ -40,47 +40,12 @@ class ScheduleController extends Controller
 
         // $schedules = Schedule::all();
         $schedules = Schedule::all()->toArray();
-      
+
         return view('schedulecrud.schedule')->with(compact('schedules'));
     }
-
-    // public function addSchedule(){
-    //     return view('addSchedule');
-    // }
+    public function export()
+    {
     
-    // public function editSchedule ($id){
-    //     $sch = Schedule::where('id','=',$id)->first();
-    //     return view('editSchedule',compact('sch'));
-    // }
-
-    public function updateSchedule(Request $request){
-        $request->validate([
-            'start_time'=> 'required',
-            'end_time'=>'required',
-            'days'=>'required',
-            'faculty_id'=>'required',
-            'laboratory'=>'required',
-        ]);
-        $id = $request->id;
-        $start_time = $request->start_time;
-        $end_time = $request->end_time;
-        $days = $request->days;
-        $faculty_id = $request->faculty_id;
-        $laboratory = $request->laboratory;
-
-        Schedule::where('id','=',$id)->update([
-            'start_time'=>$start_time,
-            'end_time'=>$end_time,
-            'days'=>$days,
-            'faculty_id'=>$faculty_id,
-            'laboratory'=>$laboratory
-        ]);
-        return redirect()->back()->with('success','Schedule updated successfully!');
+        return Excel::download(new MonitoringExport, 'YourSchedule.xlsx');
     }
-
-    public function deleteSchedule($id){
-        Schedule::where('id','=',$id)->delete();
-        return redirect()->back()->with('success','Schedule deleted successfully!');
-    }
-
 }
