@@ -10,7 +10,8 @@ class ViewScheduleModal extends ModalComponent
 {
     public $schedule;
 
-    public function mount(Schedule $schedule){
+    public function mount(Schedule $schedule)
+    {
         $this->schedule = $schedule;
     }
 
