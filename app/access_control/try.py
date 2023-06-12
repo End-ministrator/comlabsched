@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Configure the serial port
-ser = serial.Serial('/dev/ttyUSB0', 9600)  # Update the port name if necessary
+ser = serial.Serial('/dev/ttyUSB1', 9600)  # Update the port name if necessary
 
 reader = SimpleMFRC522()
 tag_id = None
