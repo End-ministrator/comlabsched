@@ -96,3 +96,4 @@ Route::middleware(['auth', 'auth.user'])->group(function () {
 // Python RFID route
 Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
 
+Route::get('/test', [MonitoringCalendarController::class, 'index']);

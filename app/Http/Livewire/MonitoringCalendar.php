@@ -13,6 +13,7 @@ class MonitoringCalendar extends LivewireCalendar
 
     public $month;
     public $year;
+    
 
     public function goToPreviousMonth()
     {
