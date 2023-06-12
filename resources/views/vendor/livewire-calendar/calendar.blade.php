@@ -5,8 +5,9 @@
         wire:poll.{{ $pollMillis }}ms
     @endif
 >
-    <div>
+    <div class="dark:text-white text-black">
         @includeIf($beforeCalendarView)
+       
     </div>
 
     <div class="flex">

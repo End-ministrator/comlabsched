@@ -11,25 +11,25 @@
 
             </div>
 
-            <div class="flex flex-col mb-3 grow">
+            <div class="flex flex-col mb-3 grow relative">
                 <label class="mb-2">User ID</label>
-                <select required wire:model="user_id" id="user_id"
-                    class="rounded p-2 shadow-inner text-black bg-smokeywhite">
-                    <option value="" disabled selected hidden>Enter User ID</option>
+                <input type="text" id="userSearch" class="rounded p-2 shadow-inner text-black bg-smokeywhite" placeholder="Search User">
+                <div id="userOptions" class="rounded p-2 shadow-inner text-black bg-smokeywhite absolute top-full left-0 w-full hidden overflow-y-auto max-h-40">
                     @foreach ($schedules as $schedule)
                         @if ($schedule['role'] === 'Faculty')
-                            <option hidden value="">Select User</option>
-                            <option value="{{ $schedule['id'] }}">
-                                {{ $schedule['firstname'] . ' ' . $schedule['lastname'] }}
-                            </option>
+                            <div wire:click="$set('user_id', '{{ $schedule['id'] }}'); document.getElementById('userSearch').placeholder = '{{ $schedule['firstname'] . ' ' . $schedule['lastname'] }}'" class="cursor-pointer p-2 hover:bg-gray-100">{{ $schedule['firstname'] . ' ' . $schedule['lastname'] }}</div>
                         @endif
                     @endforeach
-                </select>
+                </div>
                 @error('user_id')
                     <p class="error text-red-500">{{ $message }}</p>
                 @enderror
             </div>
         </div>
+
+
+
+
 
         <div class="flex flex-col mb-3 grow">
             <label class="mb-2">Date</label>
@@ -157,4 +157,79 @@
             }
         });
     });
+
+
+    // Faculty Search
+    var userSearchInput = document.getElementById('userSearch');
+    var userOptions = document.getElementById('userOptions');
+    var userOptionsItems = userOptions.getElementsByTagName('div');
+
+    userSearchInput.addEventListener('input', function() {
+        var searchText = userSearchInput.value.toLowerCase();
+
+        for (var i = 0; i < userOptionsItems.length; i++) {
+            var option = userOptionsItems[i];
+            var optionText = option.textContent.toLowerCase();
+
+            if (optionText.includes(searchText)) {
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        }
+
+        userOptions.style.display = 'block';
+        clearSelectedOption();
+    });
+
+    userSearchInput.addEventListener('click', function() {
+        userOptions.style.display = 'block';
+        clearSelectedOption();
+    });
+
+    userSearchInput.addEventListener('input', function() {
+        clearSelectedOption();
+    });
+
+    document.addEventListener('click', function(event) {
+        var target = event.target;
+
+        if (!target.closest('#userSearch') && !target.closest('#userOptions')) {
+            userOptions.style.display = 'none';
+        }
+    });
+
+    function clearSelectedOption() {
+        var selectedOption = userOptions.querySelector('.selected');
+
+        if (selectedOption) {
+            selectedOption.classList.remove('selected');
+        }
+
+        userSearchInput.placeholder = 'Search User';
+    }
+
+    // Highlight selected option
+    userOptions.addEventListener('click', function(event) {
+        var target = event.target;
+
+        if (target.tagName === 'DIV') {
+            var selectedOption = userOptions.querySelector('.selected');
+
+            if (selectedOption) {
+                selectedOption.classList.remove('selected');
+            }
+
+            target.classList.add('selected');
+            userSearchInput.value = target.textContent; // Set the input value to the selected option
+            userOptions.style.display = 'none';
+        }
+    });
+
+    // Check if there is a selected option on page load
+    var selectedOption = userOptions.querySelector('.selected');
+
+    if (selectedOption) {
+        userSearchInput.value = selectedOption.textContent;
+    }
 </script>

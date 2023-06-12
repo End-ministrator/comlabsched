@@ -12,7 +12,7 @@ darkMode:'class',
     extend: {
       fontFamily: {
         
-        helvetica: ['Helvetica', 'Helvetica'],
+        helvetica: ['Helvetica', 'serif'],
         cambria: ['cambria', 'cambria'],
         baskerville: ['baskerville', 'baskerville'],
       },

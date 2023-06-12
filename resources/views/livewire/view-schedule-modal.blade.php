@@ -2,10 +2,10 @@
     use Carbon\Carbon;
 @endphp
 
-<div class="bg-white p-5 text-black">
-    <h2 class="text-2xl font-bold">Schedule Details</h2>
+<div class="bg-white dark:bg-gray-700 p-5 text-black dark:text-white">
+    <h2 class="text-2xl ml-2 font-bold ">Schedule Details</h2>
 
-    <table class="mt-4">
+    <table class="mt-4 w-full">
         <tr>
             <th>Title</th>
             <td>{{ $schedule->title }}</td>

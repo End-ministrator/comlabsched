@@ -21,9 +21,8 @@
             <x-topbar/>
             <!-- main content goes here -->
             <div class="flex px-7 py-7 w-full h-full bg-smokeywhite dark:bg-gray-800">
-                <div class="flex w-full h-full bg-white dark:bg-gray-700 rounded-lg text-black !important">
-                    <livewire:monitoring-calendar
-                    before-calendar-view="calendar/before"/>
+                <div class="flex w-full h-full items-center justify-center bg-white dark:bg-gray-700 rounded-lg text-black px-5">
+                    <livewire:monitoring-calendar before-calendar-view="calendar/before"/>
                 </div>
             </div>
     </div>

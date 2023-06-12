@@ -146,7 +146,7 @@
  
 </head>
 
-<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white font-baskerville  " id="body">
+<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white font-helvetica  " id="body">
     @if (session('success'))
         <script>
             localStorage.setItem('successMessage', "{{ session('success') }}");

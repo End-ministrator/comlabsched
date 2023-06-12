@@ -3,7 +3,7 @@
             <div class="flex flex-row justify-between"> 
                 <a href="#" class="flex items-center space-x-2 ml-1 sm:ml-2 md:ml-3 lg:ml-8 opacity-0 sm:opacity-0 md:opacity-100 lg:opacity-100">
                     <i class="fa-solid fa-cube text-2xl"></i>
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">LabSched</span>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">LabSched</span>
                 </a>
              <!-- search -->
                 <!-- <div class="items-center flex relative">
