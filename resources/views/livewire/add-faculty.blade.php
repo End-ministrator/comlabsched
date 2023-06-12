@@ -24,11 +24,16 @@
                 <p class="error text-red-500">{{ $message }}</p>
             @enderror
             <label>Password</label>
-            
+
             <div class="w-full">
-                <input type="password" wire:model="password" id="password" class="form-control pass w-full rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none text-black bg-smokeywhite">
-                <button id="revealpass" type="button" class="text-sm absolute -translate-x-5 translate-y-2 text-black"><i class="fa-solid fa-eye"></i></button>
-                <button id="hidepass" type="button" class="text-sm hidden absolute -translate-x-5 translate-y-2 text-black"><i class=" fa-solid fa-eye-slash"></i></button>
+                <input type="password" wire:model="password" id="password"
+                    class="form-control pass w-full rounded-lg h-8 mb-3 shadow-inner shadow-blue-700  focus:outline-none text-black bg-smokeywhite">
+                <button id="revealpass" type="button"
+                    class="text-sm absolute -translate-x-5 translate-y-2 text-black"><i
+                        class="fa-solid fa-eye"></i></button>
+                <button id="hidepass" type="button"
+                    class="text-sm hidden absolute -translate-x-5 translate-y-2 text-black"><i
+                        class=" fa-solid fa-eye-slash"></i></button>
             </div>
             @error('password')
                 <p class="error text-red-500">{{ $message }}</p>
@@ -55,7 +60,7 @@
 
                     <button id="addRefresh"type="submit" value="Save"
                         class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Add</button></br>
-                        
+
                     <button wire:click="closeModal" id="closeRefresh"
                         class="rounded-lg border closeModal  border-blue-700 w-20 h-8">Close</button>
 
@@ -71,27 +76,26 @@
 
 
 <script>
+    // pass reveal
+    const revealp = document.getElementById('revealpass');
+    const hidep = document.getElementById('hidepass');
+    const pass = document.querySelector('.pass');
 
-// pass reveal
-const revealp = document.getElementById('revealpass');
-const hidep = document.getElementById('hidepass');
-const pass = document.querySelector('.pass');
+    revealp.addEventListener('click', function() {
+        hidep.classList.remove('hidden');
+        revealp.classList.add('hidden');
+        pass.type = "text";
 
-revealp.addEventListener('click', function(){
-hidep.classList.remove('hidden');
-revealp.classList.add('hidden');
-pass.type = "text";
+    });
+    hidep.addEventListener('click', function() {
+        hidep.classList.add('hidden');
+        revealp.classList.remove('hidden');
+        pass.type = "password";
 
-});
-hidep.addEventListener('click', function(){
-hidep.classList.add('hidden');
-revealp.classList.remove('hidden');
-pass.type = "password";
-
-});
+    });
 
 
-// refresh
+    // refresh
     var closeModals = document.querySelectorAll('.closeModal');
 
     closeModals.forEach(function(closeModal) {

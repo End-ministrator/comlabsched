@@ -17,7 +17,12 @@
                     class="rounded p-2 shadow-inner text-black bg-smokeywhite">
                     <option value="" disabled selected hidden>Enter User ID</option>
                     @foreach ($schedules as $schedule)
-                        <option value="{{ $schedule['id'] }}">{{ $schedule['firstname'] . ' ' . $schedule['lastname']  }}</option>
+                        @if ($schedule['role'] === 'Faculty')
+                            <option hidden value="">Select User</option>
+                            <option value="{{ $schedule['id'] }}">
+                                {{ $schedule['firstname'] . ' ' . $schedule['lastname'] }}
+                            </option>
+                        @endif
                     @endforeach
                 </select>
                 @error('user_id')
@@ -58,7 +63,8 @@
         <div class="flex w-full gap-2">
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">Recurrence</label>
-                <select class=" rounded p-2 shadow-inner text-black bg-smokeywhite" wire:model="recurrence">
+                <select id="recurrenceInput" class=" rounded p-2 shadow-inner text-black bg-smokeywhite"
+                    wire:model="recurrence">
                     <option hidden value="">Select Recurrence</option>
                     <option value="none">None</option>
                     <option value="daily">Daily</option>
@@ -71,8 +77,9 @@
 
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">Recurrence Value</label>
-                <input type="text" class=" rounded p-2 shadow-inner text-black bg-smokeywhite"
-                    wire:model="recurrence_value">
+                <input id="recurrenceValueInput" type="text"
+                    class=" rounded p-2 shadow-inner text-black bg-smokeywhite" wire:model="recurrence_value"
+                    @if ($recurrence === 'none') disabled @endif>
                 @error('recurrence_value')
                     <span class="text-red-400 text-sm py-1">{{ $message }}</span>
                 @enderror
@@ -138,12 +145,12 @@
         closeModal.addEventListener('click', function() {
             // Check if any input field is empty
             var inputs = document.querySelectorAll(
-                'input[type="text"], input[type="time"], select');
-            var isEmpty = Array.from(inputs).some(function(input) {
+                'input[type="text"], input[type="time"], input[type="date"], select');
+            var hasValue = Array.from(inputs).some(function(input) {
                 return input.value.trim() === '';
             });
 
-            if (!isEmpty) {
+            if (hasValue) {
                 setTimeout(function() {
                     location.reload();
                 }, 15); // Delay of 3 seconds before refreshing

@@ -36,10 +36,11 @@ class AddSchedule extends ModalComponent
     ];
 
     protected $validationAttributes = [
-        
+
         'title' => 'Title',
         'date' => 'Date',
         'user_id' => 'User ID',
+        'schedule_id' => 'Schedule ID',
         'start_time' => 'Start Time',
         'end_time' => 'End Time',
         'laboratory' => 'Laboratory',
@@ -66,6 +67,13 @@ class AddSchedule extends ModalComponent
         // dd($this->schedules);
     }
 
+    public function updatedRecurrence($value)
+    {
+        if ($value === 'none') {
+            $this->recurrence_value = 0;
+        }
+    }
+
 
     //Realtime Validation - Kada input, vinavalidate agad
     public function updated($field)
@@ -76,11 +84,40 @@ class AddSchedule extends ModalComponent
     public function addSched()
     {
         $validatedData = $this->validate($this->getScheduleValidationRules());
-        // $validatedData = $this->validate(); // Validate after submit button is clicked
+
+        $recurrence = $this->recurrence;
+        $recurrenceValue = $this->recurrence_value;
+
+        // Create the initial schedule
         Schedule::create($validatedData);
+
+        // Check if the recurrence type is "Daily"
+        if ($recurrence === 'daily') {
+            for ($i = 1; $i < $recurrenceValue; $i++) {
+                // Clone the initial schedule and adjust the date
+                $clonedSchedule = $validatedData;
+                $clonedSchedule['date'] = date('Y-m-d', strtotime("+$i day", strtotime($clonedSchedule['date'])));
+
+                // Create the repeated schedule
+                Schedule::create($clonedSchedule);
+            }
+        }
+        // Check if the recurrence type is "Weekly"
+        elseif ($recurrence === 'weekly') {
+            for ($i = 1; $i < $recurrenceValue; $i++) {
+                // Clone the initial schedule and adjust the date
+                $clonedSchedule = $validatedData;
+                $clonedSchedule['date'] = date('Y-m-d', strtotime("+$i week", strtotime($clonedSchedule['date'])));
+
+                // Create the repeated schedule
+                Schedule::create($clonedSchedule);
+            }
+        }
+        // $this->schedules = User::all()->toArray();
+        // dd($this->schedules);
         $this->closeModal();
         $this->emit('updateShowFaculty');
-    } 
+    }
 
 
     public function render()

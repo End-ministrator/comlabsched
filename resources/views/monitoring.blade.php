@@ -1,5 +1,4 @@
 
-
 @extends('layouts.main')
 
 @section('title', 'Department Head | Dashboard')
@@ -23,7 +22,8 @@
             <!-- main content goes here -->
             <div class="flex px-7 py-7 w-full h-full bg-smokeywhite dark:bg-gray-800">
                 <div class="flex w-full h-full bg-white dark:bg-gray-700 rounded-lg text-black !important">
-                    <livewire:monitoring-calendar year="2023" month="12" />
+                    <livewire:monitoring-calendar
+                    before-calendar-view="calendar/before"/>
                 </div>
             </div>
     </div>

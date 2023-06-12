@@ -11,44 +11,60 @@ use Livewire\Component;
 class MonitoringCalendar extends LivewireCalendar
 {
 
+    public $month;
+    public $year;
+
+    public function goToPreviousMonth()
+    {
+        $this->startsAt->subMonthNoOverflow();
+        $this->endsAt->subMonthNoOverflow();
+
+        $data = [
+            'month' => intval($this->startsAt->format('m')),
+            'year' => intval($this->startsAt->format('Y')),
+        ];
+
+        $this->month = $data['month'];
+        $this->year = $data['year'];
+
+        $this->emit('renderMonth', $data);
+        $this->calculateGridStartsEnds();
+    }
+
+    public function goToNextMonth()
+    {
+        $this->startsAt->addMonthNoOverflow();
+        $this->endsAt->addMonthNoOverflow();
+
+        $data = [
+            'month' => intval($this->startsAt->format('m')),
+            'year' => intval($this->startsAt->format('Y')),
+        ];
+
+        $this->month = $data['month'];
+        $this->year = $data['year'];
+
+        $this->emit('renderMonth', $data);
+        $this->calculateGridStartsEnds();
+    }
+
     public function events(): Collection
     {
-        // $schedules = Schedule::all();
 
-        // return $schedules->map(function ($schedule) {
 
-        //     return [
+        $schedules = Schedule::all();
 
-        //         'id' => $schedule->id,
-        //         'title' => $schedule->title,
-        //         'start_time' => Carbon::parse($schedule->date)->setTimeFromTimeString($schedule->start_time),
-        //         'end_time' => Carbon::parse($schedule->date)->setTimeFromTimeString($schedule->end_time),
-        //         'date' => Carbon::parse($schedule->date),
-        //     ];
-        // });
+        return $schedules->map(function ($schedule) {
+            $startTime = Carbon::parse($schedule->start_time)->format('H:i'); // Format as 24-hour time (e.g., 14:30)
+            $endTime = Carbon::parse($schedule->end_time)->format('H:i');
 
-        // return Schedule::query()
-        //     ->whereDate('start_time', '>=', $this->gridStartsAt)
-        //     ->whereDate('end_time', '<=', $this->gridEndsAt)
-        //     ->get()
-        //     ->map(function (Schedule $sch) {
-        //         return [
-        //             'id' => $sch->id,
-        //             'title' => $sch->title,
-        //             'date' => Carbon::parse($sch->date),
-        //         ];
-        //     });
-
-        return Schedule::query()
-            ->whereDate('start_time', '>=', $this->startsAt)
-            ->whereDate('end_time', '<=', $this->endsAt)
-            ->get()
-            ->map(function (Schedule $schedule) {
-                return [
-                    'id' => $schedule->id,  
-                    'title' => $schedule->title,
-                    'date' => Carbon::parse($schedule->date),
-                ];
-            });
+            return [
+                'id' => $schedule->id,
+                'title' => $schedule->title,
+                'date' => Carbon::parse($schedule->date),
+                'start_time' => $startTime,
+                'end_time' => $endTime,
+            ];
+        });
     }
 }
