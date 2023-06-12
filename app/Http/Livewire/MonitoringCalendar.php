@@ -50,13 +50,11 @@ class MonitoringCalendar extends LivewireCalendar
 
     public function events(): Collection
     {
-
-
         $schedules = Schedule::all();
 
         return $schedules->map(function ($schedule) {
-            $startTime = Carbon::parse($schedule->start_time)->format('H:i'); // Format as 24-hour time (e.g., 14:30)
-            $endTime = Carbon::parse($schedule->end_time)->format('H:i');
+            $startTime = Carbon::parse($schedule->start_time)->format('g:i A'); // Format as 24-hour time (e.g., 14:30)
+            $endTime = Carbon::parse($schedule->end_time)->format('g:i A');
 
             return [
                 'id' => $schedule->id,
@@ -66,5 +64,11 @@ class MonitoringCalendar extends LivewireCalendar
                 'end_time' => $endTime,
             ];
         });
+    }
+
+    public function onEventClick($eventId)
+    {
+        //open livewire modal
+        $this->emit('openModal', 'view-schedule-modal', ['schedule' => $eventId]);
     }
 }

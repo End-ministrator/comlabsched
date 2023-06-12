@@ -31,6 +31,10 @@
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
 
+    {{-- Box Icons --}}
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
     <style>
         /* For Webkit Browsers */
         ::-webkit-scrollbar {
