@@ -945,6 +945,9 @@ video {
 .mt-\[0\.15rem\] {
   margin-top: 0.15rem;
 }
+.mr-7 {
+  margin-right: 1.75rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1262,6 +1265,9 @@ video {
 }
 .w-screen {
   width: 100vw;
+}
+.w-36 {
+  width: 9rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1655,6 +1661,9 @@ video {
 }
 .flex-row {
   flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 .flex-col {
   flex-direction: column;
