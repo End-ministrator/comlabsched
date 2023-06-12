@@ -25,12 +25,10 @@
             <!-- main content goes here -->
             <div class="flex px-7 py-7 w-full h-full bg-smokeywhite dark:bg-gray-800">
                 <div class="flex flex-col w-full h-full bg-white dark:bg-gray-700 rounded-lg text-black !important px-7">
+                    
+                
                     <livewire:monitoring-calendar before-calendar-view="calendar/before" />
-                    <div class="w-full flex justify-end  pt-7">
-                        <div class="flex justify-center items-center bg-blue-700 text-white dark:bg-blue-700 hover:bg-blue-600 border  rounded-md border-blue-700 w-36 h-10">
-                            <a href="{{ route('export')}}" class=""> Export Schedule </a>
-                        </div>
-                    </div>
+                    
                 </div>
                     
             </div>
