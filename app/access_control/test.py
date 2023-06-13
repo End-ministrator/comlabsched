@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Configure the serial port
-ser = serial.Serial('/dev/ttyUSB0', 9600)  # Update the port name if necessary
+ser = serial.Serial('/dev/ttyUSB0', 4444)  # Update the port name if necessary
 
 reader = SimpleMFRC522()
 tag_id = None
@@ -28,6 +28,8 @@ while tag_id is None:
     else:
         print('Request failed with status code:', response.status_code)
         data = "Denied"
-    ser.write(data.encode())
-    sleep(10)
+    sleep(5)
     tag_id = None
+# Send data over the serial port
+data = "Hello Arduino!"  # Replace with your desired message
+ser.write(data.encode())
