@@ -71,17 +71,19 @@ class RfidController extends Controller
 
 
 
-    private function retrieveFacultySchedule($user)
-    {
-        $currentDateTime = Carbon::now()->setTimezone('Asia/Manila');
-        $schedule = Schedule::where('user_id', $user->id)
-            ->where('laboratory', 'lab1')
-            ->whereDate('date', $currentDateTime->toDateString())
-            ->whereTime('start_time', '<=', $currentDateTime->toTimeString())
-            ->whereTime('end_time', '>=', $currentDateTime->toTimeString())
-            ->first();
-        return $schedule;
-    }
+private function retrieveFacultySchedule($user)
+{
+    $currentDateTime = Carbon::now()->setTimezone('Asia/Manila');
+    $schedule = Schedule::where('user_id', $user->id)
+        ->where('laboratory', 'lab1')
+        ->where('semester', '2nd Semester')
+        ->whereDate('date', $currentDateTime->toDateString())
+        ->whereTime('start_time', '<=', $currentDateTime->toTimeString())
+        ->whereTime('end_time', '>=', $currentDateTime->toTimeString())
+        ->first();
+    return $schedule;
+}
+
 
 
     private function grantOrDenyAccess($user, $schedule)
