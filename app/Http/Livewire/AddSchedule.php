@@ -5,9 +5,14 @@ namespace App\Http\Livewire;
 use App\Models\Schedule;
 use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
+use Illuminate\Support\Facades\URL;
+
 
 class AddSchedule extends ModalComponent
 {
+
+    public $redirectUrl;
+
     public $title;
     public $user_id;
     public $date;
@@ -81,6 +86,9 @@ class AddSchedule extends ModalComponent
         $this->validateOnly($field);
     }
 
+
+
+
     public function addSched()
     {
         $validatedData = $this->validate($this->getScheduleValidationRules());
@@ -113,17 +121,14 @@ class AddSchedule extends ModalComponent
                 Schedule::create($clonedSchedule);
             }
         }
+        $this->redirectUrl = URL::current();
+
         // $this->schedules = User::all()->toArray();
         // dd($this->schedules);
         $this->closeModal();
         $this->emit('updateShowFaculty');
     }
-    public function addSchedAndRefresh()
-    {
-        $this->addSched(); // Call the existing addSched method to perform actions
-    
-        return redirect()->refresh(); // Reload the page
-    }
+
 
 
     public function render()
