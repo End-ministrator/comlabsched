@@ -2,14 +2,12 @@ from time import sleep
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 import requests
-import serial
 
 # Set to BCM
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Configure the serial port
-ser = serial.Serial('/dev/ttyUSB1', 9600)  # Update the port name if necessary
 
 reader = SimpleMFRC522()
 tag_id = None
@@ -28,6 +26,4 @@ while tag_id is None:
     else:
         print('Request failed with status code:', response.status_code)
         data = "Denied"
-    ser.write(data.encode())
-    sleep(10)
     tag_id = None

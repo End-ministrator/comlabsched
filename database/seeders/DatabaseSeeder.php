@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@tup.edu.ph',
             'password' => bcrypt('password'),
             'role' => 'Admin',
-            'tag_id' => '1234567890',
+            'tag_id' => '894970192477',
             'image' =>  '/images/usersample.jpg'
         ]);
 
@@ -38,18 +38,68 @@ class DatabaseSeeder extends Seeder
             'image' =>  '/images/usersample.jpg',
         ]);
 
+        User::create([
+            'firstname' => 'Celenia',
+            'lastname' => 'Texas',
+            'email' => 'celeniatexas@tup.edu.ph',
+            'password' => bcrypt('password'),
+            'role' => 'Faculty',
+            'tag_id' => '463184952208',
+            'image' =>  '/images/usersample.jpg',
+        ]);
+
+        User::create([
+            'firstname' => 'Darwin',
+            'lastname' => 'Vargas',
+            'email' => 'darwinvargas@tup.edu.ph',
+            'password' => bcrypt('password'),
+            'role' => 'Faculty',
+            'tag_id' => '526429919834',
+            'image' =>  '/images/usersample.jpg',
+        ]);
+
         Schedule::create([
             'title' => 'Schedule 1',
-            'date' => '2023-06-10',
-            'start_time' => '04:00:00',
-            'end_time' => '23:00:00',
-            'user_id'=>2,
-            'laboratory'=>'lab1',
+            'date' => '2023-06-13',
+            'start_time' => '12:00:00',
+            'end_time' => '24:00:00',
+            'user_id' => 2,
+            'laboratory' => 'lab1',
             'school_year' => '2022-2023',
             'semester' => '2nd Semester',
-            'recurrence' => 'daily',
-            'recurrence_value' => 2,
-            'created_at'=> Carbon::now()->setTimezone('Asia/Manila'),
+            'recurrence' => 'none',
+            'recurrence_value' => 0,
+            'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
+            'updated_at' => Carbon::now()->setTimezone('Asia/Manila'),
+        ]);
+
+        // Schedule::create([
+        //     'title' => 'Schedule 2',
+        //     'date' => '2023-06-14',
+        //     'start_time' => '05:00:00',
+        //     'end_time' => '23:00:00',
+        //     'user_id'=>3,
+        //     'laboratory'=>'lab1',
+        //     'school_year' => '2022-2023',
+        //     'semester' => '2nd Semester',
+        //     'recurrence' => 'none',
+        //     'recurrence_value' => 0,
+        //     'created_at'=> Carbon::now()->setTimezone('Asia/Manila'),
+        //     'updated_at' => Carbon::now()->setTimezone('Asia/Manila'),
+        // ]);
+
+        Schedule::create([
+            'title' => 'Schedule 3',
+            'date' => '2023-06-14',
+            'start_time' => '08:00:00',
+            'end_time' => '12:30:00',
+            'user_id' => 3,
+            'laboratory' => 'lab1',
+            'school_year' => '2022-2023',
+            'semester' => '2nd Semester',
+            'recurrence' => 'none',
+            'recurrence_value' => 0,
+            'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
             'updated_at' => Carbon::now()->setTimezone('Asia/Manila'),
         ]);
 

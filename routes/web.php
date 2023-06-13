@@ -45,14 +45,6 @@ Route::middleware('auth')->group(function () {
     // Dashboard
     Route::get('/dashboard', [ScheduleController::class, 'dashboard'])->name('dashboard');
 
-    // Schedule
-    // Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
-    // Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');
-    // Route::post('/schedule/save', [ScheduleController::class, 'saveSchedule'])->name('schedule.save');
-    // Route::get('/schedule/{id}/edit', [ScheduleController::class, 'editSchedule'])->name('schedule.edit');
-    // Route::post('/schedule/{id}/update', [ScheduleController::class, 'updateSchedule'])->name('schedule.update');
-    // Route::get('/schedule/{id}/delete', [ScheduleController::class, 'deleteSchedule'])->name('schedule.delete');
-
     // Access Logs
     Route::get('/logs', function () {
         return view('accessLogs');
@@ -80,13 +72,6 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
     Route::get('/export-schedule', [ScheduleController::class, 'export'])->name('export');
 
-
-    //   Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');
-    //   Route::post('/schedule/save', [ScheduleController::class, 'saveSchedule'])->name('schedule.save');
-    //   Route::get('/schedule/{id}/edit', [ScheduleController::class, 'editSchedule'])->name('schedule.edit');
-    //   Route::post('/schedule/{id}/update', [ScheduleController::class, 'updateSchedule'])->name('schedule.update');
-    //   Route::get('/schedule/{id}/delete', [ScheduleController::class, 'deleteSchedule'])->name('schedule.delete');
-
 });
 
 // User routes HOME LANG NANDITO KASE BOTH USER AND ADMIN MAY ACCESS SA COMMON TABS KAYA LABAS N YONG ROUTES NON SA GROUP FUNCTION
@@ -96,5 +81,5 @@ Route::middleware(['auth', 'auth.user'])->group(function () {
 
 
 // Python RFID route
-Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
+// Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
 
