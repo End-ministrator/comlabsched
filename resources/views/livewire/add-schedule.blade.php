@@ -1,3 +1,4 @@
+
 <div>
     <div class="p-5 dark:bg-gray-700 bg-white">
         <div class="flex w-full gap-2">
@@ -35,9 +36,9 @@
             <label class="mb-2">Date</label>
             <input type="date" wire:model="date" id="date"
                 class=" rounded p-2 shadow-inner text-black bg-smokeywhite ">
-            @error('date')
-                <span class="text-red-400 text-sm py-1">{{ $message }}</span>
-            @enderror
+                @error('date')
+                    <script>displayToastr('error', "{{ $message }}")</script>
+                @enderror
         </div>
 
         <div class="flex w-full gap-2">
@@ -45,16 +46,16 @@
                 <label class="mb-2">Start Time</label>
                 <input type="time" class=" rounded p-2 shadow-inner text-black  bg-smokeywhite"
                     wire:model="start_time">
-                @error('start_time')
-                    <span class="text-red-400 text-sm py-1">{{ $message }}</span>
-                @enderror
+                    @error('start_time')
+                        <script>displayToastr('error', "{{ $message }}")</script>
+                    @enderror
             </div>
 
             <div class="flex flex-col mb-3 grow">
                 <label class="mb-2">End Time</label>
                 <input type="time" class=" rounded p-2 shadow-inner text-black bg-smokeywhite" wire:model="end_time">
                 @error('end_time')
-                    <span class="text-red-400 text-sm py-1">{{ $message }}</span>
+                    <script>displayToastr('error', "{{ $message }}")</script>
                 @enderror
 
             </div>
@@ -247,3 +248,5 @@ addButton.addEventListener('click', refreshPage);
         userSearchInput.value = selectedOption.textContent;
     }
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+

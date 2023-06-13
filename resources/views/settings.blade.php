@@ -3,6 +3,19 @@
 @section('title', 'Department Head | Dashboard')
 
 @section('content')
+
+@if (session('success'))
+    <script>
+        toastr.success("{{ session('success') }}");
+    </script>
+@endif
+
+@if (session('error'))
+    <script>
+        toastr.error("{{ session('error') }}");
+    </script>
+@endif
+
     <div class="flex flex-row ">
 
         <div class=" flex">
@@ -562,6 +575,27 @@
             revealp3.classList.remove('hidden');
             rnewP.type = 'password';
         });
+    </script>
+
+<script>
+        // Show toastr notifications if success or error message is present in localStorage
+        document.addEventListener('DOMContentLoaded', function () {
+            const successMessage = localStorage.getItem('successMessage');
+            const errorMessage = localStorage.getItem('errorMessage');
+
+            if (successMessage) {
+                toastr.success(successMessage);
+                localStorage.removeItem('successMessage');
+            }
+
+            if (errorMessage) {
+                toastr.error(errorMessage);
+                localStorage.removeItem('errorMessage');
+            }
+        });
+
+        // Rest of your JavaScript code...
+
     </script>
 
 

@@ -13,9 +13,9 @@
     <!-- Styles -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <!-- Toastr -->
-    <!-- <link rel="stylesheet" href="{{ asset('node_modules/toastr/build/toastr.css') }}" /> -->
+    <link rel="stylesheet" href="{{ asset('node_modules/toastr/build/toastr.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!--  -->
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- font awesome -->
@@ -145,17 +145,7 @@
 </head>
 
 <body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white font-baskerville  " id="body">
-    @if (session('success'))
-        <script>
-            localStorage.setItem('successMessage', "{{ session('success') }}");
-        </script>
-    @endif
 
-    @if (session('error'))
-        <script>
-            localStorage.setItem('errorMessage', "{{ session('error') }}");
-        </script>
-    @endif
 
     @yield('content')
     @livewireScripts

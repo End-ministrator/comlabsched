@@ -1,3 +1,10 @@
+
+
+import 'toastr/build/toastr.css';
+import toastr from 'toastr';
+
+window.toastr = toastr;
+
 const userTheme = localStorage.getItem("theme");
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 // initial Theme check

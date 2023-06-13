@@ -1,4 +1,5 @@
 <!-- c -->
+
 <div>
     <div class="flex flex-row bg-smokeywhite">
         <div class="flex">
@@ -242,3 +243,50 @@
     sc.classList.add('dark:bg-blue-800', 'bg-blue-800', 'shadow-inner', 'shadow-blue-800');
     st.classList.remove('dark:bg-blue-800', 'bg-blue-800', 'shadow-inner', 'shadow-blue-900');
 </script>
+<script>
+        // Display stored toastr messages on page load
+        $(document).ready(function() {
+        var storedToastr = localStorage.getItem('toastr');
+        if (storedToastr) {
+            toastr.options = {
+                "positionClass": "toast-top-right"
+            };
+            toastr.clear();
+            toastr[storedToastr.type](storedToastr.message);
+            localStorage.removeItem('toastr');
+        }
+    });
+
+    function displayToastr(type, message) {
+        toastr.options = {
+            "positionClass": "toast-top-right"
+        };
+        toastr.clear();
+        toastr[type](message);
+    }
+
+    // Store toastr message in localStorage
+    function storeToastr(type, message) {
+        localStorage.setItem('toastr', JSON.stringify({ type: type, message: message }));
+    }
+</script>
+
+
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const successMessage = localStorage.getItem('successMessage');
+        const errorMessage = localStorage.getItem('errorMessage');
+
+        if (successMessage) {
+            toastr.success(successMessage);
+            localStorage.removeItem('successMessage');
+        }
+
+        if (errorMessage) {
+            toastr.error(errorMessage);
+            localStorage.removeItem('errorMessage');
+        }
+    });
+
+    // Rest of your JavaScript code...
+</script> -->
