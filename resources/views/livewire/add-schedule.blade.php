@@ -128,8 +128,7 @@
         <div class="flex items-center justify-center">
             <div class="w-full my-2 space-x-3 flex justify-end pr-7">
 
-                <button id="addRefresh" type="submit" wire:click="addSched"
-                    class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
+                <button id="addRefresh" type="submit" wire:click="addSched" class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
 
                 <button wire:click="closeModal" id="closeRefresh"
                     class="rounded-lg border  border-blue-700 w-20 h-8">Close</button>
@@ -141,23 +140,38 @@
 <script>
     var closeModals = document.querySelectorAll('.closeModal');
 
-    closeModals.forEach(function(closeModal) {
-        closeModal.addEventListener('click', function() {
-            // Check if any input field is empty
-            var inputs = document.querySelectorAll(
-                'input[type="text"], input[type="time"], input[type="date"], select');
-            var hasValue = Array.from(inputs).some(function(input) {
-                return input.value.trim() === '';
-            });
-
-            if (hasValue) {
-                setTimeout(function() {
-                    location.reload();
-                }, 15); // Delay of 3 seconds before refreshing
-            }
+closeModals.forEach(function(closeModal) {
+    closeModal.addEventListener('click', function() {
+        // Check if any input field is empty
+        var inputs = document.querySelectorAll('input[type="text"], input[type="time"], input[type="date"], select');
+        var hasValue = Array.from(inputs).some(function(input) {
+            return input.value.trim() === '';
         });
-    });
 
+        // Check if the start time is earlier than the end time
+        var startTimeInput = document.getElementById('start_time');
+        var endTimeInput = document.getElementById('end_time');
+        var startTime = startTimeInput.value;
+        var endTime = endTimeInput.value;
+        var isValidTimeRange = startTime < endTime;
+
+        if (hasValue || !isValidTimeRange) {
+            location.reload();
+        }
+    });
+});
+
+function refreshPage() {
+    setTimeout(function() {
+        location.reload();
+    }, 20); // Refresh after 2000 milliseconds (2 seconds)
+}
+
+// Faculty Search and other code...
+
+// Add event listener to the "Add" button
+var addButton = document.getElementById('addRefresh');
+addButton.addEventListener('click', refreshPage);
 
     // Faculty Search
     var userSearchInput = document.getElementById('userSearch');

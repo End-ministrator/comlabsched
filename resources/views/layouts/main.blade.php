@@ -15,9 +15,7 @@
     <!-- Toastr -->
     <!-- <link rel="stylesheet" href="{{ asset('node_modules/toastr/build/toastr.css') }}" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <!-- Select2 -->
-    <link href="/path/to/select2.min.css" rel="stylesheet" />
-    <script src="/path/to/select2.min.js"></script>
+
     <!--  -->
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- font awesome -->
@@ -146,7 +144,7 @@
  
 </head>
 
-<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white font-helvetica  " id="body">
+<body class=" bg-smokeywhite dark:bg-gray-800 dark:text-white font-baskerville  " id="body">
     @if (session('success'))
         <script>
             localStorage.setItem('successMessage', "{{ session('success') }}");

@@ -2503,6 +2503,9 @@ video {
 .font-helvetica {
   font-family: Helvetica, serif;
 }
+.font-baskerville {
+  font-family: baskerville, baskerville;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;

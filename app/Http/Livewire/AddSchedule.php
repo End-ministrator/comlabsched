@@ -118,6 +118,12 @@ class AddSchedule extends ModalComponent
         $this->closeModal();
         $this->emit('updateShowFaculty');
     }
+    public function addSchedAndRefresh()
+    {
+        $this->addSched(); // Call the existing addSched method to perform actions
+    
+        return redirect()->refresh(); // Reload the page
+    }
 
 
     public function render()
