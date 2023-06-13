@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLogsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,11 @@ class CreateLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
-            $table->id();
-            // $table->foreignId('rfid');
-            $table->boolean('access_granted');
-            $table->timestamps();
+        Schema::table('logs', function (Blueprint $table) {
+            $table->string('rfid');
+            $table->foreign('rfid')->references('tag_id')->on('users');
         });
     }
-
-    // - RFID (tag_id => User)
-	// - Timestamp
-	// - status
 
     /**
      * Reverse the migrations.
@@ -32,6 +26,8 @@ class CreateLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::table('logs', function (Blueprint $table) {
+            //
+        });
     }
-}
+};

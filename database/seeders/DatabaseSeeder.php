@@ -34,25 +34,25 @@ class DatabaseSeeder extends Seeder
             'email' => 'faculty@tup.edu.ph',
             'password' => bcrypt('password'),
             'role' => 'Faculty',
-            'tag_id' => '2345678901',
+            'tag_id' => '1093887689476',
             'image' =>  '/images/usersample.jpg',
         ]);
 
         Schedule::create([
             'title' => 'Schedule 1',
-            'date' => '2023-06-5',
-            'start_time' => '08:00:00',
-            'end_time' => '09:00:00',
-            'user_id'=>1,
+            'date' => '2023-06-10',
+            'start_time' => '04:00:00',
+            'end_time' => '23:00:00',
+            'user_id'=>2,
             'laboratory'=>'lab1',
             'school_year' => '2022-2023',
             'semester' => '2nd Semester',
             'recurrence' => 'daily',
             'recurrence_value' => 2,
-            'created_at'=> Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'created_at'=> Carbon::now()->setTimezone('Asia/Manila'),
+            'updated_at' => Carbon::now()->setTimezone('Asia/Manila'),
         ]);
-        
+
         // template for schedules table
         // $table->id('id');
         //     $table->string('name');
@@ -75,8 +75,8 @@ class DatabaseSeeder extends Seeder
         //     'days'=> 'Tuesday',
         //     'faculty_id'=>1,
         //     'laboratory'=>'lab1',
-        //     'created_at'=> Carbon::now(),
-        //     'updated_at' => Carbon::now(),
+        //     'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
+        //     'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
         //     'school_year' => '2022-2023',
         //     'semester' => '1st',
         // ]);
@@ -87,8 +87,8 @@ class DatabaseSeeder extends Seeder
         //     'days'=> 'Friday',
         //     'faculty_id'=>2,
         //     'laboratory'=>'lab2',
-        //     'created_at'=> Carbon::now(),
-        //     'updated_at' => Carbon::now(),
+        //     'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
+        //     'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
         //     'school_year' => '2022-2023',
         //     'semester' => '1st',
         // ]);
@@ -99,30 +99,37 @@ class DatabaseSeeder extends Seeder
         //     'days'=> 'Friday',
         //     'faculty_id'=>1,
         //     'laboratory'=>'lab2',
-        //     'created_at'=> Carbon::now(),
-        //     'updated_at' => Carbon::now(),
+        //     'created_at'=> Carbon::now()->setTimezone('Asia/Manila');,
+        //     'updated_at' => Carbon::now()->setTimezone('Asia/Manila');,
         //     'school_year' => '2022-2023',
         //     'semester' => '1st',
         // ]);
 
         Log::create([
-            'rfid' => '2345678901',
-            'status' => 'granted',
+            'rfid' => '1093887689476',
+            'access_granted' => false,
+            'created_at' => Carbon::now(),
         ]);
 
-        Log::create([
-            'rfid' => '2345678901',
-            'status' => 'granted',
-        ]);
+        // Log::create([
+        //     'rfid' => '1093887689476',
+        //     'status' => 'granted',
+        //     'created_at' => Carbon::now(),
+
+        // ]);
 
         Log::create([
-            'rfid' => '2345678901',
-            'status' => 'denied',
+            'rfid' => '1093887689476',
+            'access_granted' => true,
+            'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
+
         ]);
 
-        Log::create([
-            'rfid' => '1234567890',
-            'status' => 'granted',
-        ]);
+        // Log::create([
+        //     'rfid' => '1093887689476',
+        //     'status' => 'granted',
+        //     'created_at' => Carbon::now()->setTimezone('Asia/Manila'),
+
+        // ]);
     }
 }
