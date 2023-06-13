@@ -69,10 +69,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/settings-upload', [UserController::class, 'uploadProfile'])->name('uploadProfile');
 });
 
-    // Monitoring
-    Route::get('/monitoring', [MonitoringCalendarController::class, 'getEvent'])->name('monitoring');
-
-
+// Monitoring
+Route::get('/monitoring', [MonitoringCalendarController::class, 'getEvent'])->name('monitoring');
 
 // Admin routes ROUTES N KAY ADMIN LNG PWEDE DITO LALAGAY
 Route::middleware(['auth', 'auth.admin'])->group(function () {
@@ -80,7 +78,7 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::get('/faculty', [UserController::class, 'index']);
     // Schedule
     Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
-
+    Route::get('/export-schedule', [ScheduleController::class, 'export'])->name('export');
 
 
     //   Route::get('/schedule/add', [ScheduleController::class, 'addSchedule'])->name('schedule.add');
@@ -97,4 +95,6 @@ Route::middleware(['auth', 'auth.user'])->group(function () {
 });
 
 
+// Python RFID route
+Route::get('/start-rfid-scanning', [RfidController::class, 'startRfidScanning']);
 

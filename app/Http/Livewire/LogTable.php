@@ -13,6 +13,7 @@ class LogTable extends DataTableComponent
 {
     protected $model = Log::class;
 
+    public $dateFilter = null;
 
     public function configure(): void
     {
@@ -21,18 +22,31 @@ class LogTable extends DataTableComponent
         $this->setFiltersStatus(true);
     }
 
+    public function query(): Builder
+    {
+        $query = parent::query();
 
+        // Apply date filter if it is set
+        if ($this->dateFilter) {
+            $query->whereDate('created_at', Carbon::parse($this->dateFilter)->format('Y-m-d'));
+        }
+
+        return $query;
+    }
 
     public function filters(): array
     {
         return [
-            DateFilter::make('Verified From'),
+            DateFilter::make('Verified From')
+                ->filter(function (Builder $query, $value) {
+                    if ($value) {
+                        $date = Carbon::createFromFormat('Y-m-d', $value)->startOfDay();
+                        $query->whereDate('created_at', '>=', $date);
+                    }
+                }),
         ];
     }
-
-
-
-
+    
     public function columns(): array
     {
         return [

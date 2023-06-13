@@ -3,22 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Schedule;
+use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 
-class EditSchedule extends ModalComponent
-{
-    public $scheduleId;
-    public $title;
-    public $date;
-    public $user_id;
-    public $start_time;
-    public $end_time;
-    public $laboratory;
-    public $school_year;
-    public $semester;
+class EditSchedule extends ModalComponent{
     public $recurrence;
     public $recurrence_value;
     public $schedule_id;
+    public $schedules;
 
     public function mount($scheduleId)
     {
@@ -34,6 +26,7 @@ class EditSchedule extends ModalComponent
         $this->laboratory = $schedule->laboratory;
         $this->school_year = $schedule->school_year;
         $this->semester = $schedule->semester;
+        $this->schedules = User::get()->toArray();
     }
 
     protected $rules = [

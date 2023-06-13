@@ -10,6 +10,13 @@ module.exports = {
 darkMode:'class',
   theme: {
     extend: {
+      fontFamily: {
+        
+        helvetica: ['Helvetica', 'serif'],
+        cambria: ['cambria', 'cambria'],
+        baskerville: ['baskerville', 'baskerville'],
+      },
+
       translate: {
         '26': '105px',
         '-38': '-146px',
