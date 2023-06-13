@@ -139,40 +139,15 @@
 </div>
 
 <script>
-    var closeModals = document.querySelectorAll('.closeModal');
 
-closeModals.forEach(function(closeModal) {
-    closeModal.addEventListener('click', function() {
-        // Check if any input field is empty
-        var inputs = document.querySelectorAll('input[type="text"], input[type="time"], input[type="date"], select');
-        var hasValue = Array.from(inputs).some(function(input) {
-            return input.value.trim() === '';
-        });
-
-        // Check if the start time is earlier than the end time
-        var startTimeInput = document.getElementById('start_time');
-        var endTimeInput = document.getElementById('end_time');
-        var startTime = startTimeInput.value;
-        var endTime = endTimeInput.value;
-        var isValidTimeRange = startTime < endTime;
-
-        if (hasValue || !isValidTimeRange) {
-            location.reload();
-        }
-    });
+window.livewire.on('updateShowFaculty', () => {
+    location.reload();
 });
 
-function refreshPage() {
-    setTimeout(function() {
-        location.reload();
-    }, 20); // Refresh after 2000 milliseconds (2 seconds)
-}
 
 // Faculty Search and other code...
 
 // Add event listener to the "Add" button
-var addButton = document.getElementById('addRefresh');
-addButton.addEventListener('click', refreshPage);
 
     // Faculty Search
     var userSearchInput = document.getElementById('userSearch');
