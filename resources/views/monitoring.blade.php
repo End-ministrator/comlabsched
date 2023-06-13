@@ -25,12 +25,11 @@
             <!-- main content goes here -->
             <div class="flex px-7 py-7 w-full h-full bg-smokeywhite dark:bg-gray-800">
                 <div class="flex flex-col w-full h-full bg-white dark:bg-gray-700 rounded-lg text-black !important px-7">
-                    
-                
+
                     <livewire:monitoring-calendar before-calendar-view="calendar/before" />
-                    
+
                 </div>
-                    
+
             </div>
         </div>
 

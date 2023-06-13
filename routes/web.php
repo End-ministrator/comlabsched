@@ -70,7 +70,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Monitoring
-Route::get('/monitoring', [MonitoringCalendarController::class, 'getEvent'])->name('monitoring');
+Route::get('/monitoring', [MonitoringCalendarController::class, 'index'])->name('monitoring');
 
 // Admin routes ROUTES N KAY ADMIN LNG PWEDE DITO LALAGAY
 Route::middleware(['auth', 'auth.admin'])->group(function () {
