@@ -8,11 +8,13 @@ class Log extends Model
 {
     protected $fillable = [
         'rfid',
-        'status',
+        'access_granted',
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'rfid', 'tag_id');
     }
+
+
 }
