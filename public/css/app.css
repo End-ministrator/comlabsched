@@ -1126,6 +1126,9 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-44 {
+  height: 11rem;
+}
 .max-h-40 {
   max-height: 10rem;
 }
@@ -1275,6 +1278,12 @@ video {
 }
 .w-36 {
   width: 9rem;
+}
+.w-40 {
+  width: 10rem;
+}
+.w-56 {
+  width: 14rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1509,6 +1518,10 @@ video {
 }
 .-translate-y-8 {
   --tw-translate-y: -2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-3 {
+  --tw-translate-y: -0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .rotate-180 {
@@ -4820,6 +4833,10 @@ video {
 
   .md\:visible {
     visibility: visible;
+  }
+
+  .md\:invisible {
+    visibility: hidden;
   }
 
   .md\:-inset-x-3 {

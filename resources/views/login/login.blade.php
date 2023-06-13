@@ -18,9 +18,10 @@
       <div class="w-30 h-128  basis-3/5 sm:basis-3/5 md:basis-3/5 lg:basis-2/5 flex   bg-blue-400 shadow-black shadow-md  rounded-r-md relative flex-col items-center justify-evenly  backdrop-filter backdrop-blur-sm bg-opacity-20 ">
           <div class="ml-4">
               
-              <div class="flex  justify-center items-center mb-10 sm:inset-y-20 md:inset-y-20 lg:inset-y-0 inset-y-20 relative mt-6 ">
-                  <!-- logo --><i class="fa-solid fa-user-secret text-5xl"></i>
-                  <span class="text-3xl">Lab </span><span class="text-3xl text-blue-700"> SCHED</span>
+              <div class="flex w-full h-16 justify-center items-center mb-10 sm:inset-y-20 md:inset-y-20 lg:inset-y-0 inset-y-20 relative mt-6 ">
+              
+                <img src="images/logo.png" alt="" class="w-56 h-16">
+       
               </div>
               <div class="font-semibold flex justify-start w-72  flex-col sm:opacity-0 md:opacity-0 lg:opacity-100 opacity-0">
                   <span class="text-4xl mb-4">Welcome Back</span>

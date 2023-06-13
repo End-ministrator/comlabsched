@@ -15,12 +15,10 @@
 
 </script>
 <aside id="nav"
-    class="   bg-blue-600 dark:bg-blue-700 h-screen lg:w-52 md:w-40 sm:w-28 w-24 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed">
+    class="   bg-blue-600 dark:bg-blue-700 h-screen lg:w-52 md:w-40 sm:w-28 w-24 z-50 flex flex-col justify-between  rounded-none shadow-sm shadow-black fixed text-white">
     <div id=""class="flex flex-col space-y-8 sm:space-y-6 md:space-y-6 lg:space-y-4 text-lg   mt-10 relative ">
-        <a href="" id="logo"
-            class="flex items-center space-x-2 -ml-1 sm:ml-0 md:ml-3 lg:ml-8 transition-opacity lg:-translate-x-2 lg:opacity-0 md:opacity-0 sm:opacity-100 opacity-100 translate-x-10 ">
-            <i class="fa-solid fa-cube text-3xl"></i>
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white lg:opacity-100 md:opacity-100 sm:opacity-0 opacity-0">LabSCHED</span>
+        <a href="" id="logo" class="flex items-center w-40 h-16  ">
+            <img src="images/logo.png" alt="">
         </a>
         <a href="{{ route('dashboard') }}" id="menu"class="ds w-5/6 grid rounded-md z-0 hover:inset-x-3 transition-transform duration-300 py-1 lg:grid-cols-2 md:grid-cols-1 md:py-2 sm:py-2 sm:grid-cols-1  -space-x-6 items-center relative group sm:inset-x-0 md:inset-x-1 lg:-inset-x-1 inset-x-0">
             <i class="fa-solid fa-house mr-4 relative lg:inset-x-6 md:translate-x-2 sm:translate-x-2 inset-x-10  "></i>

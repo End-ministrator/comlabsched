@@ -1,10 +1,11 @@
 <nav id="topbar" class="bg-white  dark:bg-gray-700   shadow-black shadow-sm w-full rounded-none h-14"> 
             <!-- <span class="sm:text-red-500 md:text-yellow-500 lg:text-green-500">md</span> -->
-            <div class="flex flex-row justify-between"> 
-                <a href="#" class="flex items-center space-x-2 ml-1 sm:ml-2 md:ml-3 lg:ml-8 opacity-0 sm:opacity-0 md:opacity-100 lg:opacity-100">
-                    <i class="fa-solid fa-cube text-2xl"></i>
-                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">LabSched</span>
+            <div class="flex justify-between items-center -translate-y-3"> 
+                
+                <a href="" id="logo" class="flex items-center w-40 h-20 ml-7 ">
+                    <img src="images/logo.png" alt="">
                 </a>
+                
              <!-- search -->
                 <!-- <div class="items-center flex relative">
                     <div class="relative rounded-md lg:w-96 md:w-52 sm:w-24 w-24 ">
