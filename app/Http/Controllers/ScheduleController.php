@@ -6,8 +6,10 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Exports\MonitoringExport;
 use Maatwebsite\Excel\Facades\Excel;
+
 
 class ScheduleController extends Controller
 {
@@ -43,9 +45,12 @@ class ScheduleController extends Controller
 
         return view('schedulecrud.schedule')->with(compact('schedules'));
     }
-    public function export()
+
+    public function exportexcel()
     {
-    
+
         return Excel::download(new MonitoringExport, 'YourSchedule.xlsx');
     }
+
+    
 }

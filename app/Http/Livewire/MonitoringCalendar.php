@@ -71,5 +71,6 @@ class MonitoringCalendar extends LivewireCalendar
         //open livewire modal
         
         $this->emit('openModal', 'view-schedule-modal', ['schedule' => $eventId]);
+        
     }
 }
