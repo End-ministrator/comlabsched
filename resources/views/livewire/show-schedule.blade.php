@@ -43,72 +43,8 @@
                     <div
                         class="row dark:bg-gray-700 bg-white shadow shadow-black w-11/12 h-full rounded-lg overflow-x-auto ml-14 mt-10">
                         <div class="table-responsive flex justify-center items-center">
-                            <table id="tableko"
-                                class="w-full text-white !important rounded-lg border-spacing-3 p-10 font-medium">
-                                <thead class="sticky top-0">
-                                    <tr class="h-12 bg-gray-700">
-                                        <th class="">#</th>
-                                        <th class="">Title</th>
-                                        <th class="">Date</th>
-                                        <th class="">Start Time</th>
-                                        <th class="">End Time</th>
-                                        <th class="">Laboratory</th>
-                                        <th class="">School Year</th>
-                                        <th class="">Recurrence</th>
-                                        <th class="">Recurrence Value</th>
-                                        <th class="">Semester</th>
-                                        <th class="">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="">
-                                    @foreach ($schedules as $sch)
-                                        <tr class="h-12">
-                                            <td class="text-center invisible sm:invisible md:visible lg:visible">
-                                                {{ $loop->iteration }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['title'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['date'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['start_time'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['end_time'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['laboratory'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['school_year'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['recurrence'] }}</td>
-                                            <td
-                                                class="text-center -text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['recurrence_value'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $sch['semester'] }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                <button
-                                                    onclick="Livewire.emit('openModal', 'edit-schedule', { scheduleId: {{ $sch['id'] }}})"
-                                                    class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>|
-                                                </button>
-                                                <button
-                                                    onclick="Livewire.emit('openModal', 'delete-schedule', { scheduleId: {{ $sch['id'] }}})"
-                                                    class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>|
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                           
+                            <livewire:scheduling-calendar before-calendar-view="calendar/before" />
                         </div>
                     </div>
                 </div>

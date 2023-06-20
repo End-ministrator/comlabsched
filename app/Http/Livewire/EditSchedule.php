@@ -6,16 +6,26 @@ use App\Models\Schedule;
 use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
 
-class EditSchedule extends ModalComponent{
+class EditSchedule extends ModalComponent
+{
+
+    public $schedule;
+    public $title;
+    public $date;
+    public $user_id;
+    public $start_time;
+    public $end_time;
+    public $laboratory;
+    public $school_year;
+    public $semester;
     public $recurrence;
     public $recurrence_value;
     public $schedule_id;
     public $schedules;
 
-    public function mount($scheduleId)
+    public function mount(Schedule $schedule)
     {
-        $schedule = Schedule::find($scheduleId);
-        $this->scheduleId = $scheduleId;
+
         $this->title = $schedule->title;
         $this->date = $schedule->date;
         $this->user_id = $schedule->user_id;
@@ -64,7 +74,20 @@ class EditSchedule extends ModalComponent{
     public function editSched()
     {
         $validatedData = $this->validate(); // Validate after submit button is clicked
-        Schedule::find($this->scheduleId)->update($validatedData);
+        Schedule::find($this->schedule)->update($validatedData);
+        $this->closeModal();
+        $this->emit('updateShowFaculty');
+    }
+
+
+    public function deleteSchedule()
+    {
+        $schedDelete = Schedule::find($this->schedule);
+
+        if ($schedDelete) {
+            $schedDelete->delete();
+        }
+
         $this->closeModal();
         $this->emit('updateShowFaculty');
     }

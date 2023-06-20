@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\MonitoringCalendarController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserController;
@@ -70,7 +71,12 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::get('/faculty', [UserController::class, 'index']);
     // Schedule
     Route::get('/schedule', [ScheduleController::class, 'schedule'])->name('schedule');
-    Route::get('/export-schedule', [ScheduleController::class, 'export'])->name('export');
+
+    // Export 
+    Route::get('/export-excel-schedule', [ScheduleController::class, 'exportexcel'])->name('export');
+    // Export PDF
+    Route::get('/testschedule', [PdfController::class, 'index'])->name('testsched');
+    Route::get('/export-pdf-schedule', [PdfController::class, 'exportpdf'])->name('exportpdf');
 
 });
 

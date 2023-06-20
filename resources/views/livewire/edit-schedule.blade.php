@@ -1,6 +1,5 @@
 <div>
     <div class="p-5 bg-white dark:bg-gray-700">
-        <input type="hidden" value="{{ $scheduleId }}" wire:model="schedule_id" />
 
         <div class="flex w-full gap-2">
             <div class="flex flex-col mb-3 grow">
@@ -121,15 +120,27 @@
             @enderror
 
         </div>
-        <div class="flex items-center justify-center">
-            <div class="w-full my-2 space-x-3 flex justify-end pr-7">
-                <button id="addRefresh" type="submit" wire:click="editSched"
-                    class="btn btn-success  closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
 
-                <button wire:click="closeModal" id="closeRefresh"
-                    class="rounded-lg border  border-blue-700 w-20 h-8">Close</button>
+        <div class="d-flex justify-content-between">
+            <div class="flex items-center justify-center">
+                <div class="w-full my-2 space-x-3 flex justify-end pr-7">
+                    <button id="addRefresh" type="submit" wire:click="editSched"
+                        class="btn btn-success closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
+
+                    <button wire:click="closeModal" id="closeRefresh"
+                        class="rounded-lg border border-blue-700 w-20 h-8">Close</button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <div class="w-full my-2 space-x-3 flex justify-start pl-7">
+                    <button id="addRefresh" type="submit" wire:click="deleteSchedule    "
+                        class="btn btn-danger closeModal bg-red-500 w-20 h-8 text-white rounded-lg !important">Delete</button>
+                </div>
             </div>
         </div>
+
+
     </div>
 </div>
 <script>
