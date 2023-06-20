@@ -123,21 +123,23 @@
 
         <div class="d-flex justify-content-between">
             <div class="flex items-center justify-center">
-                <div class="w-full my-2 space-x-3 flex justify-end pr-7">
-                    <button id="addRefresh" type="submit" wire:click="editSched"
-                        class="btn btn-success closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
-
+                <div class="w-full my-2 space-x-3 flex justify-between px-7">
                     <button wire:click="closeModal" id="closeRefresh"
                         class="rounded-lg border border-blue-700 w-20 h-8">Close</button>
+                
+                    <div>
+                        <button id="addRefresh" type="submit" wire:click="deleteSchedule" class="btn btn-danger closeModal bg-red-500 w-20 h-8 text-white rounded-lg !important">Delete</button>
+                    
+                        <button id="addRefresh" type="submit" wire:click="editSched" class="btn btn-success closeModal bg-blue-500 w-20 h-8 text-white rounded-lg !important">Submit</button></br>
+
+                    </div>
+
+                    
+                    
                 </div>
             </div>
 
-            <div class="flex items-center justify-center">
-                <div class="w-full my-2 space-x-3 flex justify-start pl-7">
-                    <button id="addRefresh" type="submit" wire:click="deleteSchedule    "
-                        class="btn btn-danger closeModal bg-red-500 w-20 h-8 text-white rounded-lg !important">Delete</button>
-                </div>
-            </div>
+
         </div>
 
 

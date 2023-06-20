@@ -11,7 +11,7 @@
    
     </div>
 
-    <div class="flex">
+    <div class="flex text-black">
         <div class="overflow-x-auto w-full">
             <div class="inline-block min-w-full overflow-hidden">
 
