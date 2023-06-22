@@ -24,7 +24,8 @@ class User extends Authenticatable
         'password',
         'role',
         'tag_id',
-        'image'
+        'image',
+        'school_year',
     ];
 
     /**
@@ -45,8 +46,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-        public function isAdmin()
+    public function isAdmin()
     {
         return $this->role === 'Admin';
+    }
+
+    public function hasScheduleForYear($schoolYear)
+    {
+        return $this->schedules()->where('school_year', $schoolYear)->exists();
+    }
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
     }
 }

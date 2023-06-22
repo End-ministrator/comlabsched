@@ -13,10 +13,10 @@ class UserController extends Controller
 
     public function index()
     {
-
+        
         $faculties = User::all();
         $faculty_id = $faculties->first()->id;
-        return view('facultycrud.faculty')->with(compact('faculties', 'faculty_id'));
+        return view('facultycrud.faculty')->with(compact('faculties', 'faculty_id',));
     }
     public function updateProfile(Request $request)
     {
@@ -43,20 +43,6 @@ class UserController extends Controller
         $profilePicture->move($path, $profilePicture->getClientOriginalName());
         $user->image = $path . '/' . $profilePicture->getClientOriginalName();
         $user->save();
-        // if ($request->hasFile('profile_picture')) {
-        //     $file = $request->file('profile_picture');
-        //     // dd($file);
-        //     
-        //     $user->image = $path;
-
-        // } else {
-
-        //     $file = $request->file('profile_picture');
-        //     // dd($file);
-        //     $path = $file->store('image', 'public');
-        //     $user->image = $path;
-        // }
-
 
         return redirect()->back()->with('success', 'Profile updated successfully!');
     }

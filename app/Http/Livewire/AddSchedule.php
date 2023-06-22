@@ -97,7 +97,10 @@ class AddSchedule extends ModalComponent
         $recurrenceValue = $this->recurrence_value;
 
         // Create the initial schedule
-        Schedule::create($validatedData);
+        $schedule = Schedule::create($validatedData);
+
+        // Update the related User's school_year attribute
+        $schedule->user->update(['school_year' => $validatedData['school_year']]);
 
         // Check if the recurrence type is "Daily"
         if ($recurrence === 'daily') {
@@ -108,6 +111,7 @@ class AddSchedule extends ModalComponent
 
                 // Create the repeated schedule
                 Schedule::create($clonedSchedule);
+                
             }
         }
         // Check if the recurrence type is "Weekly"

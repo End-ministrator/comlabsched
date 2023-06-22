@@ -39,7 +39,8 @@
                         class="row dark:bg-gray-700  bg-white shadow shadow-black w-11/12 h-full rounded-lg  overflow-x-auto ml-14 mt-10">
 
                         <div class="table-responsive flex justify-center items-center   ">
-                            <table id="tableko" class=" w-full  text-white !important  rounded-lg  border-spacing-3  p-10 font-medium">
+                            <table id="tableko"
+                                class=" w-full  text-white !important  rounded-lg  border-spacing-3  p-10 font-medium">
                                 <thead class="  sticky top-0 ">
                                     <tr class="h-12 bg-gray-700">
                                         <th class="">#</th>
@@ -47,6 +48,7 @@
                                         <th class="">Email</th>
                                         <th class="">Role</th>
                                         <th class="">Tag Id</th>
+                                        <th class="">Status</th>
                                         <th class="">Action</th>
                                     </tr>
                                 </thead>
@@ -69,6 +71,15 @@
                                                 {{ $faculty->tag_id }}</td>
                                             <td
                                                 class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
+                                                @if ($faculty->hasScheduleForYear($faculty->school_year))
+                                                    <span style="color: rgb(145, 250, 172);">Active</span>
+                                                @else
+                                                    <span style="color: rgb(253, 38, 0);">Inactive</span>
+                                                @endif
+                                            </td>
+
+                                            <td
+                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
 
 
                                                 <button
@@ -82,7 +93,7 @@
                                                     class="btn btn-primary btn-sm">
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>|
                                                 </button>
-            
+
                                             </td>
 
                                         </tr>

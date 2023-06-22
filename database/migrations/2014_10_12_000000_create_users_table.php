@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('role');
             $table->string('tag_id')->unique();
             $table->string('image')->nullable();
+            $table->string('school_year')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
