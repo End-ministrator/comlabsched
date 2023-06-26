@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         User::create([
-            'firstname' => 'John',
-            'lastname' => 'Doe',
+            'firstname' => 'Department Head',
+            'lastname' => 'Computer Studies',
             'email' => 'admin@tup.edu.ph',
             'password' => bcrypt('password'),
             'role' => 'Admin',
@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'firstname' => 'Cellenia',
             'lastname' => 'Texas',
-            'email' => 'celeniatexas@tup.edu.ph',
+            'email' => 'celleniatexas@tup.edu.ph',
             'password' => bcrypt('password'),
             'role' => 'Faculty',
             'tag_id' => '463184952208',
