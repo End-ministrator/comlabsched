@@ -39,7 +39,8 @@
                         class="row dark:bg-gray-700  bg-white shadow shadow-black w-11/12 h-full rounded-lg  overflow-x-auto ml-14 mt-10">
 
                         <div class="table-responsive flex justify-center items-center   ">
-                            <table id="tableko" class=" w-full  text-white !important  rounded-lg  border-spacing-3  p-10 font-medium">
+                            <table id="tableko"
+                                class=" w-full  text-white !important  rounded-lg  border-spacing-3  p-10 font-medium">
                                 <thead class="  sticky top-0 ">
                                     <tr class="h-12 bg-gray-700">
                                         <th class="">#</th>
@@ -47,45 +48,57 @@
                                         <th class="">Email</th>
                                         <th class="">Role</th>
                                         <th class="">Tag Id</th>
+                                        <th class="">Status</th>
                                         <th class="">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class=" ">
                                     @foreach ($faculties as $faculty)
-                                        <tr class="h-12 ">
-                                            <td class="text-center invisible sm:invisible md:visible lg:visible">
-                                                {{ $loop->iteration }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $faculty->firstname . ' ' . $faculty->lastname }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $faculty->email }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $faculty->role }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
-                                                {{ $faculty->tag_id }}</td>
-                                            <td
-                                                class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
+                                        @if ($faculty->role !== 'Admin')
+                                            <tr class="h-12 ">
+                                                <td class="text-center invisible sm:invisible md:visible lg:visible">
+                                                    {{ $loop->iteration }}</td>
+                                                <td
+                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
+                                                    {{ $faculty->firstname . ' ' . $faculty->lastname }}</td>
+                                                <td
+                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
+                                                    {{ $faculty->email }}</td>
+                                                <td
+                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
+                                                    {{ $faculty->role }}</td>
+                                                <td
+                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
+                                                    {{ $faculty->tag_id }}</td>
+                                                <td
+                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
+                                                    @if ($faculty->hasScheduleForYear($faculty->school_year))
+                                                        <span style="color: rgb(145, 250, 172);">Active</span>
+                                                    @else
+                                                        <span style="color: rgb(253, 38, 0);">Inactive</span>
+                                                    @endif
+                                                </td>
+
+                                                <td
+                                                    class="text-center text-xs sm:text-sm md:text-md lg:text-md overflow-x-visible">
 
 
-                                                <button
-                                                    onclick="Livewire.emit('openModal', 'edit-faculty', { facultyId: {{ $faculty->id }}}) "
-                                                    class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>|
-                                                </button>
+                                                    <button
+                                                        onclick="Livewire.emit('openModal', 'edit-faculty', { facultyId: {{ $faculty->id }}}) "
+                                                        class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>|
+                                                    </button>
 
-                                                <button
-                                                    onclick="Livewire.emit('openModal', 'delete-faculty', { facultyId: {{ $faculty->id }}}) "
-                                                    class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>|
-                                                </button>
-            
-                                            </td>
+                                                    <button
+                                                        onclick="Livewire.emit('openModal', 'delete-faculty', { facultyId: {{ $faculty->id }}}) "
+                                                        class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-trash-o" aria-hidden="true"></i>|
+                                                    </button>
 
-                                        </tr>
+                                                </td>
+
+                                            </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>
